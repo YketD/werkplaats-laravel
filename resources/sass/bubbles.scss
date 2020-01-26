@@ -1,0 +1,150 @@
+.bubble {
+    width                      : 200px;
+    height                     : 200px;
+    border-radius              : 200px;
+    position                   : relative;
+    color                      : white;
+    font-size                  : 32px;
+    background-color           : rgb(232, 138, 96);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    transition-property        : box-shadow, transform;
+    transition-duration        : .3s;
+    transition-timing-function : cubic-bezier(1.5, 2, 0.175, 1);
+
+    &.router-link-exact-active {
+        .bubble-content {
+            text-decoration : underline;
+        }
+    }
+
+    &.dark {
+        background-color : rgba(232, 138, 96, .5);
+        color            : #bccfbf;
+    }
+
+    &:hover {
+        transform  : scale(1.1);
+        box-shadow : 0 3px 6px rgba(0, 0, 0, 0.35);
+    }
+
+    &.var-1 {
+        color            : rgb(32, 64, 37);
+        font-size        : 32px;
+        border           : 5px solid rgb(232, 138, 96);
+        background-color : rgba(232, 138, 96, .2);
+    }
+}
+
+#bubbles {
+    z-index: 1;
+    width         : 500px;
+    margin-top    : 112px;
+    margin-bottom : 112px;
+    margin-left   : 24px;
+    position      : relative;
+
+    @media('max-width : 1440px') {
+        width : 300px;
+    }
+
+    @media('max-width : 992px') {
+        display : none;
+    }
+
+    .bubble-0 {
+        position : absolute;
+        top      : -72px;
+        left     : 170px;
+        width    : 180px;
+        height   : 180px;
+
+        @media ('max-width : 1440px') {
+            top: 0;
+            left: 140px;
+            width  : 110px;
+            height : 110px;
+        }
+    }
+
+    .bubble-1 {
+        position : absolute;
+        top      : 12px;
+        left     : 12px;
+        width    : 150px;
+        height   : 150px;
+
+        @media ('max-width : 1440px') {
+            width  : 110px;
+            height : 110px;
+        }
+    }
+
+    .bubble-2 {
+        position : absolute;
+        top      : 142px;
+        left     : 104px;
+        width    : 250px;
+        height   : 250px;
+
+        @media ('max-width : 1440px') {
+            width  : 175px;
+            height : 175px;
+            top    : 130px;
+            left   : 50px;
+        }
+    }
+
+    .bubble-3 {
+        position : absolute;
+        top      : 375px;
+
+        @media ('max-width : 1440px') {
+            width  : 175px;
+            height : 175px;
+            top    : 330px;
+            left   : 0;
+        }
+    }
+}
+
+.bubble-content {
+    margin        : 0;
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    margin-right  : -50%;
+    transform     : translate(-50%, -50%);
+    border-radius : 200px;
+    font-size     : 24px;
+    font-weight   : 300;
+    width: 80%;
+
+    @media ('max-width: 1440px') {
+        font-size: 18px;
+    }
+
+    @media ('max-width: 1280px') {
+        font-size: 16px;
+    }
+}
+
+
+.small-bubbles {
+    display  : none;
+    width    : 500px;
+    position : absolute;
+    bottom   : 0;
+    right    : 0;
+}
+
+.small-bubble {
+    width            : 75px;
+    height           : 75px;
+    border-radius    : 125px;
+    background-color : rgb(232, 138, 96);
+}
+
+.icon {
+    width : 75px;
+}
