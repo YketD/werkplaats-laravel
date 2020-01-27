@@ -227,7 +227,7 @@
             display        : flex;
             flex-direction : row;
             &:after {
-                content    : "Agenda";
+                content    : "Kalender";
                 width      : 100%;
             }
         }
