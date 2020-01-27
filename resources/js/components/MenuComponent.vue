@@ -37,16 +37,16 @@
         },
         computed: {
             imgSrc() {
-                let src = '/storage-old/storage/homepage.png';
+                let src = '/storage/homepage.png';
 
                 if (this.$route.path === '/werkplek-huren') {
-                    src = '/storage-old/storage/huren.png';
+                    src = '/storage/huren.png';
                 }
                 if (this.$route.path === '/reserveren') {
-                    src = '/storage-old/storage/create.png';
+                    src = '/storage/create.png';
                 }
                 if (this.$route.path === '/contact') {
-                    src = '/storage-old/storage/map.png';
+                    src = '/storage/map.png';
                 }
                 this.menuImage = this.$route.path;
                 return src;
