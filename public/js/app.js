@@ -12108,18 +12108,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     imgSrc: function imgSrc() {
-      var src = '/storage/img/homepage.png';
+      var src = '/storage-old/storage/homepage.png';
 
       if (this.$route.path === '/werkplek-huren') {
-        src = '/storage/img/huren.png';
+        src = '/storage-old/storage/huren.png';
       }
 
       if (this.$route.path === '/reserveren') {
-        src = '/storage/img/create.png';
+        src = '/storage-old/storage/create.png';
       }
 
       if (this.$route.path === '/contact') {
-        src = '/storage/img/map.png';
+        src = '/storage-old/storage/map.png';
       }
 
       this.menuImage = this.$route.path;
