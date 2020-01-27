@@ -691,6 +691,35 @@ a {
   }
 }
 
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .mobile-menu {
+    display: block;
+    width: 100%;
+  }
+}
+
+.mobile-menu-link {
+  width: 100%;
+  color: white;
+  display: block;
+  margin: 12px 0 6px 0;
+  background: #e88a60;
+}
+
+.mobile-menu-link.inactive {
+  background-color: rgba(232, 138, 96, 0.5);
+  color: #bccfbf;
+}
+
+.mobile-menu-link.sub {
+  background-color: #bccfbf;
+  color: black;
+}
+
 html {
   color: #204025;
 }

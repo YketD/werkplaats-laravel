@@ -4,11 +4,11 @@
             <div class="left">
                 Werkplaats 75C is de plek voor ondernemers die op zoek zijn naar een werkplek.<br />
                 Je werkt samen met andere professionals in een inspirerende en prettige werkomgeving,
-                waar je ook kunt sparren met elkaar en kunt genieten van een kop koffie.
+                waar je ook kunt sparren met elkaar<br> en kunt genieten van een kop koffie.
             </div>
             <div class="center">
-                Wij geloven dat je meer uit jezelf kunt halen<br />
-                door samen te werken met anderen!<br />
+                Wij geloven dat je meer<br v-if="width < 500" /> uit jezelf kunt halen<br />
+                door samen te werken<br v-if="width < 500" /> met anderen!<br />
             </div>
             <div class="left">
                 <span class="normal">Ben je ondernemer bij WP75C? </span> <br />
@@ -26,7 +26,12 @@
 
 <script>
     export default {
-        name: "WerkplaatsInformatie"
+        name: "WerkplaatsInformatie",
+        data() {
+            return {
+                width:window.innerWidth
+            }
+        }
     }
 </script>
 

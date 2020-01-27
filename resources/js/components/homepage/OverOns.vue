@@ -2,7 +2,8 @@
     <div class="green-content-box">
         <div class="green-content">
             <h1> Over ons </h1>
-            <span> Wij zijn Karin & Renate Roetgerink, zussen, geboren en opgegroeid in Goor. Wij zijn in ons pand, gelegen in het centrum van Goor, ons bedrijf ’Werkplaats 75C’ gestart. Met Werkplaats 75C willen wij ondernemers een plek bieden waar het fijn werken is en waar je met elkaar tot mooie en onverwachte resultaten kunt komen. </span>
+            <span> Wij zijn Karin & Renate Roetgerink, zussen, geboren en opgegroeid in Goor. Wij zijn in ons pand, gelegen in het centrum van Goor, ons bedrijf ’Werkplaats 75C’ gestart.
+                <br>Met Werkplaats 75C willen wij ondernemers een plek bieden waar het fijn werken is en waar je met elkaar tot mooie en onverwachte resultaten kunt komen. </span>
             <div class="over">
                 <div class="text">
                     Ik, Renate, ben in mijn werk vooral procesmatig bezig en heb jarenlang gewerkt als gebiedsmanager
@@ -22,7 +23,7 @@
             <div class="over">
                 <img width="88" height="87" class="image" src="/storage/img/renate.png" />
                 <div class="text">
-                    Ik, Karin, ben architect. Daarnaast ben mij steeds meer bezig gaan houden met
+                    Ik, Karin, ben architect. Daarnaast ben ik mij steeds meer bezig gaan houden met
                     interieur advies. Dit doe
                     ik
                     samen met Karin Olthoff van
@@ -41,7 +42,7 @@
                 Wij hopen dat Werkplaats 75C een bruisende plek wordt waar je als creatieve ondernemer naast je werk ook
                 de
                 mogelijkheid hebt activiteiten te ondernemen met als doel te verbinden, te inspireren en te motiveren.
-                Een
+                <br />Een
                 plek waar je met plezier naar toe gaat!
             </div>
         </div>

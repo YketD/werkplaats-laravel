@@ -2,7 +2,7 @@
     <div class="page-container">
         <div class="contact-info-container">
             <h1 class="big-title">
-                WERKRUIMTEN
+                WERKPLEKKEN
             </h1>
             <div class="info-container">
                 <div class="info">
@@ -58,70 +58,65 @@
                     </div>
                 </div>
             </div>
-<!--            <div v-if="true" class="price-cards">-->
-<!--                <pricing-card-->
-<!--                        :price-two-hour="30"-->
-<!--                        :price-four-hour="60"-->
-<!--                        :price-eight-hour="90"-->
-<!--                        :months="false"-->
-<!--                        :title="'Onbeperkt'"-->
-<!--                        :pro-one="'20 á 25 personen'"-->
-<!--                        :pro-two="'Beschikking over workshop / vergaderruimte'"-->
-<!--                        :pro-three="'Wifi / koffie / thee'"-->
-<!--                />-->
-<!--                <pricing-card-->
-<!--                        :price-two-hour="20"-->
-<!--                        :price-four-hour="40"-->
-<!--                        :price-eight-hour="70"-->
-<!--                        :months="false"-->
-<!--                        :title="'Onbeperkt + Vaste plek'"-->
-<!--                        :pro-one="'6 á 8 personen'"-->
-<!--                        :pro-two="'Beschikking over spreekkamer'"-->
-<!--                        :pro-three="'Wifi / Koffie / Thee'"-->
-<!--                />-->
-<!--            </div>-->
             <div v-if="true" class="price-cards">
                 <pricing-card
                         :price-twelve-month="175"
                         :price-six-month="185"
                         :title="'Onbeperkt'"
                         :months="true"
-                        :pro-one="'Maak onbeperkt gebruik van werkplaats 75C.'"
-                        :pro-two="'12 uur workshop / vergaderruimte'"
-                        :pro-three="'Wifi / Koffie / Thee'" />
+                        :pro-one="'12 u gratis gebruik vergaderruimten, mits beschikbaar'"
+                        :pro-two="'Wifi / Koffie / Thee'"
+                        :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '"/>
                 <pricing-card
                         :price-twelve-month="220"
                         :price-six-month="235"
                         :title="'Onbeperkt + Vaste plek'"
                         :months="true"
-                        :pro-one="'Onbeperkt gebruik met vaste plek'"
-                        :pro-two="'12 uur workshop / vergaderruimte'"
-                        :pro-three="'Wifi / Koffie / Thee'" />
+                        :pro-one="'12 u gratis gebruik vergaderruimten, mits beschikbaar'"
+                        :pro-two="'Wifi / Koffie / Thee'"
+                        :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '"/>
                 <pricing-card
                         :price-twelve-month="150"
                         :price-six-month="150"
-                        :title="'3 Dagen'"
+                        :title="'3 Dagen per week'"
                         :months="true"
-                        :pro-one="'3 dagen gebruik'"
-                        :pro-two="'9 uur workshop/vergaderruimte (op werkdagen)'"
-                        :pro-three="'Wifi / Koffie / Thee'" />
+                        :pro-one="'9 u gratis gebruik vergaderruimten op de werkdagen, mits beschikbaar'"
+                        :pro-two="'Wifi / Koffie / Thee'"
+                :pro-three="'toegang 8.00 u – 22.00 u'"/>
                 <pricing-card
                         :price-twelve-month="125"
                         :price-six-month="125"
                         :title="'2 Dagen'"
                         :months="true"
-                        :pro-one="'2 Dagen gebruik'"
-                        :pro-two="'6 uur workshop/vergaderruimte (op werkdagen)'"
-                        :pro-three="'Wifi / Koffie / Thee'"
+                        :pro-one="'6 u gratis gebruik vergaderruimten op de werkdagen, mits beschikbaar'"
+                        :pro-two="'Wifi / Koffie / Thee'"
+                        :pro-three="'toegang 8.00 u – 22.00 u'"
                 />
                 <pricing-card
                         :price-twelve-month="75"
                         :price-six-month="75"
                         :title="'1 Dag'"
                         :months="true"
-                        :pro-one="'1 Dag gebruik'"
-                        :pro-two="'3 uur workshop/vergaderruimte (op werkdagen)'"
-                        :pro-three="'Wifi / Koffie / Thee'" />
+                        :pro-one="'3 u gratis gebruik vergaderruimten op de werkdag, mits beschikbaar'"
+                        :pro-two="'Wifi / Koffie / Thee'"
+                        :pro-three="'toegang 8.00 u – 22.00 u'"/>
+            </div>
+            <a target="_blank" href="/storage/img/docs/privacy.pdf">
+                <div class="privacy-policy">
+                    Privacy policy
+                </div>
+            </a>
+            <div class="mobile-menu">
+                <a target="_blank" class="mobile-menu-link sub" href="/storage/img/docs/privacy.pdf">
+                    <div class="">
+                        Privacy policy
+                    </div>
+                </a>
+                <a target="_blank" class="mobile-menu-link sub" href="https://www.facebook.com/werkplaats75c">
+                    <div class="">
+                        Facebook
+                    </div>
+                </a>
             </div>
             <div class="content-opaque">
             </div>
@@ -139,6 +134,15 @@
 </script>
 
 <style lang="scss" scoped>
+    .privacy-policy {
+        position: absolute;
+        bottom: 0;
+        z-index:1;
+        @media('max-width: 500px') {
+            display: none;
+        }
+    }
+
     .content {
         display: inline-block;
         height: auto;

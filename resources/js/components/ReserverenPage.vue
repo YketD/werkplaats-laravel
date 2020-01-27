@@ -2,7 +2,7 @@
     <div class="page-container">
         <div class="contact-info-container">
             <h1 class="big-title">
-                WERKPLEKKEN
+                WERKRUIMTEN
             </h1>
             <div class="info-container">
                 <div class="info">
@@ -93,23 +93,37 @@
                         :price-four-hour="60"
                         :price-eight-hour="90"
                         :months="false"
-                        :title="'VergaderRuimte klein'"
+                        :title="'Workshop-/ vergaderruimte'"
                         :pro-one="'20 á 25 personen'"
-                        :pro-two="'Beschikking over workshop / vergaderruimte'"
-                        :pro-three="'Wifi / koffie / thee'"
+                        :pro-two="'Wifi / koffie / thee'"
                 />
                 <pricing-card
                         :price-two-hour="20"
                         :price-four-hour="40"
                         :price-eight-hour="70"
                         :months="false"
-                        :title="'Vergaderruimte groot'"
+                        :title="'Spreekkamer'"
                         :pro-one="'6 á 8 personen'"
-                        :pro-two="'Beschikking over spreekkamer'"
-                        :pro-three="'Wifi / Koffie / Thee'"
+                        :pro-two="'Wifi / Koffie / Thee'"
                 />
             </div>
-
+            <a target="_blank" href="/storage/img/docs/privacy.pdf">
+                <div class="privacy-policy">
+                    Privacy policy
+                </div>
+            </a>
+            <div class="mobile-menu">
+                <a target="_blank" class="mobile-menu-link sub" href="/storage/img/docs/privacy.pdf">
+                    <div class="">
+                        Privacy policy
+                    </div>
+                </a>
+                <a target="_blank" class="mobile-menu-link sub" href="https://www.facebook.com/werkplaats75c">
+                    <div class="">
+                        Facebook
+                    </div>
+                </a>
+            </div>
             <div class="opaque"></div>
         </div>
     </div>
@@ -125,7 +139,21 @@
 </script>
 
 <style lang="scss" scoped>
+    .privacy-policy {
+        position: absolute;
+        bottom: 0;
+        z-index:1;
 
+        @media('max-width: 500px') {
+            display: none;
+        }
+    }
+    .price-cards {
+        max-width: 60vw;
+        @media('max-width: 992px') {
+            max-width: unset;
+        }
+    }
     .content {
         display: inline-block;
         height: auto;

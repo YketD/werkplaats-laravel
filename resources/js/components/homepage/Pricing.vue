@@ -52,9 +52,9 @@
         <ol class="card__list">
             <li class="card__list__item">{{proOne}}</li>
             <li class="card__list__item">{{proTwo}}</li>
-            <li class="card__list__item">{{proThree}}</li>
+            <li v-if="proThree" class="card__list__item">{{proThree}}</li>
         </ol>
-        <a href="mailto:yketd@hotmail.com?body=Ik%20heb%20interresse%20in%20Werkplaats%2075C">
+        <a class="button" :href="'mailto:yketd@hotmail.com?body=' + getMailText()">
             <button class="card__button"
                     type="button"
                     @click="location.href('')">Kies
@@ -80,16 +80,51 @@
         ],
         data() {
             return {
-                months: true,
                 twelveMonthActive: true,
                 twoHourActive: true,
                 fourHourActive: false,
+            }
+        },
+        methods: {
+            getMailText() {
+                let time = "";
+                if (this.months) {
+                    time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
+                    return "Hartelijk dank voor het reserveren van een vergaderruimte bij Werkplaats 75C %0A %0A" +
+                        "" + this.title + ", " + time + " %0A %0A" +
+                        "Laat ons weten op welke dag jij deze ruimte wil reserveren en vanaf welk tijdstip %0A %0A" +
+                        "Datum: %0A" +
+                        "Tijdstip: %0A %0A" +
+                        "Wij controleren of de door jouw aangevraagde ruimte ook daadwerkelijk beschikbaar is en sturen jou een bevestiging van de reservering. %0A %0A" +
+                        "Hartelijke groeten, %0A" +
+                        "Karin en Renate %0A" +
+                        "Werkplaats 75C %0A";
+                } else {
+                    if (!this.twoHourActive) {
+                        time = this.fourHourActive ? " 4 uur" : "8 uur";
+                    } else {
+                        time = "2 uur"
+                    }
+                    return "Hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C %0A %0A" +
+                        "" + this.title + ", " + time + " %0A %0A" +
+                        "Wij nemen contact met jou op om verdere afspraken te maken %0A %0A" +
+                        "Hartelijke groeten, %0A" +
+                        "Karin en Renate %0A" +
+                        "Werkplaats 75C %0A";
+                }
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+    .button {
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        bottom: 20px;
+    }
+
     span {
         font-size : .6rem;
     }
@@ -121,7 +156,9 @@
         background-color           : #204025;
         color                      : #ffffff;
         padding                    : 16px 32px 32px 32px;
-        margin                     : 16px;
+        margin                     : 42px 16px;
+
+
         width                      : 280px;
         height                     : 500px;
         box-shadow                 : 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);

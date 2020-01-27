@@ -1,6 +1,7 @@
 require('./bootstrap');
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
+import axios from 'axios';
 import HomePage from "./components/HomePage.vue";
 import VueRouter from "vue-router";
 import WerkplekHurenPage from "./components/WerkplekHurenPage";
@@ -17,6 +18,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
+Vue.prototype.$http = axios;
 
 library.add(faPhone);
 library.add(faEnvelope);

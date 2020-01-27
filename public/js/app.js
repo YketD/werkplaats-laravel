@@ -11904,13 +11904,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-__webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactPage",
   methods: {
     sendMail: function sendMail() {
-      this.axios.post(mailData);
+      this.$http.post('/api/send-mail', this.mailData, {
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+      });
     }
   },
   data: function data() {
@@ -11936,6 +11954,21 @@ __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -12224,6 +12257,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactPage",
@@ -12244,11 +12291,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_homepage_Pricing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/homepage/Pricing */ "./resources/js/components/homepage/Pricing.vue");
-//
-//
-//
-//
-//
 //
 //
 //
@@ -12444,6 +12486,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "OverOns"
 });
@@ -12529,11 +12572,28 @@ __webpack_require__.r(__webpack_exports__);
   props: ['proOne', 'proTwo', 'proThree', 'months', 'priceTwelveMonth', 'priceSixMonth', 'priceTwoHour', 'priceFourHour', 'priceEightHour', 'title'],
   data: function data() {
     return {
-      months: true,
       twelveMonthActive: true,
       twoHourActive: true,
       fourHourActive: false
     };
+  },
+  methods: {
+    getMailText: function getMailText() {
+      var time = "";
+
+      if (this.months) {
+        time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
+        return "Hartelijk dank voor het reserveren van een vergaderruimte bij Werkplaats 75C %0A %0A" + "" + this.title + ", " + time + " %0A %0A" + "Laat ons weten op welke dag jij deze ruimte wil reserveren en vanaf welk tijdstip %0A %0A" + "Datum: %0A" + "Tijdstip: %0A %0A" + "Wij controleren of de door jouw aangevraagde ruimte ook daadwerkelijk beschikbaar is en sturen jou een bevestiging van de reservering. %0A %0A" + "Hartelijke groeten, %0A" + "Karin en Renate %0A" + "Werkplaats 75C %0A";
+      } else {
+        if (!this.twoHourActive) {
+          time = this.fourHourActive ? " 4 uur" : "8 uur";
+        } else {
+          time = "2 uur";
+        }
+
+        return "Hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C %0A %0A" + "" + this.title + ", " + time + " %0A %0A" + "Wij nemen contact met jou op om verdere afspraken te maken %0A %0A" + "Hartelijke groeten, %0A" + "Karin en Renate %0A" + "Werkplaats 75C %0A";
+      }
+    }
   }
 });
 
@@ -12575,7 +12635,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "WerkplaatsInformatie"
+  name: "WerkplaatsInformatie",
+  data: function data() {
+    return {
+      width: window.innerWidth
+    };
+  }
 });
 
 /***/ }),
@@ -14610,7 +14675,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "a[data-v-48de3398] {\n  /*font-weight: 400;*/\n  border-radius: 4px;\n}\n.padding[data-v-48de3398] {\n  padding: 12px;\n}\nh1[data-v-48de3398] {\n  font-size: 42px;\n  line-height: 42px;\n}\nform[data-v-48de3398] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  margin-top: 24px;\n}\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n  margin: 0px;\n  margin-bottom: 24px;\n  padding: 12px;\n  font-size: 24px;\n  font-family: \"Poppins\", sans-serif;\n}\n@media (max-width : 1440px) {\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n    margin-bottom: 12px;\n    padding: 4px;\n}\n}\ntextarea[data-v-48de3398] {\n  height: 86px;\n}\nbutton[data-v-48de3398] {\n  font-size: 32px;\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 800;\n}\n.contact-info-container[data-v-48de3398] {\n  text-align: left;\n  z-index: 1;\n}\n.contact-table[data-v-48de3398] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: 0.5fr 0.5fr 1fr;\n}\n.contact-table .grid-item[data-v-48de3398] {\n  margin: 12px;\n  margin-left: 0;\n}\n.contact-table .grid-item.double[data-v-48de3398] {\n  grid-column: 2/span 2;\n}\n@media (max-width: 992px) {\n.contact-table[data-v-48de3398] {\n    width: 100%;\n    margin: 0;\n    height: auto;\n    font-size: 20px;\n}\n}\n@media (max-width : 500px) {\n.contact-table[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}\n.sub-item[data-v-48de3398] {\n  font-weight: 200;\n}\n.icon[data-v-48de3398] {\n  width: 40%;\n  padding-left: 30%;\n  padding-right: 30%;\n}\n.bubble-content[data-v-48de3398] {\n  display: -webkit-box;\n  display: flex;\n  text-align: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  border-radius: 200px;\n  color: #5b5b5b;\n  font-weight: 300;\n  width: 80%;\n}\n.bubble-content .larger[data-v-48de3398] {\n  font-size: 40px;\n  margin-bottom: 12px;\n}\n.bubble-1[data-v-48de3398] {\n  position: absolute;\n  top: 12px;\n  left: 12px;\n  width: 150px;\n  height: 150px;\n}\n.bubble-2[data-v-48de3398] {\n  position: absolute;\n  top: 142px;\n  left: 104px;\n  width: 220px;\n  height: 220px;\n}\n.bubble-3[data-v-48de3398] {\n  position: absolute;\n  top: 355px;\n}\n.center[data-v-48de3398] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-48de3398] {\n  text-align: left;\n}\n@media (max-width : 500px) {\n.green-content-box[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}", ""]);
+exports.push([module.i, ".privacy-policy[data-v-48de3398] {\n  top: 600px;\n  position: absolute;\n}\na[data-v-48de3398] {\n  /*font-weight: 400;*/\n  border-radius: 4px;\n}\n.padding[data-v-48de3398] {\n  padding: 12px;\n}\nh1[data-v-48de3398] {\n  font-size: 42px;\n  line-height: 42px;\n}\nform[data-v-48de3398] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  margin-top: 24px;\n}\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n  margin: 0px;\n  margin-bottom: 24px;\n  padding: 12px;\n  font-size: 24px;\n  font-family: \"Poppins\", sans-serif;\n}\n@media (max-width : 1440px) {\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n    margin-bottom: 12px;\n    padding: 4px;\n}\n}\n@media (max-width : 500px) {\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n    font-size: 14px;\n}\n}\ntextarea[data-v-48de3398] {\n  height: 86px;\n}\nbutton[data-v-48de3398] {\n  font-size: 32px;\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 800;\n  color: white;\n  background: #e88a60;\n  border: none;\n  cursor: poiner;\n}\n.contact-info-container[data-v-48de3398] {\n  text-align: left;\n  z-index: 1;\n}\n.contact-table[data-v-48de3398] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: 0.5fr 0.5fr 1fr;\n}\n.contact-table .grid-item[data-v-48de3398] {\n  margin: 12px;\n  margin-left: 0;\n}\n.contact-table .grid-item.double[data-v-48de3398] {\n  grid-column: 2/span 2;\n}\n@media (max-width: 992px) {\n.contact-table[data-v-48de3398] {\n    width: 100%;\n    margin: 0;\n    height: auto;\n    font-size: 20px;\n}\n}\n@media (max-width : 500px) {\n.contact-table[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}\n.sub-item[data-v-48de3398] {\n  font-weight: 200;\n}\n.icon[data-v-48de3398] {\n  width: 40%;\n  padding-left: 30%;\n  padding-right: 30%;\n}\n.bubble-content[data-v-48de3398] {\n  display: -webkit-box;\n  display: flex;\n  text-align: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  border-radius: 200px;\n  color: #5b5b5b;\n  font-weight: 300;\n  width: 80%;\n}\n.bubble-content .larger[data-v-48de3398] {\n  font-size: 40px;\n  margin-bottom: 12px;\n}\n.bubble-1[data-v-48de3398] {\n  position: absolute;\n  top: 12px;\n  left: 12px;\n  width: 150px;\n  height: 150px;\n}\n.bubble-2[data-v-48de3398] {\n  position: absolute;\n  top: 142px;\n  left: 104px;\n  width: 220px;\n  height: 220px;\n}\n.bubble-3[data-v-48de3398] {\n  position: absolute;\n  top: 355px;\n}\n.center[data-v-48de3398] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-48de3398] {\n  text-align: left;\n}\n@media (max-width : 500px) {\n.green-content-box[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -14628,7 +14693,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".privacy-policy[data-v-247e7d33] {\n  position: absolute;\n  top: 600px;\n  color: #204025;\n  padding: 0;\n}\n#bubbles[data-v-247e7d33] {\n  z-index: 1;\n  position: relative;\n}\n@media (max-width :1440px) {\n#bubbles[data-v-247e7d33] {\n    margin-top: 50px;\n}\n}\n.mobile-menu[data-v-247e7d33] {\n  display: none;\n}\n@media (max-width:500px) {\n.mobile-menu[data-v-247e7d33] {\n    display: block;\n    width: 100%;\n}\n}\n.center[data-v-247e7d33] {\n  width: 100%;\n  text-align: center;\n}\n.mobile-menu-link[data-v-247e7d33] {\n  width: 100%;\n  color: white;\n  display: block;\n  margin: 12px 0 6px 0;\n  background: #e88a60;\n}", ""]);
+exports.push([module.i, ".privacy-policy[data-v-247e7d33] {\n  position: absolute;\n  top: 600px;\n  color: #204025;\n  padding: 0;\n}\n.facebook[data-v-247e7d33] {\n  top: 650px;\n  position: absolute;\n}\n#bubbles[data-v-247e7d33] {\n  z-index: 1;\n  position: relative;\n}\n@media (max-width :1440px) {\n#bubbles[data-v-247e7d33] {\n    margin-top: 50px;\n}\n}\n.mobile-menu[data-v-247e7d33] {\n  display: none;\n}\n@media (max-width:500px) {\n.mobile-menu[data-v-247e7d33] {\n    display: block;\n    width: 100%;\n}\n}\n.center[data-v-247e7d33] {\n  width: 100%;\n  text-align: center;\n}\n.mobile-menu-link[data-v-247e7d33] {\n  width: 100%;\n  color: white;\n  display: block;\n  margin: 12px 0 6px 0;\n  background: #e88a60;\n}\n.mobile-menu-link.inactive[data-v-247e7d33] {\n  background-color: rgba(232, 138, 96, 0.5);\n  color: #bccfbf;\n}\n.mobile-menu-link.sub[data-v-247e7d33] {\n  background-color: #bccfbf;\n  color: black;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -14682,7 +14747,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".content[data-v-744025b9] {\n  display: inline-block;\n  height: auto;\n}\n.contact-info-container[data-v-744025b9] {\n  z-index: 1;\n}\n.price-cards[data-v-744025b9] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\n.info-container[data-v-744025b9] {\n  width: 61vw;\n}\n\n/*.opaque-2 {*/\n/*    position         : absolute;*/\n/*    background-color : rgba(255, 255, 255, .5);*/\n/*    top              : 0;*/\n/*    bottom           : 0;*/\n/*    z-index          : 0;*/\n/*    @media ('max-width : 1280px') {*/\n/*        display : none;*/\n/*    }*/\n/*}*/\nh1[data-v-744025b9] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.grid[data-v-744025b9] {\n  margin: 12px;\n}\n.grid-column[data-v-744025b9] {\n  padding: 0px 12px;\n}\n@media (max-width: 1680px) {\n.grid-column[data-v-744025b9] {\n    font-size: 18px;\n    padding-left: 12px;\n    padding-right: 12px;\n    line-height: 28px;\n    padding-top: 4px;\n    padding-bottom: 4px;\n}\n}\n@media (max-width: 920px) {\n.grid-column[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n@media (max-width: 1680px) {\n.under-text[data-v-744025b9] {\n    font-size: 18px;\n}\n}\n@media (max-width: 920px) {\n.under-text[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n.info[data-v-744025b9] {\n  width: 100%;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n}\n@media (max-width: 920px) {\n.info[data-v-744025b9] {\n    width: 90vw;\n    font-size: 16px;\n    line-height: 20px;\n}\n}\n.sub-item[data-v-744025b9] {\n  font-weight: 200;\n}\n.bubble-content[data-v-744025b9] {\n  font-size: 18px;\n}\n.icon[data-v-744025b9] {\n  width: 50%;\n}\n.center[data-v-744025b9] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-744025b9] {\n  text-align: left;\n}", ""]);
+exports.push([module.i, ".privacy-policy[data-v-744025b9] {\n  position: absolute;\n  bottom: 0;\n  z-index: 1;\n}\n@media (max-width: 500px) {\n.privacy-policy[data-v-744025b9] {\n    display: none;\n}\n}\n.price-cards[data-v-744025b9] {\n  max-width: 60vw;\n}\n@media (max-width: 992px) {\n.price-cards[data-v-744025b9] {\n    max-width: unset;\n}\n}\n.content[data-v-744025b9] {\n  display: inline-block;\n  height: auto;\n}\n.contact-info-container[data-v-744025b9] {\n  z-index: 1;\n}\n.price-cards[data-v-744025b9] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\n.info-container[data-v-744025b9] {\n  width: 61vw;\n}\n\n/*.opaque-2 {*/\n/*    position         : absolute;*/\n/*    background-color : rgba(255, 255, 255, .5);*/\n/*    top              : 0;*/\n/*    bottom           : 0;*/\n/*    z-index          : 0;*/\n/*    @media ('max-width : 1280px') {*/\n/*        display : none;*/\n/*    }*/\n/*}*/\nh1[data-v-744025b9] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.grid[data-v-744025b9] {\n  margin: 12px;\n}\n.grid-column[data-v-744025b9] {\n  padding: 0px 12px;\n}\n@media (max-width: 1680px) {\n.grid-column[data-v-744025b9] {\n    font-size: 18px;\n    padding-left: 12px;\n    padding-right: 12px;\n    line-height: 28px;\n    padding-top: 4px;\n    padding-bottom: 4px;\n}\n}\n@media (max-width: 920px) {\n.grid-column[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n@media (max-width: 1680px) {\n.under-text[data-v-744025b9] {\n    font-size: 18px;\n}\n}\n@media (max-width: 920px) {\n.under-text[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n.info[data-v-744025b9] {\n  width: 100%;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n}\n@media (max-width: 920px) {\n.info[data-v-744025b9] {\n    width: 90vw;\n    font-size: 16px;\n    line-height: 20px;\n}\n}\n.sub-item[data-v-744025b9] {\n  font-weight: 200;\n}\n.bubble-content[data-v-744025b9] {\n  font-size: 18px;\n}\n.icon[data-v-744025b9] {\n  width: 50%;\n}\n.center[data-v-744025b9] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-744025b9] {\n  text-align: left;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -14700,7 +14765,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".content[data-v-63c8b399] {\n  display: inline-block;\n  height: auto;\n}\n.price-cards[data-v-63c8b399] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\nh1[data-v-63c8b399] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.big-title[data-v-63c8b399] {\n  position: relative;\n  z-index: 1;\n}\n.mobile-menu[data-v-63c8b399] {\n  display: none;\n}\n@media (max-width: 500px) {\n.mobile-menu[data-v-63c8b399] {\n    display: block;\n    width: 100%;\n}\n}\n.info[data-v-63c8b399] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n  z-index: 1;\n  position: relative;\n}\n@media (max-width: 920px) {\n.info[data-v-63c8b399] {\n    width: 90vw;\n    font-size: 14px;\n    line-height: 20px;\n}\n}\n.grid-column[data-v-63c8b399] {\n  height: 100px;\n}\n.info-container[data-v-63c8b399] {\n  position: relative;\n}\n.sub-item[data-v-63c8b399] {\n  font-weight: 200;\n}\n.bubble[data-v-63c8b399] {\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  position: relative;\n  color: #204025;\n  font-size: 32px;\n  border: 5px solid #e88a60;\n  background-color: rgba(232, 138, 96, 0.2);\n  -webkit-transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, transform;\n  transition-property: box-shadow, transform, -webkit-transform;\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n          transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n}\n.bubble.dark[data-v-63c8b399] {\n  background-color: rgba(232, 138, 96, 0.5);\n  color: #bccfbf;\n}\n.bubble[data-v-63c8b399]:hover {\n  -webkit-transform: scale(1.1);\n          transform: scale(1.1);\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);\n}\n#bubbles[data-v-63c8b399] {\n  z-index: 1;\n}\n\n/*#bubbles {*/\n/*    width: 25%;*/\n/*    margin-top: 112px;*/\n/*    margin-bottom: 112px;*/\n/*    margin-left: 24px;*/\n/*    position: relative;*/\n/*    @media('max-width : 992px') {*/\n/*        display: none;*/\n/*    }*/\n/*}*/\n/*<!--.bubble-content {-->*/\n/*<!--    margin        : 0;-->*/\n/*<!--    position      : absolute;-->*/\n/*<!--    top           : 50%;-->*/\n/*<!--    left          : 50%;-->*/\n/*<!--    margin-right  : -50%;-->*/\n/*<!--    transform     : translate(-50%, -50%);-->*/\n/*<!--    border-radius : 200px;-->*/\n/*<!--    font-size     : 24px;-->*/\n/*<!--    font-weight   : 300;-->*/\n/*<!--    !*background-color: rgb(232, 138, 96);*!-->*/\n/*<!--}-->*/\n/*<!--.bubble-1 {-->*/\n/*<!--    position: absolute;-->*/\n/*<!--    top: -32px;-->*/\n/*<!--    left: 222px;-->*/\n/*<!--    width: 100px;-->*/\n/*<!--    height: 100px;-->*/\n/*<!--}-->*/\n/*.bubble-2 {*/\n/*    position: absolute;*/\n/*    top: 2px;*/\n/*    left: 24px;*/\n/*    width: 200px;*/\n/*    height: 200px;*/\n/*}*/\n/*.bubble-3 {*/\n/*    position: absolute;*/\n/*    top:195px;*/\n/*    left:134px;*/\n/*}*/\n#text[data-v-63c8b399] {\n  width: 75%;\n  font-size: 30px;\n  background-color: #204025;\n  color: white;\n  margin-top: 112px;\n  margin-bottom: 112px;\n  margin-right: 142px;\n  padding: 12px;\n  line-height: 42px;\n  z-index: 1;\n}\n@media (max-width: 992px) {\n#text[data-v-63c8b399] {\n    width: 100%;\n    margin: 0;\n    display: inline-block;\n    height: auto;\n}\n}\n.center[data-v-63c8b399] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-63c8b399] {\n  text-align: left;\n}", ""]);
+exports.push([module.i, ".privacy-policy[data-v-63c8b399] {\n  position: absolute;\n  bottom: 0;\n  z-index: 1;\n}\n@media (max-width: 500px) {\n.privacy-policy[data-v-63c8b399] {\n    display: none;\n}\n}\n.content[data-v-63c8b399] {\n  display: inline-block;\n  height: auto;\n}\n.price-cards[data-v-63c8b399] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\nh1[data-v-63c8b399] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.big-title[data-v-63c8b399] {\n  position: relative;\n  z-index: 1;\n}\n.mobile-menu[data-v-63c8b399] {\n  display: none;\n}\n@media (max-width: 500px) {\n.mobile-menu[data-v-63c8b399] {\n    display: block;\n    width: 100%;\n}\n}\n.info[data-v-63c8b399] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n  z-index: 1;\n  position: relative;\n}\n@media (max-width: 920px) {\n.info[data-v-63c8b399] {\n    width: 90vw;\n    font-size: 14px;\n    line-height: 20px;\n}\n}\n.grid-column[data-v-63c8b399] {\n  height: 100px;\n}\n.info-container[data-v-63c8b399] {\n  position: relative;\n}\n.sub-item[data-v-63c8b399] {\n  font-weight: 200;\n}\n.bubble[data-v-63c8b399] {\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  position: relative;\n  color: #204025;\n  font-size: 32px;\n  border: 5px solid #e88a60;\n  background-color: rgba(232, 138, 96, 0.2);\n  -webkit-transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, transform;\n  transition-property: box-shadow, transform, -webkit-transform;\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n          transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n}\n.bubble.dark[data-v-63c8b399] {\n  background-color: rgba(232, 138, 96, 0.5);\n  color: #bccfbf;\n}\n.bubble[data-v-63c8b399]:hover {\n  -webkit-transform: scale(1.1);\n          transform: scale(1.1);\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);\n}\n#bubbles[data-v-63c8b399] {\n  z-index: 1;\n}\n\n/*#bubbles {*/\n/*    width: 25%;*/\n/*    margin-top: 112px;*/\n/*    margin-bottom: 112px;*/\n/*    margin-left: 24px;*/\n/*    position: relative;*/\n/*    @media('max-width : 992px') {*/\n/*        display: none;*/\n/*    }*/\n/*}*/\n/*<!--.bubble-content {-->*/\n/*<!--    margin        : 0;-->*/\n/*<!--    position      : absolute;-->*/\n/*<!--    top           : 50%;-->*/\n/*<!--    left          : 50%;-->*/\n/*<!--    margin-right  : -50%;-->*/\n/*<!--    transform     : translate(-50%, -50%);-->*/\n/*<!--    border-radius : 200px;-->*/\n/*<!--    font-size     : 24px;-->*/\n/*<!--    font-weight   : 300;-->*/\n/*<!--    !*background-color: rgb(232, 138, 96);*!-->*/\n/*<!--}-->*/\n/*<!--.bubble-1 {-->*/\n/*<!--    position: absolute;-->*/\n/*<!--    top: -32px;-->*/\n/*<!--    left: 222px;-->*/\n/*<!--    width: 100px;-->*/\n/*<!--    height: 100px;-->*/\n/*<!--}-->*/\n/*.bubble-2 {*/\n/*    position: absolute;*/\n/*    top: 2px;*/\n/*    left: 24px;*/\n/*    width: 200px;*/\n/*    height: 200px;*/\n/*}*/\n/*.bubble-3 {*/\n/*    position: absolute;*/\n/*    top:195px;*/\n/*    left:134px;*/\n/*}*/\n#text[data-v-63c8b399] {\n  width: 75%;\n  font-size: 30px;\n  background-color: #204025;\n  color: white;\n  margin-top: 112px;\n  margin-bottom: 112px;\n  margin-right: 142px;\n  padding: 12px;\n  line-height: 42px;\n  z-index: 1;\n}\n@media (max-width: 992px) {\n#text[data-v-63c8b399] {\n    width: 100%;\n    margin: 0;\n    display: inline-block;\n    height: auto;\n}\n}\n.center[data-v-63c8b399] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-63c8b399] {\n  text-align: left;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -14736,7 +14801,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "span[data-v-3e4deb60] {\n  font-size: 0.6rem;\n}\n*[data-v-3e4deb60] {\n  z-index: 1;\n}\nhtml[data-v-3e4deb60] {\n  font-size: 1rem;\n  color: #777777;\n  background: #d5d5d5;\n  background: -webkit-gradient(linear, left top, left bottom, from(#d5d5d5), to(#ffffff));\n  background: linear-gradient(#d5d5d5, #ffffff);\n  height: 100%;\n}\nbody[data-v-3e4deb60] {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  flex-direction: row;\n  -webkit-box-pack: center;\n  justify-content: center;\n}\n.card[data-v-3e4deb60] {\n  background-color: #204025;\n  color: #ffffff;\n  padding: 16px 32px 32px 32px;\n  margin: 16px;\n  width: 280px;\n  height: 500px;\n  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);\n  -webkit-transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, transform;\n  transition-property: box-shadow, transform, -webkit-transform;\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n          transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n}\n.card[data-v-3e4deb60]:hover {\n  -webkit-transform: scale(1.01);\n          transform: scale(1.01);\n}\n.card__title[data-v-3e4deb60] {\n  font-size: 0.875rem;\n  text-transform: uppercase;\n  letter-spacing: 4px;\n  padding-bottom: 8px;\n}\n.card__body[data-v-3e4deb60] {\n  position: relative;\n  border-top: 2px solid #777777;\n  border-bottom: 2px solid #777777;\n  padding-bottom: 16px;\n}\n.price[data-v-3e4deb60] {\n  font-size: 4rem;\n  font-weight: bold;\n  text-shadow: 0 0 1px #000000;\n  color: white;\n  padding-left: 24px;\n  margin: 32px 0;\n}\n.price__toggle__container[data-v-3e4deb60] {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-direction: row;\n}\n.price__toggle[data-v-3e4deb60] {\n  width: 50%;\n  padding: 12px;\n  font-size: 16px;\n  cursor: pointer;\n}\n.price__toggle.active[data-v-3e4deb60] {\n  /*border-bottom: 1px solid #999999;*/\n  /*border-left: 1px solid #999999 ;*/\n  /*border-right: 1px solid #999999 ;*/\n  background-color: rgba(255, 255, 255, 0.05);\n  /*-moz-box-shadow:    unset;*/\n  /*-webkit-box-shadow: unset;*/\n  /*box-shadow:         unset;*/\n  box-shadow: inset 0 0 2px #ffffff;\n}\n.price__symbol[data-v-3e4deb60] {\n  position: absolute;\n  left: 0px;\n  top: 42px;\n  font-size: 1.5rem;\n}\n.price__tag[data-v-3e4deb60] {\n  text-transform: uppercase;\n  margin-bottom: 8px;\n}\nol[data-v-3e4deb60] {\n  list-style: none;\n  margin-left: -40px;\n}\nli[data-v-3e4deb60] {\n  padding: 6px 0;\n  font-size: 1rem;\n}\nli[data-v-3e4deb60]:before {\n  content: \"-\";\n  margin-right: 8px;\n  font-size: 0.875rem;\n}\n.card__button[data-v-3e4deb60] {\n  border: none;\n  width: 100%;\n  background-color: #e88a60;\n  margin-top: 32px;\n  padding: 16px 0;\n  font-size: 1.25rem;\n  font-weight: bold;\n  letter-spacing: 2.6666666667px;\n  text-transform: uppercase;\n  text-shadow: 1px 1px #3a3a3a;\n  color: #ffffff;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".button[data-v-3e4deb60] {\n  position: absolute;\n  width: 80%;\n  left: 10%;\n  bottom: 20px;\n}\nspan[data-v-3e4deb60] {\n  font-size: 0.6rem;\n}\n*[data-v-3e4deb60] {\n  z-index: 1;\n}\nhtml[data-v-3e4deb60] {\n  font-size: 1rem;\n  color: #777777;\n  background: #d5d5d5;\n  background: -webkit-gradient(linear, left top, left bottom, from(#d5d5d5), to(#ffffff));\n  background: linear-gradient(#d5d5d5, #ffffff);\n  height: 100%;\n}\nbody[data-v-3e4deb60] {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  flex-direction: row;\n  -webkit-box-pack: center;\n  justify-content: center;\n}\n.card[data-v-3e4deb60] {\n  background-color: #204025;\n  color: #ffffff;\n  padding: 16px 32px 32px 32px;\n  margin: 42px 16px;\n  width: 280px;\n  height: 500px;\n  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);\n  -webkit-transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, transform;\n  transition-property: box-shadow, transform, -webkit-transform;\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n          transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n}\n.card[data-v-3e4deb60]:hover {\n  -webkit-transform: scale(1.01);\n          transform: scale(1.01);\n}\n.card__title[data-v-3e4deb60] {\n  font-size: 0.875rem;\n  text-transform: uppercase;\n  letter-spacing: 4px;\n  padding-bottom: 8px;\n}\n.card__body[data-v-3e4deb60] {\n  position: relative;\n  border-top: 2px solid #777777;\n  border-bottom: 2px solid #777777;\n  padding-bottom: 16px;\n}\n.price[data-v-3e4deb60] {\n  font-size: 4rem;\n  font-weight: bold;\n  text-shadow: 0 0 1px #000000;\n  color: white;\n  padding-left: 24px;\n  margin: 32px 0;\n}\n.price__toggle__container[data-v-3e4deb60] {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-direction: row;\n}\n.price__toggle[data-v-3e4deb60] {\n  width: 50%;\n  padding: 12px;\n  font-size: 16px;\n  cursor: pointer;\n}\n.price__toggle.active[data-v-3e4deb60] {\n  /*border-bottom: 1px solid #999999;*/\n  /*border-left: 1px solid #999999 ;*/\n  /*border-right: 1px solid #999999 ;*/\n  background-color: rgba(255, 255, 255, 0.05);\n  /*-moz-box-shadow:    unset;*/\n  /*-webkit-box-shadow: unset;*/\n  /*box-shadow:         unset;*/\n  box-shadow: inset 0 0 2px #ffffff;\n}\n.price__symbol[data-v-3e4deb60] {\n  position: absolute;\n  left: 0px;\n  top: 42px;\n  font-size: 1.5rem;\n}\n.price__tag[data-v-3e4deb60] {\n  text-transform: uppercase;\n  margin-bottom: 8px;\n}\nol[data-v-3e4deb60] {\n  list-style: none;\n  margin-left: -40px;\n}\nli[data-v-3e4deb60] {\n  padding: 6px 0;\n  font-size: 1rem;\n}\nli[data-v-3e4deb60]:before {\n  content: \"-\";\n  margin-right: 8px;\n  font-size: 0.875rem;\n}\n.card__button[data-v-3e4deb60] {\n  border: none;\n  width: 100%;\n  background-color: #e88a60;\n  margin-top: 32px;\n  padding: 16px 0;\n  font-size: 1.25rem;\n  font-weight: bold;\n  letter-spacing: 2.6666666667px;\n  text-transform: uppercase;\n  text-shadow: 1px 1px #3a3a3a;\n  color: #ffffff;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);\n  cursor: pointer;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -56871,12 +56936,12 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { on: { click: function($event) {} } }, [
-              _vm._v("Verzenden")
-            ])
+            _c("button", { on: { click: _vm.sendMail } }, [_vm._v("Verzenden")])
           ])
         ])
       ]),
+      _vm._v(" "),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "opaque" })
     ])
@@ -56921,7 +56986,52 @@ var staticRenderFns = [
           }),
           _vm._v("\n                    ± 700m\n                ")
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "a",
+        { attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" } },
+        [
+          _c("div", { staticClass: "privacy-policy" }, [
+            _vm._v("\n                    Privacy policy\n                ")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mobile-menu" }, [
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Privacy policy\n                ")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: {
+            target: "_blank",
+            href: "https://www.facebook.com/werkplaats75c"
+          }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Facebook\n                ")
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -56974,7 +57084,9 @@ var render = function() {
           _vm._v(" "),
           _vm._m(1),
           _vm._v(" "),
-          _vm._m(2)
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3)
         ],
         1
       ),
@@ -56995,7 +57107,7 @@ var render = function() {
           _c(
             "router-link",
             { staticClass: "mobile-menu-link", attrs: { to: "/" } },
-            [_vm._v("Werktplaats 75C")]
+            [_vm._v("Werkplaats 75C")]
           ),
           _vm._v(" "),
           _c(
@@ -57004,18 +57116,22 @@ var render = function() {
             [_vm._v("Over ons")]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "mobile-menu-link" }, [
+          _c("div", { staticClass: "mobile-menu-link inactive" }, [
             _vm._v("Ondernemers WP75C ")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "mobile-menu-link" }, [
+          _c("div", { staticClass: "mobile-menu-link inactive" }, [
             _vm._v("Activiteiten WP75C")
-          ])
+          ]),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _vm._m(5)
         ],
         1
       ),
       _vm._v(" "),
-      _vm._m(3)
+      _vm._m(6)
     ],
     1
   )
@@ -57053,6 +57169,58 @@ var staticRenderFns = [
           _vm._v("\n                Privacy policy\n            ")
         ])
       ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        attrs: {
+          target: "_blank",
+          href: "https://www.facebook.com/werkplaats75c"
+        }
+      },
+      [
+        _c("div", { staticClass: "facebook" }, [
+          _vm._v("\n                Facebook\n            ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "mobile-menu-link sub",
+        attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" }
+      },
+      [
+        _c("div", {}, [
+          _vm._v("\n                Privacy policy\n            ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "mobile-menu-link sub",
+        attrs: {
+          target: "_blank",
+          href: "https://www.facebook.com/werkplaats75c"
+        }
+      },
+      [_c("div", {}, [_vm._v("\n                Facebook\n            ")])]
     )
   },
   function() {
@@ -57290,10 +57458,9 @@ var render = function() {
                   "price-four-hour": 60,
                   "price-eight-hour": 90,
                   months: false,
-                  title: "VergaderRuimte klein",
+                  title: "Workshop-/ vergaderruimte",
                   "pro-one": "20 á 25 personen",
-                  "pro-two": "Beschikking over workshop / vergaderruimte",
-                  "pro-three": "Wifi / koffie / thee"
+                  "pro-two": "Wifi / koffie / thee"
                 }
               }),
               _vm._v(" "),
@@ -57303,16 +57470,19 @@ var render = function() {
                   "price-four-hour": 40,
                   "price-eight-hour": 70,
                   months: false,
-                  title: "Vergaderruimte groot",
+                  title: "Spreekkamer",
                   "pro-one": "6 á 8 personen",
-                  "pro-two": "Beschikking over spreekkamer",
-                  "pro-three": "Wifi / Koffie / Thee"
+                  "pro-two": "Wifi / Koffie / Thee"
                 }
               })
             ],
             1
           )
         : undefined,
+      _vm._v(" "),
+      _vm._m(6),
+      _vm._v(" "),
+      _vm._m(7),
       _vm._v(" "),
       _c("div", { staticClass: "opaque" })
     ])
@@ -57325,7 +57495,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "contact-info-container" }, [
       _c("h1", { staticClass: "big-title" }, [
-        _vm._v("\n            WERKPLEKKEN\n        ")
+        _vm._v("\n            WERKRUIMTEN\n        ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "info-container" }, [
@@ -57459,6 +57629,55 @@ var staticRenderFns = [
         _vm._v("9 uur op de werkdagen")
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" } },
+      [
+        _c("div", { staticClass: "privacy-policy" }, [
+          _vm._v("\n                Privacy policy\n            ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mobile-menu" }, [
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Privacy policy\n                ")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: {
+            target: "_blank",
+            href: "https://www.facebook.com/werkplaats75c"
+          }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Facebook\n                ")
+          ])
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -57507,9 +57726,11 @@ var render = function() {
                   "price-six-month": 185,
                   title: "Onbeperkt",
                   months: true,
-                  "pro-one": "Maak onbeperkt gebruik van werkplaats 75C.",
-                  "pro-two": "12 uur workshop / vergaderruimte",
-                  "pro-three": "Wifi / Koffie / Thee"
+                  "pro-one":
+                    "12 u gratis gebruik vergaderruimten, mits beschikbaar",
+                  "pro-two": "Wifi / Koffie / Thee",
+                  "pro-three":
+                    "toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 "
                 }
               }),
               _vm._v(" "),
@@ -57519,9 +57740,11 @@ var render = function() {
                   "price-six-month": 235,
                   title: "Onbeperkt + Vaste plek",
                   months: true,
-                  "pro-one": "Onbeperkt gebruik met vaste plek",
-                  "pro-two": "12 uur workshop / vergaderruimte",
-                  "pro-three": "Wifi / Koffie / Thee"
+                  "pro-one":
+                    "12 u gratis gebruik vergaderruimten, mits beschikbaar",
+                  "pro-two": "Wifi / Koffie / Thee",
+                  "pro-three":
+                    "toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 "
                 }
               }),
               _vm._v(" "),
@@ -57529,11 +57752,12 @@ var render = function() {
                 attrs: {
                   "price-twelve-month": 150,
                   "price-six-month": 150,
-                  title: "3 Dagen",
+                  title: "3 Dagen per week",
                   months: true,
-                  "pro-one": "3 dagen gebruik",
-                  "pro-two": "9 uur workshop/vergaderruimte (op werkdagen)",
-                  "pro-three": "Wifi / Koffie / Thee"
+                  "pro-one":
+                    "9 u gratis gebruik vergaderruimten op de werkdagen, mits beschikbaar",
+                  "pro-two": "Wifi / Koffie / Thee",
+                  "pro-three": "toegang 8.00 u – 22.00 u"
                 }
               }),
               _vm._v(" "),
@@ -57543,9 +57767,10 @@ var render = function() {
                   "price-six-month": 125,
                   title: "2 Dagen",
                   months: true,
-                  "pro-one": "2 Dagen gebruik",
-                  "pro-two": "6 uur workshop/vergaderruimte (op werkdagen)",
-                  "pro-three": "Wifi / Koffie / Thee"
+                  "pro-one":
+                    "6 u gratis gebruik vergaderruimten op de werkdagen, mits beschikbaar",
+                  "pro-two": "Wifi / Koffie / Thee",
+                  "pro-three": "toegang 8.00 u – 22.00 u"
                 }
               }),
               _vm._v(" "),
@@ -57555,15 +57780,20 @@ var render = function() {
                   "price-six-month": 75,
                   title: "1 Dag",
                   months: true,
-                  "pro-one": "1 Dag gebruik",
-                  "pro-two": "3 uur workshop/vergaderruimte (op werkdagen)",
-                  "pro-three": "Wifi / Koffie / Thee"
+                  "pro-one":
+                    "3 u gratis gebruik vergaderruimten op de werkdag, mits beschikbaar",
+                  "pro-two": "Wifi / Koffie / Thee",
+                  "pro-three": "toegang 8.00 u – 22.00 u"
                 }
               })
             ],
             1
           )
         : undefined,
+      _vm._v(" "),
+      _vm._m(5),
+      _vm._v(" "),
+      _vm._m(6),
       _vm._v(" "),
       _c("div", { staticClass: "content-opaque" })
     ])
@@ -57576,13 +57806,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "contact-info-container" }, [
       _c("h1", { staticClass: "big-title" }, [
-        _vm._v("\n                WERKRUIMTEN\n            ")
+        _vm._v("\n            WERKPLEKKEN\n        ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "info-container" }, [
         _c("div", { staticClass: "info" }, [
           _vm._v(
-            "\n                    Ben jij benieuwd of WP75C voor jou de ideale werkplek is?\n                    Je hebt de keuze uit verschillende abonnementen en mogelijkheden.\n                    Wil je graag een eigen vaste werkplek?\n                    Wij kijken samen met jou naar de mogelijkheden.\n                "
+            "\n                Ben jij benieuwd of WP75C voor jou de ideale werkplek is?\n                Je hebt de keuze uit verschillende abonnementen en mogelijkheden.\n                Wil je graag een eigen vaste werkplek?\n                Wij kijken samen met jou naar de mogelijkheden.\n            "
           )
         ])
       ]),
@@ -57597,7 +57827,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "bubble bubble-1" }, [
       _c("div", { staticClass: "bubble-content" }, [
         _vm._v(
-          "Vrije\n                                                toegang tot wifi\n                    "
+          "Vrije\n                                            toegang tot wifi\n                "
         )
       ])
     ])
@@ -57609,7 +57839,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "bubble bubble-2" }, [
       _c("div", { staticClass: "bubble-content" }, [
         _vm._v(
-          "In de\n                                                workshop- /vergaderruimte\n                                                is een beamer\n                                                aanwezig.\n                    "
+          "In de\n                                            workshop- /vergaderruimte\n                                            is een beamer\n                                            aanwezig.\n                "
         )
       ])
     ])
@@ -57621,7 +57851,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "bubble bubble-3" }, [
       _c("div", { staticClass: "bubble-content" }, [
         _vm._v(
-          "Bij het\n                                                gebruik van\n                                                de ruimten is koffie & thee\n                                                inbegrepen.\n                    "
+          "Bij het\n                                            gebruik van\n                                            de ruimten is koffie & thee\n                                            inbegrepen.\n                "
         )
       ])
     ])
@@ -57663,6 +57893,55 @@ var staticRenderFns = [
         _c("div", { staticClass: "grid-column" }, [_vm._v("6 á 8 personen")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" } },
+      [
+        _c("div", { staticClass: "privacy-policy" }, [
+          _vm._v("\n                Privacy policy\n            ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mobile-menu" }, [
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Privacy policy\n                ")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: {
+            target: "_blank",
+            href: "https://www.facebook.com/werkplaats75c"
+          }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Facebook\n                ")
+          ])
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -57699,7 +57978,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("span", [
           _vm._v(
-            " Wij zijn Karin & Renate Roetgerink, zussen, geboren en opgegroeid in Goor. Wij zijn in ons pand, gelegen in het centrum van Goor, ons bedrijf ’Werkplaats 75C’ gestart. Met Werkplaats 75C willen wij ondernemers een plek bieden waar het fijn werken is en waar je met elkaar tot mooie en onverwachte resultaten kunt komen. "
+            " Wij zijn Karin & Renate Roetgerink, zussen, geboren en opgegroeid in Goor. Wij zijn in ons pand, gelegen in het centrum van Goor, ons bedrijf ’Werkplaats 75C’ gestart.\n            "
+          ),
+          _c("br"),
+          _vm._v(
+            "Met Werkplaats 75C willen wij ondernemers een plek bieden waar het fijn werken is en waar je met elkaar tot mooie en onverwachte resultaten kunt komen. "
           )
         ]),
         _vm._v(" "),
@@ -57724,7 +58007,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "text" }, [
             _vm._v(
-              "\n                Ik, Karin, ben architect. Daarnaast ben mij steeds meer bezig gaan houden met\n                interieur advies. Dit doe\n                ik\n                samen met Karin Olthoff van\n                "
+              "\n                Ik, Karin, ben architect. Daarnaast ben ik mij steeds meer bezig gaan houden met\n                interieur advies. Dit doe\n                ik\n                samen met Karin Olthoff van\n                "
             ),
             _c(
               "a",
@@ -57743,7 +58026,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "footer" }, [
           _vm._v(
-            "\n            Wij hopen dat Werkplaats 75C een bruisende plek wordt waar je als creatieve ondernemer naast je werk ook\n            de\n            mogelijkheid hebt activiteiten te ondernemen met als doel te verbinden, te inspireren en te motiveren.\n            Een\n            plek waar je met plezier naar toe gaat!\n        "
+            "\n            Wij hopen dat Werkplaats 75C een bruisende plek wordt waar je als creatieve ondernemer naast je werk ook\n            de\n            mogelijkheid hebt activiteiten te ondernemen met als doel te verbinden, te inspireren en te motiveren.\n            "
+          ),
+          _c("br"),
+          _vm._v(
+            "Een\n            plek waar je met plezier naar toe gaat!\n        "
           )
         ])
       ])
@@ -57936,18 +58223,18 @@ var render = function() {
         _vm._v(_vm._s(_vm.proTwo))
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "card__list__item" }, [
-        _vm._v(_vm._s(_vm.proThree))
-      ])
+      _vm.proThree
+        ? _c("li", { staticClass: "card__list__item" }, [
+            _vm._v(_vm._s(_vm.proThree))
+          ])
+        : _vm._e()
     ]),
     _vm._v(" "),
     _c(
       "a",
       {
-        attrs: {
-          href:
-            "mailto:yketd@hotmail.com?body=Ik%20heb%20interresse%20in%20Werkplaats%2075C"
-        }
+        staticClass: "button",
+        attrs: { href: "mailto:yketd@hotmail.com?body=" + _vm.getMailText() }
       },
       [
         _c(
@@ -58032,63 +58319,75 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "green-content-box" }, [
+    _c("div", { staticClass: "green-content" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "center" }, [
+        _vm._v("\n            Wij geloven dat je meer"),
+        _vm.width < 500 ? _c("br") : _vm._e(),
+        _vm._v(" uit jezelf kunt halen"),
+        _c("br"),
+        _vm._v("\n            door samen te werken"),
+        _vm.width < 500 ? _c("br") : _vm._e(),
+        _vm._v(" met anderen!"),
+        _c("br")
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "green-content-box" }, [
-      _c("div", { staticClass: "green-content" }, [
-        _c("div", { staticClass: "left" }, [
-          _vm._v(
-            "\n            Werkplaats 75C is de plek voor ondernemers die op zoek zijn naar een werkplek."
-          ),
-          _c("br"),
-          _vm._v(
-            "\n            Je werkt samen met andere professionals in een inspirerende en prettige werkomgeving,\n            waar je ook kunt sparren met elkaar en kunt genieten van een kop koffie.\n        "
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "center" }, [
-          _vm._v("\n            Wij geloven dat je meer uit jezelf kunt halen"),
-          _c("br"),
-          _vm._v("\n            door samen te werken met anderen!"),
-          _c("br")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "left" }, [
-          _c("span", { staticClass: "normal" }, [
-            _vm._v("Ben je ondernemer bij WP75C? ")
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(
-            "\n            Dan kun je ook gebruik maken van onze workshop-/ vergaderruimten "
-          ),
-          _c("br"),
-          _vm._v(" "),
-          _c("span", { staticClass: "normal" }, [
-            _vm._v("Ben je geen ondernemer bij WP75C? ")
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(
-            "\n            Kijk dan bij ‘Ruimte reserveren’ voor het organiseren van workshops, vergaderingen of overige\n            bijeenkomsten.\n            "
-          ),
-          _c("br"),
-          _vm._v(" "),
-          _c("span", { staticClass: "normal" }, [
-            _vm._v("Heb jij een leuk idee voor een bijeenkomst? ")
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(
-            "Laat het ons weten. Wij\n            denken graag mee over de mogelijkheden.\n        "
-          )
-        ])
-      ])
+    return _c("div", { staticClass: "left" }, [
+      _vm._v(
+        "\n            Werkplaats 75C is de plek voor ondernemers die op zoek zijn naar een werkplek."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n            Je werkt samen met andere professionals in een inspirerende en prettige werkomgeving,\n            waar je ook kunt sparren met elkaar"
+      ),
+      _c("br"),
+      _vm._v(" en kunt genieten van een kop koffie.\n        ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "left" }, [
+      _c("span", { staticClass: "normal" }, [
+        _vm._v("Ben je ondernemer bij WP75C? ")
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(
+        "\n            Dan kun je ook gebruik maken van onze workshop-/ vergaderruimten "
+      ),
+      _c("br"),
+      _vm._v(" "),
+      _c("span", { staticClass: "normal" }, [
+        _vm._v("Ben je geen ondernemer bij WP75C? ")
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(
+        "\n            Kijk dan bij ‘Ruimte reserveren’ voor het organiseren van workshops, vergaderingen of overige\n            bijeenkomsten.\n            "
+      ),
+      _c("br"),
+      _vm._v(" "),
+      _c("span", { staticClass: "normal" }, [
+        _vm._v("Heb jij een leuk idee voor een bijeenkomst? ")
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(
+        "Laat het ons weten. Wij\n            denken graag mee over de mogelijkheden.\n        "
+      )
     ])
   }
 ]
@@ -73955,18 +74254,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
-/* harmony import */ var _components_HomePage_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/HomePage.vue */ "./resources/js/components/HomePage.vue");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_WerkplekHurenPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/WerkplekHurenPage */ "./resources/js/components/WerkplekHurenPage.vue");
-/* harmony import */ var _components_ContactPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ContactPage */ "./resources/js/components/ContactPage.vue");
-/* harmony import */ var _components_ReserverenPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ReserverenPage */ "./resources/js/components/ReserverenPage.vue");
-/* harmony import */ var _components_homepage_OverOns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/homepage/OverOns */ "./resources/js/components/homepage/OverOns.vue");
-/* harmony import */ var _components_homepage_Pricing__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/homepage/Pricing */ "./resources/js/components/homepage/Pricing.vue");
-/* harmony import */ var _components_homepage_privacy__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/homepage/privacy */ "./resources/js/components/homepage/privacy.vue");
-/* harmony import */ var _components_homepage_WerkplaatsInformatie__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/homepage/WerkplaatsInformatie */ "./resources/js/components/homepage/WerkplaatsInformatie.vue");
-/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_HomePage_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/HomePage.vue */ "./resources/js/components/HomePage.vue");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_WerkplekHurenPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/WerkplekHurenPage */ "./resources/js/components/WerkplekHurenPage.vue");
+/* harmony import */ var _components_ContactPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ContactPage */ "./resources/js/components/ContactPage.vue");
+/* harmony import */ var _components_ReserverenPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ReserverenPage */ "./resources/js/components/ReserverenPage.vue");
+/* harmony import */ var _components_homepage_OverOns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/homepage/OverOns */ "./resources/js/components/homepage/OverOns.vue");
+/* harmony import */ var _components_homepage_Pricing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/homepage/Pricing */ "./resources/js/components/homepage/Pricing.vue");
+/* harmony import */ var _components_homepage_privacy__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/homepage/privacy */ "./resources/js/components/homepage/privacy.vue");
+/* harmony import */ var _components_homepage_WerkplaatsInformatie__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/homepage/WerkplaatsInformatie */ "./resources/js/components/homepage/WerkplaatsInformatie.vue");
+/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -73983,36 +74284,38 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.productionTip = false;
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_11__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__["faPhone"]);
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_11__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__["faEnvelope"]);
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_11__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__["faExternalLinkAlt"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeIcon"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$http = axios__WEBPACK_IMPORTED_MODULE_2___default.a;
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_12__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__["faPhone"]);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_12__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__["faEnvelope"]);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_12__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__["faExternalLinkAlt"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_14__["FontAwesomeIcon"]);
 var routes = [{
   path: '/',
-  component: _components_HomePage_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  component: _components_HomePage_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
   children: [{
     path: 'over-ons',
-    component: _components_homepage_OverOns__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _components_homepage_OverOns__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
     path: '/',
-    component: _components_homepage_WerkplaatsInformatie__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _components_homepage_WerkplaatsInformatie__WEBPACK_IMPORTED_MODULE_11__["default"]
   }, {
     path: '/privacy',
-    component: _components_homepage_privacy__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _components_homepage_privacy__WEBPACK_IMPORTED_MODULE_10__["default"]
   }]
 }, {
   path: '/contact',
-  component: _components_ContactPage__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _components_ContactPage__WEBPACK_IMPORTED_MODULE_6__["default"]
 }, {
   path: '/werkplek-huren',
-  component: _components_WerkplekHurenPage__WEBPACK_IMPORTED_MODULE_4__["default"]
+  component: _components_WerkplekHurenPage__WEBPACK_IMPORTED_MODULE_5__["default"]
 }, {
   path: '/reserveren',
-  component: _components_ReserverenPage__WEBPACK_IMPORTED_MODULE_6__["default"]
+  component: _components_ReserverenPage__WEBPACK_IMPORTED_MODULE_7__["default"]
 }];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]({
   routes: routes
 });
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
@@ -74033,7 +74336,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /**
- * We'll load the axios HTTP library which allows us to easily issue requests
+ * We'll load the axios HTTP library which allows us to easily issue Requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */

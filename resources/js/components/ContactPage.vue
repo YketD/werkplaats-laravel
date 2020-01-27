@@ -54,6 +54,11 @@
                         ± 700m
                     </div>
                 </div>
+                <a target="_blank" href="/storage/img/docs/privacy.pdf">
+                    <div class="privacy-policy">
+                        Privacy policy
+                    </div>
+                </a>
             </div>
             <div class="green-content-box">
                 <div class="padding">
@@ -67,9 +72,22 @@
                         <input placeholder="Mailadres" v-model="mailData.mail" />
                         <input placeholder="Telefoonnummer" v-model="mailData.phone" />
                         <textarea placeholder="Bericht" v-model="mailData.message" />
-                        <button @click="">Verzenden</button>
+                        <button @click="sendMail">Verzenden</button>
                     </form>
                 </div>
+            </div>
+
+            <div class="mobile-menu">
+                <a target="_blank" class="mobile-menu-link sub" href="/storage/img/docs/privacy.pdf">
+                    <div class="">
+                        Privacy policy
+                    </div>
+                </a>
+                <a target="_blank" class="mobile-menu-link sub" href="https://www.facebook.com/werkplaats75c">
+                    <div class="">
+                        Facebook
+                    </div>
+                </a>
             </div>
             <div class="opaque"></div>
         </div>
@@ -77,19 +95,22 @@
 </template>
 
 <script>
-    require('axios');
     export default {
         name: "ContactPage",
         methods: {
             sendMail() {
-                this.axios.post(
-                    mailData
-                );
+                this.$http.post('/api/send-mail',
+                    this.mailData,
+                    {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    }
+                )
+                ;
             }
         },
         data() {
             return {
-                mailData : {
+                mailData: {
                     name: "",
                     mail: "",
                     phone: "",
@@ -101,6 +122,11 @@
 </script>
 
 <style lang="scss" scoped>
+    .privacy-policy {
+        top      : 600px;
+        position : absolute;
+    }
+
     a {
         /*font-weight: 400;*/
 
@@ -135,6 +161,10 @@
             margin-bottom : 12px;
             padding       : 4px;
         }
+
+        @media ('max-width : 500px') {
+            font-size : 14px;
+        }
     }
 
     textarea {
@@ -145,6 +175,10 @@
         font-size   : 32px;
         font-family : 'Poppins', sans-serif;
         font-weight : 800;
+        color       : white;
+        background  : #e88a60;
+        border      : none;
+        cursor      : poiner;
     }
 
     .contact-info-container {
@@ -174,8 +208,8 @@
         }
 
         @media ('max-width : 500px') {
-            font-size : 14px;
-            line-height: 18px;
+            font-size   : 14px;
+            line-height : 18px;
         }
     }
 
@@ -238,9 +272,9 @@
     }
 
     .green-content-box {
-        @media ('max-width : 500px'){
-            font-size: 14px;
-            line-height:18px;
+        @media ('max-width : 500px') {
+            font-size   : 14px;
+            line-height : 18px;
         }
     }
 </style>

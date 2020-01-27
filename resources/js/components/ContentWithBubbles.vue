@@ -18,6 +18,11 @@
                     Privacy policy
                 </div>
             </a>
+            <a target="_blank" href="https://www.facebook.com/werkplaats75c">
+                <div class="facebook">
+                    Facebook
+                </div>
+            </a>
         </div>
 
         <div class="content-opaque"></div>
@@ -27,10 +32,20 @@
         </transition>
 
         <div class="mobile-menu">
-            <router-link to="/" class="mobile-menu-link">Werktplaats 75C</router-link>
+            <router-link to="/" class="mobile-menu-link">Werkplaats 75C</router-link>
             <router-link to="/over-ons" class="mobile-menu-link">Over ons</router-link>
-            <div class="mobile-menu-link">Ondernemers WP75C </div>
-            <div class="mobile-menu-link">Activiteiten WP75C</div>
+            <div class="mobile-menu-link inactive">Ondernemers WP75C </div>
+            <div class="mobile-menu-link inactive">Activiteiten WP75C</div>
+            <a target="_blank" class="mobile-menu-link sub" href="/storage/img/docs/privacy.pdf">
+                <div class="">
+                    Privacy policy
+                </div>
+            </a>
+            <a target="_blank" class="mobile-menu-link sub" href="https://www.facebook.com/werkplaats75c">
+                <div class="">
+                    Facebook
+                </div>
+            </a>
         </div>
 
         <div class="small-bubbles">
@@ -61,6 +76,10 @@
         color            : rgb(32, 64, 37);
         padding          : 0;
     }
+    .facebook {
+        top: 650px;
+        position : absolute;
+    }
 
     #bubbles {
         z-index: 1;
@@ -90,5 +109,15 @@
         display: block;
         margin: 12px 0 6px 0;
         background: #e88a60;
+
+        &.inactive{
+            background-color : rgba(232, 138, 96, .5);
+            color            : #bccfbf;
+        }
+
+        &.sub{
+            background-color: #bccfbf;
+            color: black;
+        }
     }
 </style>
