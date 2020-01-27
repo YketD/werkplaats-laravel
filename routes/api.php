@@ -19,10 +19,12 @@ Route::middleware('throttle:500')->post('/send-mail', function (EmailRequest $re
     $recipient = 'info@werkplaats75c.nl';
 
     $subject = "php mail test";
-    $message = "php test message";
-    $headers = 'From:' . $sender;
-
-    if (mail($recipient, $subject, $message, $headers))
+    $msg = $request->input('message') ."\n" .
+        ' naam: ' . $request->input('name') . "\n" .
+        ' telefoon nummer: ' . $request->input('phone'). "\n" .
+        ' email adres: ' . $request->input('phone');
+    $headers = "From:" . $request->input('mail');
+    if (mail($recipient, $subject, $msg, $headers))
     {
         echo "Message accepted";
     }
@@ -30,13 +32,4 @@ Route::middleware('throttle:500')->post('/send-mail', function (EmailRequest $re
     {
         echo "Error: Message not accepted";
     }
-
-
-    $msg = $request->input('message') ."\n" .
-    ' naam: ' . $request->input('name') . "\n" .
-    ' telefoon nummer: ' . $request->input('phone'). "\n" .
-    ' email adres: ' . $request->input('phone');
-    $headers = "From:" . $request->input('mail');
-    if (mail("yketd@hotmail.com", "Onderwerp", $msg, $headers));
-    return $msg;
 });
