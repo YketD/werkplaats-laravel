@@ -54,7 +54,7 @@
             <li class="card__list__item">{{proTwo}}</li>
             <li v-if="proThree" class="card__list__item">{{proThree}}</li>
         </ol>
-        <a class="button" :href="'mailto:yketd@hotmail.com?body=' + getMailText()">
+        <a class="button" :href="'mailto:info@werkplaats75c.nl?body=' + getMailText()">
             <button class="card__button"
                     type="button"
                     @click="location.href('')">Kies
