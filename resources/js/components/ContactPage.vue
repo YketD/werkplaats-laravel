@@ -59,6 +59,11 @@
                         Privacy policy
                     </div>
                 </a>
+                <a target="_blank" href="https://www.facebook.com/werkplaats75c">
+                    <div class="facebook">
+                        Facebook
+                    </div>
+                </a>
             </div>
             <div class="green-content-box">
                 <div class="padding">
@@ -124,6 +129,10 @@
 <style lang="scss" scoped>
     .privacy-policy {
         top      : 600px;
+        position : absolute;
+    }
+    .facebook {
+        top      : 650px;
         position : absolute;
     }
 

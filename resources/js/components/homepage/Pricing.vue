@@ -1,5 +1,5 @@
 <template>
-    <div id="card" class="card">
+    <div id="card" class="card" :class="{cardsmall: !proThree}">
         <h1 class="card__title">{{title}}</h1>
         <div class="card__body">
             <div v-if="!!priceTwelveMonth" class="price__toggle__container">
@@ -50,9 +50,9 @@
             </div>
         </div>
         <ol class="card__list">
-            <li class="card__list__item">{{proOne}}</li>
-            <li class="card__list__item">{{proTwo}}</li>
-            <li v-if="proThree" class="card__list__item">{{proThree}}</li>
+            <li class="card__list__item" v-html="proOne" />
+            <li class="card__list__item" v-html="proTwo" />
+            <li v-if="proThree" class="card__list__item" v-html="proThree" />
         </ol>
         <a class="button" :href="'mailto:info@werkplaats75c.nl?body=' + getMailText()">
             <button class="card__button"
@@ -88,26 +88,30 @@
         methods: {
             getMailText() {
                 let time = "";
-                if (this.months) {
-                    time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
-                    return "Hartelijk dank voor het reserveren van een vergaderruimte bij Werkplaats 75C %0A %0A" +
-                        "" + this.title + ", " + time + " %0A %0A" +
-                        "Laat ons weten op welke dag jij deze ruimte wil reserveren en vanaf welk tijdstip %0A %0A" +
-                        "Datum: %0A" +
-                        "Tijdstip: %0A %0A" +
-                        "Wij controleren of de door jouw aangevraagde ruimte ook daadwerkelijk beschikbaar is en sturen jou een bevestiging van de reservering. %0A %0A" +
-                        "Hartelijke groeten, %0A" +
-                        "Karin en Renate %0A" +
-                        "Werkplaats 75C %0A";
-                } else {
+                if (! this.months) {
                     if (!this.twoHourActive) {
                         time = this.fourHourActive ? " 4 uur" : "8 uur";
                     } else {
                         time = "2 uur"
                     }
-                    return "Hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C %0A %0A" +
-                        "" + this.title + ", " + time + " %0A %0A" +
-                        "Wij nemen contact met jou op om verdere afspraken te maken %0A %0A" +
+                    return "Keuze reservering: %0A %0A" +
+                        "" + this.title + "%0A" + time + " %0A %0A" +
+                        "Hartelijk dank voor het reserveren van een vergaderruimte bij Werkplaats75C. %0A" +
+                        "Wat is de gewenste datum en tijd? %0A %0A" +
+                        "Datum: %0A" +
+                        "Tijdstip: %0A %0A" +
+                        "Verstuur deze mail en wij controleren of de door jouw aangevraagde ruimte ook daadwerkelijk beschikbaar is.%0A" +
+                        "Hierna sturen we jou een bevestiging van de reservering. %0A %0A" +
+                        "Hartelijke groeten, %0A" +
+                        "Karin en Renate %0A" +
+                        "Werkplaats 75C %0A";
+                } else {
+
+                    time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
+                    return "Keuze abbonement: %0A %0A" +
+                        "" + this.title + " voor " + time + " %0A %0A" +
+                        "Hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C %0A %0A" +
+                        "Verstuur deze mail en wij nemen contact met jou op om verdere afspraken te maken %0A %0A" +
                         "Hartelijke groeten, %0A" +
                         "Karin en Renate %0A" +
                         "Werkplaats 75C %0A";
@@ -116,7 +120,13 @@
         }
     }
 </script>
+<style>
 
+    i {
+        font-style:italic;
+        font-weight:400;
+    }
+</style>
 <style lang="scss" scoped>
     .button {
         position: absolute;
@@ -132,6 +142,7 @@
     * {
         z-index : 1;
     }
+
 
     html {
         font-size  : 1rem;
@@ -158,7 +169,6 @@
         padding                    : 16px 32px 32px 32px;
         margin                     : 42px 16px;
 
-
         width                      : 280px;
         height                     : 500px;
         box-shadow                 : 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -170,6 +180,10 @@
         &:hover {
             transform : scale(1.01);
         }
+    }
+
+    .cardsmall {
+        height: 400px;
     }
 
     .card__title {

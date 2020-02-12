@@ -58,13 +58,15 @@
                     </div>
                 </div>
             </div>
+            <h1 class="description-title">Bestelling plaatsen</h1>
+            <span class="description-sub">Mocht het plaatsen van een bestelling niet werken via de daarvoor bestemde knoppen,<br /> Stuur ons de een mail op: info@werkplaats75c.nl</span>
             <div v-if="true" class="price-cards">
                 <pricing-card
                         :price-twelve-month="175"
                         :price-six-month="185"
                         :title="'Onbeperkt'"
                         :months="true"
-                        :pro-one="'12 u gratis gebruik vergaderruimten, mits beschikbaar'"
+                        :pro-one="'12 u gratis gebruik vergaderruimten per week<br /><i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
                         :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '"/>
                 <pricing-card
@@ -72,7 +74,7 @@
                         :price-six-month="235"
                         :title="'Onbeperkt + Vaste plek'"
                         :months="true"
-                        :pro-one="'12 u gratis gebruik vergaderruimten, mits beschikbaar'"
+                        :pro-one="'12 u gratis gebruik vergaderruimten per week, <i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
                         :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '"/>
                 <pricing-card
@@ -80,15 +82,15 @@
                         :price-six-month="150"
                         :title="'3 Dagen per week'"
                         :months="true"
-                        :pro-one="'9 u gratis gebruik vergaderruimten op de werkdagen, mits beschikbaar'"
+                        :pro-one="'9 u gratis gebruik per week vergaderruimten op de werkdagen, <i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
-                :pro-three="'toegang 8.00 u – 22.00 u'"/>
+                        :pro-three="'toegang 8.00 u – 22.00 u'"/>
                 <pricing-card
                         :price-twelve-month="125"
                         :price-six-month="125"
                         :title="'2 Dagen'"
                         :months="true"
-                        :pro-one="'6 u gratis gebruik vergaderruimten op de werkdagen, mits beschikbaar'"
+                        :pro-one="'6 u gratis gebruik per week vergaderruimten op de werkdagen,<i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
                         :pro-three="'toegang 8.00 u – 22.00 u'"
                 />
@@ -97,13 +99,18 @@
                         :price-six-month="75"
                         :title="'1 Dag'"
                         :months="true"
-                        :pro-one="'3 u gratis gebruik vergaderruimten op de werkdag, mits beschikbaar'"
+                        :pro-one="'3 u gratis gebruik per week vergaderruimten op de werkdag, <i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
                         :pro-three="'toegang 8.00 u – 22.00 u'"/>
             </div>
             <a target="_blank" href="/storage/img/docs/privacy.pdf">
                 <div class="privacy-policy">
                     Privacy policy
+                </div>
+            </a>
+            <a target="_blank" href="https://www.facebook.com/werkplaats75c">
+                <div class="facebook">
+                    Facebook
                 </div>
             </a>
             <div class="mobile-menu">
@@ -134,10 +141,41 @@
 </script>
 
 <style lang="scss" scoped>
+
+    .description-title {
+        margin-top: 64px;
+        text-align: center;
+        z-index: 2;
+        font-weight:700;
+        @media('max-width: 500px') {
+            margin-top: 32px;
+            font-size: 18px;
+        }
+    }
+
+    .description-sub {
+        z-index: 2;
+        @media('max-width: 500px') {
+            font-size: 14px;
+            line-height: 18px;
+            padding: 16px;
+            padding-bottom:0;
+        }
+    }
     .privacy-policy {
         position: absolute;
         bottom: 0;
         z-index:1;
+        @media('max-width: 500px') {
+            display: none;
+        }
+    }
+
+    .facebook {
+        position: absolute;
+        bottom: 50px;
+        z-index:1;
+
         @media('max-width: 500px') {
             display: none;
         }

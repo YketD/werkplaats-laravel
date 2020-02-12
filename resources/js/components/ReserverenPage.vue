@@ -88,6 +88,8 @@
                 </div>
             </div>
             <div v-if="true" class="price-cards">
+                <h1 class="description-title">Bestelling plaatsen</h1>
+                <span class="description-sub">Mocht het plaatsen van een bestelling niet werken via de daarvoor bestemde knoppen,<br /> Stuur ons de een mail op: info@werkplaats75c.nl</span>
                 <pricing-card
                         :price-two-hour="30"
                         :price-four-hour="60"
@@ -110,6 +112,11 @@
             <a target="_blank" href="/storage/img/docs/privacy.pdf">
                 <div class="privacy-policy">
                     Privacy policy
+                </div>
+            </a>
+            <a target="_blank" href="https://www.facebook.com/werkplaats75c">
+                <div class="facebook">
+                    Facebook
                 </div>
             </a>
             <div class="mobile-menu">
@@ -139,9 +146,40 @@
 </script>
 
 <style lang="scss" scoped>
+    .description-title {
+        margin-top: 64px;
+        text-align: center;
+        z-index: 2;
+        font-weight:700;
+        @media('max-width: 500px') {
+            margin-top: 32px;
+            font-size: 18px;
+        }
+    }
+
+    .description-sub {
+        z-index: 2;
+        @media('max-width: 500px') {
+            font-size: 14px;
+            line-height: 18px;
+            padding: 16px;
+            padding-bottom:0;
+        }
+    }
+
     .privacy-policy {
         position: absolute;
         bottom: 0;
+        z-index:1;
+
+        @media('max-width: 500px') {
+            display: none;
+        }
+    }
+
+    .facebook {
+        position: absolute;
+        bottom: 50px;
         z-index:1;
 
         @media('max-width: 500px') {

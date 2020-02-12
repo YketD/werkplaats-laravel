@@ -98,13 +98,9 @@
         margin-bottom   : 24px;
         font-family     : 'Poppins', sans-serif;
         font-weight     : 300;
-        font-size       : 38px;
+        font-size       : 32px;
 
-        @media ('max-width: 1680px') {
-            font-size : 32px;
-        }
-
-        @media ('max-width: 1366px') {
+        @media ('max-width: 1420px') {
             font-size : 28px;
         }
 
