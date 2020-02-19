@@ -89,7 +89,7 @@
             </div>
             <div v-if="true" class="price-cards">
                 <h1 class="description-title">Bestelling plaatsen</h1>
-                <span class="description-sub">Mocht het plaatsen van een bestelling niet werken via de daarvoor bestemde knoppen,<br /> Stuur ons de een mail op: info@werkplaats75c.nl</span>
+                <span class="description-sub">Mocht het plaatsen van een bestelling niet werken via de daarvoor bestemde knoppen,<br /> Stuur ons een mail op: info@werkplaats75c.nl</span>
                 <pricing-card
                         :price-two-hour="30"
                         :price-four-hour="60"
