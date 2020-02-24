@@ -182,7 +182,7 @@
         text-align      : right;
         justify-content : right;
         display         : flex;
-        align-content   : end;
+        align-content   : flex-end;
         flex-direction  : row;
 
         a {
