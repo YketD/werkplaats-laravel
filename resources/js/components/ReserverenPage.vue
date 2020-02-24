@@ -93,7 +93,7 @@
                 <pricing-card
                         :price-two-hour="30"
                         :price-four-hour="60"
-                        :price-eight-hour="90"
+                        :price-eight-hour="120"
                         :months="false"
                         :title="'Workshop-/ vergaderruimte'"
                         :pro-one="'20 á 25 personen'"
@@ -102,7 +102,7 @@
                 <pricing-card
                         :price-two-hour="20"
                         :price-four-hour="40"
-                        :price-eight-hour="70"
+                        :price-eight-hour="80"
                         :months="false"
                         :title="'Spreekkamer'"
                         :pro-one="'6 á 8 personen'"
