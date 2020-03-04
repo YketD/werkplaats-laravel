@@ -49,21 +49,41 @@
                 </div>
             </div>
         </div>
-        <ol class="card__list">
-            <li class="card__list__item" v-html="proOne" />
-            <li class="card__list__item" v-html="proTwo" />
-            <li v-if="proThree" class="card__list__item" v-html="proThree" />
-        </ol>
-        <a class="button" :href="'mailto:info@werkplaats75c.nl?body=' + getMailText()">
-            <button class="card__button"
-                    type="button"
-                    @click="location.href('')">Kies
-            </button>
-        </a>
+        <transition name="fade-in-out" mode="out-in">
+            <div class="container" v-if="! displayForm" key="info">
+                <ol class="card__list">
+                    <li class="card__list__item" v-html="proOne" />
+                    <li class="card__list__item" v-html="proTwo" />
+                    <li v-if="proThree" class="card__list__item" v-html="proThree" />
+                </ol>
+                <button class="button card__button"
+                        type="button"
+                        @click="displayForm = true">Kies
+                </button>
+            </div>
+            <div class="container" key="order" v-else>
+                <span class="sub-text">Vul hier uw persoonlijke gegevens in:</span>
+                <form class="form">
+                    <label for="email">Email: </label>
+                    <input type="text" id="email"  v-model="email"/>
+                    <label for="tel">Telefoon nummer: </label>
+                    <input type="text" id="tel"  v-model="phone"/>
+                    <label for="name">volledige naam: </label>
+                    <input type="text" id="name" v-model="fullName"/>
+                </form>
+                <button @click="sendOrder"
+                        class="button card__button send__button"
+                        type="button">
+                    Verstuur
+                </button>
+                <span class="go-back" @click="displayForm = false">< Terug</span>
+            </div>
+        </transition>
     </div>
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "Pricing",
         props: [
@@ -83,12 +103,44 @@
                 twelveMonthActive: true,
                 twoHourActive: true,
                 fourHourActive: false,
+                displayForm: false,
+                email: "",
+                phone: "",
+                fullName: ""
+            }
+        },
+        computed: {
+            timeToString() {
+                let time = "";
+                if (!this.months) {
+                    if (!this.twoHourActive) {
+                        time = this.fourHourActive ? " 4 uur" : "8 uur";
+                    } else {
+                        time = "2 uur"
+                    }
+                } else {
+                    time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
+                }
+                return time;
             }
         },
         methods: {
+            sendOrder() {
+                let data = {
+                    'email': this.email,
+                    'phone': this.phone,
+                    'fullName': this.fullName,
+                    'plan': this.title,
+                    'time': this.timeToString,
+                }
+
+                axios.post('/api/send-order', data).then(response => {
+                    console.log(response);
+                });
+            },
             getMailText() {
                 let time = "";
-                if (! this.months) {
+                if (!this.months) {
                     if (!this.twoHourActive) {
                         time = this.fourHourActive ? " 4 uur" : "8 uur";
                     } else {
@@ -108,7 +160,7 @@
                 } else {
 
                     time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
-                    return "Keuze abbonement: %0A %0A" +
+                    return "Keuze abonnement: %0A %0A" +
                         "" + this.title + " voor " + time + " %0A %0A" +
                         "Hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C %0A %0A" +
                         "Verstuur deze mail en wij nemen contact met jou op om verdere afspraken te maken %0A %0A" +
@@ -123,16 +175,59 @@
 <style>
 
     i {
-        font-style:italic;
-        font-weight:400;
+        font-style: italic;
+        font-weight: 400;
     }
 </style>
 <style lang="scss" scoped>
+
+    .go-back {
+        position   : absolute;
+        bottom     : 0;
+        font-size  : 13px;
+        width      : 100%;
+        text-align : center;
+    }
+
+    .sub-text {
+        font-size : 12px;
+    }
+
+    .container {
+        text-align : left;
+        height     : 310px;
+        width      : 100%;
+        left       : 0;
+        right      : 0;
+        display    : inline-block;
+    }
+
+    .form {
+        width : 100%;
+
+        label {
+            display     : block;
+            text-align  : left;
+            font-size   : 14px;
+            line-height : 16px;
+            margin-top  : 8px;
+        }
+
+        input {
+            width        : calc(100% - 8px);
+
+            border       : none;
+            height       : 32px;
+            padding-left : 8px;
+            background   : #bbbbbb;
+        }
+    }
+
     .button {
-        position: absolute;
-        width: 80%;
-        left: 10%;
-        bottom: 20px;
+        position : absolute;
+        width    : 80%;
+        left     : 10%;
+        bottom   : 30px;
     }
 
     span {
@@ -183,7 +278,7 @@
     }
 
     .cardsmall {
-        height: 400px;
+        height : 400px;
     }
 
     .card__title {
@@ -267,7 +362,6 @@
 
     .card__button {
         border           : none;
-        width            : 100%;
         background-color : #e88a60;
         margin-top       : 32px;
         padding          : 16px 0;
@@ -279,6 +373,15 @@
         color            : #ffffff;
         box-shadow       : 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         cursor           : pointer;
+    }
+
+    .fade-in-out-enter-active, .fade-in-out-leave-active {
+        transition : opacity .5s;
+    }
+
+    .fade-in-out-enter, .fade-in-out-leave-to /* .fade-leave-active below version 2.1.8 */
+    {
+        opacity : 0;
     }
 
 
