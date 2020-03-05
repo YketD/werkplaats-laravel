@@ -151,7 +151,7 @@
         }
         .layout-fixed-width,
         .mso .layout-full-width {
-            background-color: #ffffff;
+            background-color: #919e93;
         }
         @media only screen and (min-width: 620px) {
             .column,
@@ -437,7 +437,7 @@
                                                                                                                                                                                                                                                                                                    <!--[if !mso]><!-->
 <body class="full-padding" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;">
     <!--<![endif]-->
-    <table class="wrapper" style="border-collapse: collapse;table-layout: fixed;min-width: 320px;width: 100%;background-color: #fff;" cellpadding="0" cellspacing="0" role="presentation"><tbody><tr><td>
+    <table class="wrapper" style="border-collapse: collapse;table-layout: fixed;min-width: 320px;width: 100%;background-color: #919e93;" cellpadding="0" cellspacing="0" role="presentation"><tbody><tr><td>
                     <div role="banner">
                         <div class="preheader" style="Margin: 0 auto;max-width: 560px;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">
                             <div style="border-collapse: collapse;display: table;width: 100%;">
@@ -461,7 +461,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="layout one-col fixed-width stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+                        <div class="layout one-col fixed-width stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);">
                             <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;background-color: #ffffff;">
                                 <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-fixed-width" style="background-color: #ffffff;"><td style="width: 600px" class="w560"><![endif]-->
                                 <div class="column" style="text-align: left;color: #8f8f8f;font-size: 16px;line-height: 24px;font-family: Open Sans,sans-serif;">
@@ -502,47 +502,6 @@
                         </div>
 
                         <div style="mso-line-height-rule: exactly;line-height: 80px;font-size: 80px;">&nbsp;</div>
-
-
-                        <div role="contentinfo">
-                            <div class="layout email-footer stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-                                <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-                                    <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-email-footer"><td style="width: 400px;" valign="top" class="w360"><![endif]-->
-                                    <div class="column wide" style="text-align: left;font-size: 12px;line-height: 19px;color: #bdb9bd;font-family: Cabin,Avenir,sans-serif;Float: left;max-width: 400px;min-width: 320px; width: 320px;width: calc(8000% - 47600px);">
-                                        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
-
-                                            <div style="font-size: 12px;line-height: 19px;">
-                                                <div>Werkplaats75C</div>
-                                            </div>
-                                            <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;">
-
-                                            </div>
-                                            <!--[if mso]>&nbsp;<![endif]-->
-                                        </div>
-                                    </div>
-                                    <!--[if (mso)|(IE)]></td><td style="width: 200px;" valign="top" class="w160"><![endif]-->
-                                    <div class="column narrow" style="text-align: left;font-size: 12px;line-height: 19px;color: #bdb9bd;font-family: Cabin,Avenir,sans-serif;Float: left;max-width: 320px;min-width: 200px; width: 320px;width: calc(72200px - 12000%);">
-                                        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
-
-                                        </div>
-                                    </div>
-                                    <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-                                </div>
-                            </div>
-                            <div class="layout one-col email-footer" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-                                <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-                                    <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-email-footer"><td style="width: 600px;" class="w560"><![endif]-->
-                                    <div class="column" style="text-align: left;font-size: 12px;line-height: 19px;color: #bdb9bd;font-family: Cabin,Avenir,sans-serif;">
-                                        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
-                                            <div style="font-size: 12px;line-height: 19px;">
-                                                <a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bdb9bd;" href="https://10003.createsend1.com/t/t-u-ndhuktk-l-r/">Unsubscribe</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-                                </div>
-                            </div>
-                        </div>
                         <div style="line-height:40px;font-size:40px;">&nbsp;</div>
                     </div></td></tr></tbody></table>
 
