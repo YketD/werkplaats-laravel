@@ -214,12 +214,12 @@
         }
 
         input {
-            width        : calc(100% - 8px);
+            width        : calc(80% - 8px);
 
             border       : none;
             height       : 32px;
             padding-left : 8px;
-            background   : #bbbbbb;
+            background   : #eee;
         }
     }
 

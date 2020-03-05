@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('throttle:500')->post('/send-order', 'OrderController@sendOrder');
+Route::middleware('throttle:500')->get('/show', 'OrderController@show');
 //    , function (EmailRequest $request) {
 //    $sender = 'info@werkplaats75c.nl';
 //    $recipient = 'info@werkplaats75c.nl';
