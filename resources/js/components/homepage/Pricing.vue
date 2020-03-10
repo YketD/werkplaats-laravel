@@ -12,15 +12,19 @@
             </div>
             <div v-else class="price__toggle__container">
                 <div class="price__toggle" :class="{active: !!twoHourActive}"
-                     @click="function() {twoHourActive = true; fourHourActive = false; eightHourActive = false;}">2
+                     @click="function() {twoHourActive = true; fourHourActive = false; sixHourActive = false; eightHourActive = false;}">2
                                                                                                                   uur
                 </div>
                 <div class="price__toggle" :class="{active: !!fourHourActive}"
-                     @click="function(){twoHourActive = false; fourHourActive = true; eightHourActive = false;}">4
+                     @click="function(){twoHourActive = false; fourHourActive = true;sixHourActive = false; eightHourActive = false;}">4
+                                                                                                                 uur
+                </div>
+                <div class="price__toggle" :class="{active: !!sixHourActive}"
+                     @click="function(){twoHourActive = false; fourHourActive = false; sixHourActive = true; eightHourActive = false;}">6
                                                                                                                  uur
                 </div>
                 <div class="price__toggle" :class="{active: !!eightHourActive}"
-                     @click="function() {twoHourActive = false; fourHourActive = false; eightHourActive = true;}">8
+                     @click="function() {twoHourActive = false; fourHourActive = false; sixHourActive = false; eightHourActive = true;}">8
                                                                                                                   uur
                 </div>
             </div>
@@ -41,6 +45,10 @@
                 </div>
                 <div v-else-if="!!fourHourActive">
                     <p class="price"><span class="price__symbol">€</span>{{priceFourHour}},-</p>
+                    <p class="price__tag"><span>(excl. BTW)</span></p>
+                </div>
+                <div v-else-if="!!sixHourActive">
+                    <p class="price"><span class="price__symbol">€</span>{{priceSixHour}},-</p>
                     <p class="price__tag"><span>(excl. BTW)</span></p>
                 </div>
                 <div v-else-if="!!eightHourActive">
@@ -95,6 +103,7 @@
             'priceSixMonth',
             'priceTwoHour',
             'priceFourHour',
+            'priceSixHour',
             'priceEightHour',
             'title',
         ],
@@ -103,6 +112,7 @@
                 twelveMonthActive: true,
                 twoHourActive: true,
                 fourHourActive: false,
+                sixHourActive: false,
                 displayForm: false,
                 email: "",
                 phone: "",

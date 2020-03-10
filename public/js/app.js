@@ -12283,6 +12283,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactPage",
@@ -12607,15 +12609,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Pricing",
-  props: ['proOne', 'proTwo', 'proThree', 'months', 'priceTwelveMonth', 'priceSixMonth', 'priceTwoHour', 'priceFourHour', 'priceEightHour', 'title'],
+  props: ['proOne', 'proTwo', 'proThree', 'months', 'priceTwelveMonth', 'priceSixMonth', 'priceTwoHour', 'priceFourHour', 'priceSixHour', 'priceEightHour', 'title'],
   data: function data() {
     return {
       twelveMonthActive: true,
       twoHourActive: true,
       fourHourActive: false,
+      sixHourActive: false,
       displayForm: false,
       email: "",
       phone: "",
@@ -57599,6 +57610,7 @@ var render = function() {
                 attrs: {
                   "price-two-hour": 30,
                   "price-four-hour": 60,
+                  "price-six-hour": 90,
                   "price-eight-hour": 120,
                   months: false,
                   title: "Workshop-/ vergaderruimte",
@@ -57611,6 +57623,7 @@ var render = function() {
                 attrs: {
                   "price-two-hour": 20,
                   "price-four-hour": 40,
+                  "price-six-hour": 60,
                   "price-eight-hour": 80,
                   months: false,
                   title: "Spreekkamer",
@@ -58332,6 +58345,7 @@ var render = function() {
                     click: function() {
                       _vm.twoHourActive = true
                       _vm.fourHourActive = false
+                      _vm.sixHourActive = false
                       _vm.eightHourActive = false
                     }
                   }
@@ -58352,6 +58366,7 @@ var render = function() {
                     click: function() {
                       _vm.twoHourActive = false
                       _vm.fourHourActive = true
+                      _vm.sixHourActive = false
                       _vm.eightHourActive = false
                     }
                   }
@@ -58367,11 +58382,33 @@ var render = function() {
                 "div",
                 {
                   staticClass: "price__toggle",
+                  class: { active: !!_vm.sixHourActive },
+                  on: {
+                    click: function() {
+                      _vm.twoHourActive = false
+                      _vm.fourHourActive = false
+                      _vm.sixHourActive = true
+                      _vm.eightHourActive = false
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "6\n                                                                                                             uur\n            "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "price__toggle",
                   class: { active: !!_vm.eightHourActive },
                   on: {
                     click: function() {
                       _vm.twoHourActive = false
                       _vm.fourHourActive = false
+                      _vm.sixHourActive = false
                       _vm.eightHourActive = true
                     }
                   }
@@ -58431,6 +58468,17 @@ var render = function() {
                     _vm._v(" "),
                     _vm._m(3)
                   ])
+                : !!_vm.sixHourActive
+                ? _c("div", [
+                    _c("p", { staticClass: "price" }, [
+                      _c("span", { staticClass: "price__symbol" }, [
+                        _vm._v("€")
+                      ]),
+                      _vm._v(_vm._s(_vm.priceSixHour) + ",-")
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(4)
+                  ])
                 : !!_vm.eightHourActive
                 ? _c("div", [
                     _c("p", { staticClass: "price" }, [
@@ -58440,7 +58488,7 @@ var render = function() {
                       _vm._v(_vm._s(_vm.priceEightHour) + ",-")
                     ]),
                     _vm._v(" "),
-                    _vm._m(4)
+                    _vm._m(5)
                   ])
                 : _vm._e()
             ])
@@ -58606,6 +58654,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "price__tag" }, [
       _vm._v("Per maand "),
+      _c("span", [_vm._v("(excl. BTW)")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "price__tag" }, [
       _c("span", [_vm._v("(excl. BTW)")])
     ])
   },
