@@ -1,5 +1,5 @@
 <template>
-    <div id="card" class="card" >
+    <div id="card" class="card">
         <h1 class="card__title">{{title}}</h1>
         <div class="card__body">
             <div v-if="!!priceTwelveMonth" class="price__toggle__container">
@@ -12,53 +12,50 @@
             </div>
             <div v-else class="price__toggle__container">
                 <div class="price__toggle" :class="{active: !!twoHourActive}"
-                     @click="function() {twoHourActive = true; fourHourActive = false; sixHourActive = false; eightHourActive = false;}">2
-                                                                                                                  uur
+                     @click="function() {twoHourActive = true; fourHourActive = false; sixHourActive = false; eightHourActive = false;}">
+                    2
+                    uur
                 </div>
                 <div class="price__toggle" :class="{active: !!fourHourActive}"
-                     @click="function(){twoHourActive = false; fourHourActive = true;sixHourActive = false; eightHourActive = false;}">4
-                                                                                                                 uur
+                     @click="function(){twoHourActive = false; fourHourActive = true;sixHourActive = false; eightHourActive = false;}">
+                    4
+                    uur
                 </div>
                 <div class="price__toggle" :class="{active: !!sixHourActive}"
-                     @click="function(){twoHourActive = false; fourHourActive = false; sixHourActive = true; eightHourActive = false;}">6
-                                                                                                                 uur
+                     @click="function(){twoHourActive = false; fourHourActive = false; sixHourActive = true; eightHourActive = false;}">
+                    6
+                    uur
                 </div>
                 <div class="price__toggle" :class="{active: !!eightHourActive}"
-                     @click="function() {twoHourActive = false; fourHourActive = false; sixHourActive = false; eightHourActive = true;}">8
-                                                                                                                  uur
+                     @click="function() {twoHourActive = false; fourHourActive = false; sixHourActive = false; eightHourActive = true;}">
+                    8
+                    uur
                 </div>
             </div>
-            <div v-if="months">
-                <div v-if="twelveMonthActive">
-                    <p class="price"><span class="price__symbol">€</span>{{priceTwelveMonth}},-</p>
-                    <p class="price__tag">Per maand <span>(excl. BTW)</span></p>
-                </div>
-                <div v-else>
-                    <p class="price"><span class="price__symbol">€</span>{{priceSixMonth}},-</p>
-                    <p class="price__tag">Per maand <span>(excl. BTW)</span></p>
-                </div>
-            </div>
-            <div v-else>
-                <div v-if="!!twoHourActive">
-                    <p class="price"><span class="price__symbol">€</span>{{priceTwoHour}},-</p>
-                    <p class="price__tag"><span>(excl. BTW)</span></p>
-                </div>
-                <div v-else-if="!!fourHourActive">
-                    <p class="price"><span class="price__symbol">€</span>{{priceFourHour}},-</p>
-                    <p class="price__tag"><span>(excl. BTW)</span></p>
-                </div>
-                <div v-else-if="!!sixHourActive">
-                    <p class="price"><span class="price__symbol">€</span>{{priceSixHour}},-</p>
-                    <p class="price__tag"><span>(excl. BTW)</span></p>
-                </div>
-                <div v-else-if="!!eightHourActive">
-                    <p class="price"><span class="price__symbol">€</span>{{priceEightHour}},-</p>
-                    <p class="price__tag"><span>(excl. BTW)</span></p>
+            <div >
+                <div>
+                    <div v-if="!!twoHourActive">
+                        <p class="price"><span class="price__symbol">€</span>{{priceTwoHour}},-</p>
+                        <p class="price__tag"><span>(excl. BTW)</span></p>
+                    </div>
+                    <div v-else-if="!!fourHourActive">
+                        <p class="price"><span class="price__symbol">€</span>{{priceFourHour}},-</p>
+                        <p class="price__tag"><span>(excl. BTW)</span></p>
+                    </div>
+                    <div v-else-if="!!sixHourActive">
+                        <p class="price"><span class="price__symbol">€</span>{{priceSixHour}},-</p>
+                        <p class="price__tag"><span>(excl. BTW)</span></p>
+                    </div>
+                    <div v-else-if="!!eightHourActive">
+                        <p class="price"><span class="price__symbol">€</span>{{priceEightHour}},-</p>
+                        <p class="price__tag"><span>(excl. BTW)</span></p>
+                    </div>
                 </div>
             </div>
+
         </div>
         <transition name="fade-in-out" mode="out-in">
-            <div class="container"  v-if="! displayForm" key="info">
+            <div class="container" v-if="! displayForm" key="info">
                 <ol class="card__list">
                     <li class="card__list__item" v-html="proOne" />
                     <li class="card__list__item" v-html="proTwo" />
@@ -73,11 +70,11 @@
                 <span class="sub-text">Vul hier uw persoonlijke gegevens in:</span>
                 <form class="form">
                     <label for="email">Email: </label>
-                    <input type="text" id="email"  v-model="email"/>
+                    <input required type="text" id="email" v-model="email" />
                     <label for="tel">Telefoon nummer: </label>
-                    <input type="text" id="tel"  v-model="phone"/>
+                    <input required type="text" id="tel" v-model="phone" />
                     <label for="name">volledige naam: </label>
-                    <input type="text" id="name" v-model="fullName"/>
+                    <input required type="text" id="name" v-model="fullName" />
                 </form>
                 <button @click="sendOrder"
                         class="button card__button send__button"
@@ -92,6 +89,7 @@
 
 <script>
     import axios from 'axios';
+
     export default {
         name: "Pricing",
         props: [
@@ -124,7 +122,9 @@
             timeToString() {
                 let time = "";
                 if (!this.months) {
-                    if (!this.twoHourActive) {
+                    if (this.sixHourActive){
+                        time = "6 uur"
+                    }   else if (!this.twoHourActive) {
                         time = this.fourHourActive ? " 4 uur" : "8 uur";
                     } else {
                         time = "2 uur"
@@ -138,42 +138,36 @@
         methods: {
             sendOrder() {
                 this.loading =true;
-
                 let data = {
                     'email': this.email,
                     'phone': this.phone,
                     'fullName': this.fullName,
                     'plan': this.title,
                     'time': this.timeToString,
-                }
+                };
                 let accepted = true;
                 if(!this.email){
-                    this.$notify({group: 'reservations', title: 'Mislukt !', text: 'email niet ingevuld'});
+                    this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'email niet ingevuld'});
                     console.log('false');
                     accepted = false;
-                    this.loading = false;
                 }if(!this.phone){
-                    this.$notify({group: 'reservations', title: 'Mislukt !', text: 'Telefoonnummer niet ingevuld'});
+                    this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'Telefoonnummer niet ingevuld'});
                     console.log('false');
                     accepted = false;
-                    this.loading = false;
                 }if(!this.fullName){
-                    this.$notify({group: 'reservations', title: 'Mislukt !', text: 'Naam niet ingevuld'});
+                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Naam niet ingevuld'});
                     console.log('false');
                     accepted = false;
-                    this.loading = false;
                 }
 
                 if (accepted)
-                axios.post('/api/send-hire-request', data).then(response => {
+                axios.post('/api/send-order', data).then(response => {
                     this.$notify({
                         group: 'reservations',
-                        title: 'Huuraanvraag succesvol! ',
+                        title: 'Reservering succesvol! ',
                         text: 'Bekijk je mailbox voor meer informatie',
                     });
-                    this.loading = false;
-                    this.displayForm = false;
-                }).catch(error => {
+
                     this.loading = false;
                     this.displayForm = false;
                 })
@@ -213,11 +207,6 @@
     }
 </script>
 <style>
-
-    i {
-        font-style: italic;
-        font-weight: 400;
-    }
 
     .lds-dual-ring {
         display: inline-block;
@@ -290,7 +279,7 @@
             border       : none;
             height       : 32px;
             padding-left : 8px;
-            background   : #eee;
+            background   : #eeeeee;
         }
     }
 
@@ -357,7 +346,7 @@
         text-transform : uppercase;
         letter-spacing : 4px;
         padding-bottom : 8px;
-        height: 50px;
+        height         : 50px;
     }
 
     .card__body {
@@ -448,8 +437,9 @@
     }
 
     .containerSmall {
-        height: 232px;
+        height : 232px;
     }
+
     .fade-in-out-enter-active, .fade-in-out-leave-active {
         transition : opacity .5s;
     }

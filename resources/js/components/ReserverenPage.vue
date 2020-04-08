@@ -93,6 +93,7 @@
                 <pricing-card
                         :price-two-hour="30"
                         :price-four-hour="60"
+                        :price-six-hour="90"
                         :price-eight-hour="120"
                         :months="false"
                         :title="'Workshop-/ vergaderruimte'"
@@ -102,6 +103,7 @@
                 <pricing-card
                         :price-two-hour="20"
                         :price-four-hour="40"
+                        :price-six-hour="60"
                         :price-eight-hour="80"
                         :months="false"
                         :title="'Spreekkamer'"
@@ -137,7 +139,7 @@
 </template>
 
 <script>
-    import PricingCard from "../components/homepage/Pricing";
+    import PricingCard from "../components/homepage/ReservationPricing";
 
     export default {
         name: "ContactPage",
