@@ -139,7 +139,7 @@
 </template>
 
 <script>
-    import PricingCard from "../components/homepage/Pricing";
+    import PricingCard from "../components/homepage/ReservationPricing";
 
     export default {
         name: "ContactPage",

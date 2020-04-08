@@ -104,13 +104,40 @@
         name: "ContactPage",
         methods: {
             sendMail() {
-                this.$http.post('/api/send-mail',
+                let accepted = true;
+                if(!this.mailData.mail) {
+                    this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'email niet ingevuld' });
+                    console.log('false');
+                    accepted = false;
+                }if(!this.mailData.phone){
+                    this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'Telefoonnummer niet ingevuld'});
+                    console.log('false');
+                    accepted = false;
+                }if(!this.mailData.name){
+                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Naam niet ingevuld'});
+                    console.log('false');
+                    accepted = false;
+                }if(!this.mailData.message){
+                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Bericht is leeg'});
+                    console.log('false');
+                    accepted = false;
+                }
+
+                if (accepted)
+                this.$http.post('api/send-message',
                     this.mailData,
                     {
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     }
-                )
-                ;
+                ).then(response =>{
+                    this.$notify({
+                        group: 'reservations',
+                        title: 'Bericht verzonden! ',
+                        text: 'We nemen zo spoedig mogelijk contact met u op.',
+                    });
+                }).catch(error => {
+                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Er is iets fout gegaan. propeer het opnieuw'});
+                });
             }
         },
         data() {

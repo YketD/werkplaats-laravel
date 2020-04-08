@@ -14,11 +14,14 @@ import WerkplaatsInformatie from "./components/homepage/WerkplaatsInformatie";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPhone, faEnvelope, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Notifications from 'vue-notification'
+
 
 Vue.config.productionTip = false;
-
 Vue.use(VueRouter);
 Vue.prototype.$http = axios;
+Vue.use(Notifications);
+
 
 library.add(faPhone);
 library.add(faEnvelope);
@@ -50,7 +53,7 @@ const routes = [
 
 const router = new VueRouter({
     routes
-})
+});
 
 new Vue({
     router,

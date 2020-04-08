@@ -6,6 +6,8 @@
         <transition name="fade" mode="out-in">
             <router-view v-if="initialLoad" />
         </transition>
+        <notifications group="reservations" />
+        <notifications group="error"/>
     </div>
 </template>
 
@@ -49,6 +51,10 @@
         @media ('max-width: 500px') {
             margin : 12px
         }
+    }
+
+    .error {
+        background: red;
     }
 
     .menu-component {
