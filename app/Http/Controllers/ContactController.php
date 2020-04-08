@@ -17,7 +17,7 @@ class ContactController extends Controller
         $bericht = Arr::get($request, 'message', 'Not provided');
 
         Mail::send('mail.contactmessage', ['fullname' => $fullname, 'phone' => $phone, 'email' => $email, 'bericht' => $bericht], function($message) {
-            $message->to('yketd@hotmail.com')->subject('Nieuw bericht!')->from('info@werkplaats75c.nl');
+            $message->to('info@werkplaats75c.nl')->subject('Nieuw bericht!')->from('info@werkplaats75c.nl');
         });
 
         view('mail.succesfullreservation');
