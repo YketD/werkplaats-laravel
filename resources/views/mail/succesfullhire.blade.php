@@ -468,7 +468,7 @@
 
                                     <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 24px;">
                                         <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-                                            <h1 style="Margin-top: 0;Margin-bottom: 20px;font-style: normal;font-weight: normal;color: #404040;font-size: 28px;line-height: 36px;text-align: center;">Bedankt voor je huur aanvraag!</h1>
+                                            <h1 style="Margin-top: 0;Margin-bottom: 20px;font-style: normal;font-weight: normal;color: #404040;font-size: 28px;line-height: 36px;text-align: center;">Bedankt voor je interesse!</h1>
                                         </div>
                                     </div>
 
@@ -488,7 +488,9 @@
 
                                     <div style="Margin-left: 20px;Margin-right: 20px;">
                                         <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-                                            <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #706f70;font-size: 18px;line-height: 26px;font-family: Cabin,Avenir,sans-serif;"><strong>Je huur aanvraag bij werkplaats75c is gelukt!</strong></h2><p style="Margin-top: 16px;Margin-bottom: 0;">Beste {{$fullname}}, Hartelijk dank voor jouw reservering van een van onze vergaderruimten.</p><p style="Margin-top: 20px;Margin-bottom: 0;">Wij controleren of de door jouw aangevraagde ruimte ook daadwerkelijk beschikbaar is en sturen jou een bevestiging van de reservering.</p><p style="Margin-top: 20px;Margin-bottom: 0;">&nbsp;</p><p style="Margin-top: 20px;Margin-bottom: 0;">Hartelijke groeten,</p><p style="Margin-top: 20px;Margin-bottom: 0;">Karin en Renate</p><p style="Margin-top: 20px;Margin-bottom: 20px;">Werkplaats 75C</p>
+                                            <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #706f70;font-size: 18px;line-height: 26px;font-family: Cabin,Avenir,sans-serif;"><strong>Aanvraag abonnement bij Werkplaats 75c is gelukt!</strong></h2>
+                                            <h3>Je hebt gekozen voor {{strtolower($reservation->plan)}}!</h3>
+                                            <p style="Margin-top: 16px;Margin-bottom: 0;">Beste {{$fullname}}, hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C.</p><p style="Margin-top: 20px;Margin-bottom: 0;">Wij nemen contact met jou op om verdere afspraken te maken.</p><p style="Margin-top: 20px;Margin-bottom: 0;">Hartelijke groeten,</p><p style="Margin-top: 20px;Margin-bottom: 0;">Karin en Renate</p><p style="Margin-top: 20px;Margin-bottom: 20px;">Werkplaats 75C</p>
                                         </div>
                                     </div>
 
