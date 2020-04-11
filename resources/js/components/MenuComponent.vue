@@ -100,8 +100,11 @@
         font-weight     : 300;
         font-size       : 32px;
 
+        @media ('max-width: 1620px ') {
+            font-size: 28px;
+        }
         @media ('max-width: 1420px') {
-            font-size : 28px;
+            font-size : 24px;
         }
 
         @media ('max-width: 1280px') {
