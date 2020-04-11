@@ -11929,6 +11929,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactPage",
   methods: {
@@ -12086,6 +12096,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContentWithBubbles"
 });
@@ -12102,6 +12122,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ContentWithBubbles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContentWithBubbles */ "./resources/js/components/ContentWithBubbles.vue");
+//
 //
 //
 //
@@ -12346,6 +12367,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactPage",
@@ -12366,6 +12399,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_homepage_Pricing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/homepage/Pricing */ "./resources/js/components/homepage/Pricing.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15083,7 +15129,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".privacy-policy[data-v-48de3398] {\n  top: 600px;\n  position: absolute;\n}\n.facebook[data-v-48de3398] {\n  top: 650px;\n  position: absolute;\n}\na[data-v-48de3398] {\n  /*font-weight: 400;*/\n  border-radius: 4px;\n}\n.padding[data-v-48de3398] {\n  padding: 12px;\n}\nh1[data-v-48de3398] {\n  font-size: 42px;\n  line-height: 42px;\n}\nform[data-v-48de3398] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  margin-top: 24px;\n}\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n  margin: 0px;\n  margin-bottom: 24px;\n  padding: 12px;\n  font-size: 24px;\n  font-family: \"Poppins\", sans-serif;\n}\n@media (max-width : 1440px) {\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n    margin-bottom: 12px;\n    padding: 4px;\n}\n}\n@media (max-width : 500px) {\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n    font-size: 14px;\n}\n}\ntextarea[data-v-48de3398] {\n  height: 86px;\n}\nbutton[data-v-48de3398] {\n  font-size: 32px;\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 800;\n  color: white;\n  background: #e88a60;\n  border: none;\n  cursor: poiner;\n}\n.contact-info-container[data-v-48de3398] {\n  text-align: left;\n  z-index: 1;\n}\n.contact-table[data-v-48de3398] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: 0.5fr 0.5fr 1fr;\n}\n.contact-table .grid-item[data-v-48de3398] {\n  margin: 12px;\n  margin-left: 0;\n}\n.contact-table .grid-item.double[data-v-48de3398] {\n  grid-column: 2/span 2;\n}\n@media (max-width: 992px) {\n.contact-table[data-v-48de3398] {\n    width: 100%;\n    margin: 0;\n    height: auto;\n    font-size: 20px;\n}\n}\n@media (max-width : 500px) {\n.contact-table[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}\n.sub-item[data-v-48de3398] {\n  font-weight: 200;\n}\n.icon[data-v-48de3398] {\n  width: 40%;\n  padding-left: 30%;\n  padding-right: 30%;\n}\n.bubble-content[data-v-48de3398] {\n  display: -webkit-box;\n  display: flex;\n  text-align: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  border-radius: 200px;\n  color: #5b5b5b;\n  font-weight: 300;\n  width: 80%;\n}\n.bubble-content .larger[data-v-48de3398] {\n  font-size: 40px;\n  margin-bottom: 12px;\n}\n.bubble-1[data-v-48de3398] {\n  position: absolute;\n  top: 12px;\n  left: 12px;\n  width: 150px;\n  height: 150px;\n}\n.bubble-2[data-v-48de3398] {\n  position: absolute;\n  top: 142px;\n  left: 104px;\n  width: 220px;\n  height: 220px;\n}\n.bubble-3[data-v-48de3398] {\n  position: absolute;\n  top: 355px;\n}\n.center[data-v-48de3398] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-48de3398] {\n  text-align: left;\n}\n@media (max-width : 500px) {\n.green-content-box[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}", ""]);
+exports.push([module.i, ".privacy-policy[data-v-48de3398] {\n  top: 600px;\n  position: absolute;\n}\n@media (max-width: 1440px) {\n.privacy-policy[data-v-48de3398] {\n    top: 520px;\n    white-space: nowrap;\n}\n}\n.facebook[data-v-48de3398] {\n  top: 640px;\n  position: absolute;\n}\n@media (max-width: 1440px) {\n.facebook[data-v-48de3398] {\n    top: 560px;\n}\n}\n.instagram[data-v-48de3398] {\n  top: 680px;\n  position: absolute;\n}\n@media (max-width: 1440px) {\n.instagram[data-v-48de3398] {\n    top: 600px;\n}\n}\na[data-v-48de3398] {\n  /*font-weight: 400;*/\n  border-radius: 4px;\n}\n.padding[data-v-48de3398] {\n  padding: 12px;\n}\nh1[data-v-48de3398] {\n  font-size: 42px;\n  line-height: 42px;\n}\nform[data-v-48de3398] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  margin-top: 24px;\n}\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n  margin: 0px;\n  margin-bottom: 24px;\n  padding: 12px;\n  font-size: 24px;\n  font-family: \"Poppins\", sans-serif;\n}\n@media (max-width : 1440px) {\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n    margin-bottom: 12px;\n    padding: 4px;\n}\n}\n@media (max-width : 500px) {\ninput[data-v-48de3398], textarea[data-v-48de3398] {\n    font-size: 14px;\n}\n}\ntextarea[data-v-48de3398] {\n  height: 86px;\n}\nbutton[data-v-48de3398] {\n  font-size: 32px;\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 800;\n  color: white;\n  background: #e88a60;\n  border: none;\n  cursor: poiner;\n}\n.contact-info-container[data-v-48de3398] {\n  text-align: left;\n  z-index: 1;\n}\n.contact-table[data-v-48de3398] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: 0.5fr 0.5fr 1fr;\n}\n.contact-table .grid-item[data-v-48de3398] {\n  margin: 12px;\n  margin-left: 0;\n}\n.contact-table .grid-item.double[data-v-48de3398] {\n  grid-column: 2/span 2;\n}\n@media (max-width: 992px) {\n.contact-table[data-v-48de3398] {\n    width: 100%;\n    margin: 0;\n    height: auto;\n    font-size: 20px;\n}\n}\n@media (max-width : 500px) {\n.contact-table[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}\n.sub-item[data-v-48de3398] {\n  font-weight: 200;\n}\n.icon[data-v-48de3398] {\n  width: 40%;\n  padding-left: 30%;\n  padding-right: 30%;\n}\n.bubble-content[data-v-48de3398] {\n  display: -webkit-box;\n  display: flex;\n  text-align: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  border-radius: 200px;\n  color: #5b5b5b;\n  font-weight: 300;\n  width: 80%;\n}\n.bubble-content .larger[data-v-48de3398] {\n  font-size: 40px;\n  margin-bottom: 12px;\n}\n.bubble-1[data-v-48de3398] {\n  position: absolute;\n  top: 12px;\n  left: 12px;\n  width: 150px;\n  height: 150px;\n}\n.bubble-2[data-v-48de3398] {\n  position: absolute;\n  top: 142px;\n  left: 104px;\n  width: 220px;\n  height: 220px;\n}\n.bubble-3[data-v-48de3398] {\n  position: absolute;\n  top: 355px;\n}\n.center[data-v-48de3398] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-48de3398] {\n  text-align: left;\n}\n@media (max-width : 500px) {\n.green-content-box[data-v-48de3398] {\n    font-size: 14px;\n    line-height: 18px;\n}\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -15101,7 +15147,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".privacy-policy[data-v-247e7d33] {\n  position: absolute;\n  top: 600px;\n  color: #204025;\n  padding: 0;\n}\n.facebook[data-v-247e7d33] {\n  top: 650px;\n  position: absolute;\n}\n#bubbles[data-v-247e7d33] {\n  z-index: 1;\n  position: relative;\n}\n@media (max-width :1440px) {\n#bubbles[data-v-247e7d33] {\n    margin-top: 50px;\n}\n}\n.mobile-menu[data-v-247e7d33] {\n  display: none;\n}\n@media (max-width:500px) {\n.mobile-menu[data-v-247e7d33] {\n    display: block;\n    width: 100%;\n}\n}\n.center[data-v-247e7d33] {\n  width: 100%;\n  text-align: center;\n}\n.mobile-menu-link[data-v-247e7d33] {\n  width: 100%;\n  color: white;\n  display: block;\n  margin: 12px 0 6px 0;\n  background: #e88a60;\n}\n.mobile-menu-link.inactive[data-v-247e7d33] {\n  background-color: rgba(232, 138, 96, 0.5);\n  color: #bccfbf;\n}\n.mobile-menu-link.sub[data-v-247e7d33] {\n  background-color: #bccfbf;\n  color: black;\n}", ""]);
+exports.push([module.i, ".privacy-policy[data-v-247e7d33] {\n  top: 600px;\n  position: absolute;\n}\n@media (max-width: 1440px) {\n.privacy-policy[data-v-247e7d33] {\n    top: 520px;\n    white-space: nowrap;\n}\n}\n.facebook[data-v-247e7d33] {\n  top: 640px;\n  position: absolute;\n}\n@media (max-width: 1440px) {\n.facebook[data-v-247e7d33] {\n    top: 560px;\n}\n}\n.instagram[data-v-247e7d33] {\n  top: 680px;\n  position: absolute;\n}\n@media (max-width: 1440px) {\n.instagram[data-v-247e7d33] {\n    top: 600px;\n}\n}\n#bubbles[data-v-247e7d33] {\n  z-index: 1;\n  position: relative;\n}\n@media (max-width :1440px) {\n#bubbles[data-v-247e7d33] {\n    margin-top: 50px;\n}\n}\n.mobile-menu[data-v-247e7d33] {\n  display: none;\n}\n@media (max-width:500px) {\n.mobile-menu[data-v-247e7d33] {\n    display: block;\n    width: 100%;\n}\n}\n.center[data-v-247e7d33] {\n  width: 100%;\n  text-align: center;\n}\n.mobile-menu-link[data-v-247e7d33] {\n  width: 100%;\n  color: white;\n  display: block;\n  margin: 12px 0 6px 0;\n  background: #e88a60;\n}\n.mobile-menu-link.inactive[data-v-247e7d33] {\n  background-color: rgba(232, 138, 96, 0.5);\n  color: #bccfbf;\n}\n.mobile-menu-link.sub[data-v-247e7d33] {\n  background-color: #bccfbf;\n  color: black;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -15155,7 +15201,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".description-title[data-v-744025b9] {\n  margin-top: 64px;\n  text-align: center;\n  z-index: 2;\n  font-weight: 700;\n}\n@media (max-width: 500px) {\n.description-title[data-v-744025b9] {\n    margin-top: 32px;\n    font-size: 18px;\n}\n}\n.description-sub[data-v-744025b9] {\n  z-index: 2;\n}\n@media (max-width: 500px) {\n.description-sub[data-v-744025b9] {\n    font-size: 14px;\n    line-height: 18px;\n    padding: 16px;\n    padding-bottom: 0;\n}\n}\n.privacy-policy[data-v-744025b9] {\n  position: absolute;\n  bottom: 0;\n  z-index: 1;\n}\n@media (max-width: 500px) {\n.privacy-policy[data-v-744025b9] {\n    display: none;\n}\n}\n.facebook[data-v-744025b9] {\n  position: absolute;\n  bottom: 50px;\n  z-index: 1;\n}\n@media (max-width: 500px) {\n.facebook[data-v-744025b9] {\n    display: none;\n}\n}\n.price-cards[data-v-744025b9] {\n  max-width: 60vw;\n}\n@media (max-width: 992px) {\n.price-cards[data-v-744025b9] {\n    max-width: unset;\n}\n}\n.content[data-v-744025b9] {\n  display: inline-block;\n  height: auto;\n}\n.contact-info-container[data-v-744025b9] {\n  z-index: 1;\n}\n.price-cards[data-v-744025b9] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\n.info-container[data-v-744025b9] {\n  width: 61vw;\n}\n\n/*.opaque-2 {*/\n/*    position         : absolute;*/\n/*    background-color : rgba(255, 255, 255, .5);*/\n/*    top              : 0;*/\n/*    bottom           : 0;*/\n/*    z-index          : 0;*/\n/*    @media ('max-width : 1280px') {*/\n/*        display : none;*/\n/*    }*/\n/*}*/\nh1[data-v-744025b9] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.grid[data-v-744025b9] {\n  margin: 12px;\n}\n.grid-column[data-v-744025b9] {\n  padding: 0px 12px;\n}\n@media (max-width: 1680px) {\n.grid-column[data-v-744025b9] {\n    font-size: 18px;\n    padding-left: 12px;\n    padding-right: 12px;\n    line-height: 28px;\n    padding-top: 4px;\n    padding-bottom: 4px;\n}\n}\n@media (max-width: 920px) {\n.grid-column[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n@media (max-width: 1680px) {\n.under-text[data-v-744025b9] {\n    font-size: 18px;\n}\n}\n@media (max-width: 920px) {\n.under-text[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n.info[data-v-744025b9] {\n  width: 100%;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n}\n@media (max-width: 920px) {\n.info[data-v-744025b9] {\n    width: 90vw;\n    font-size: 16px;\n    line-height: 20px;\n}\n}\n.sub-item[data-v-744025b9] {\n  font-weight: 200;\n}\n.bubble-content[data-v-744025b9] {\n  font-size: 18px;\n}\n.icon[data-v-744025b9] {\n  width: 50%;\n}\n.center[data-v-744025b9] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-744025b9] {\n  text-align: left;\n}", ""]);
+exports.push([module.i, ".description-title[data-v-744025b9] {\n  margin-top: 64px;\n  text-align: center;\n  z-index: 2;\n  font-weight: 700;\n}\n@media (max-width: 500px) {\n.description-title[data-v-744025b9] {\n    margin-top: 32px;\n    font-size: 18px;\n}\n}\n.description-sub[data-v-744025b9] {\n  z-index: 2;\n}\n@media (max-width: 500px) {\n.description-sub[data-v-744025b9] {\n    font-size: 14px;\n    line-height: 18px;\n    padding: 16px;\n    padding-bottom: 0;\n}\n}\n.privacy-policy[data-v-744025b9] {\n  position: absolute;\n  bottom: 0;\n  z-index: 1;\n  right: 12px;\n  white-space: nowrap;\n}\n@media (max-width: 500px) {\n.privacy-policy[data-v-744025b9] {\n    display: none;\n}\n}\n.facebook[data-v-744025b9] {\n  position: absolute;\n  bottom: 30px;\n  z-index: 1;\n  right: 12px;\n}\n@media (max-width: 500px) {\n.facebook[data-v-744025b9] {\n    display: none;\n}\n}\n.instagram[data-v-744025b9] {\n  position: absolute;\n  bottom: 60px;\n  z-index: 1;\n  right: 12px;\n}\n@media (max-width: 500px) {\n.instagram[data-v-744025b9] {\n    display: none;\n}\n}\n.price-cards[data-v-744025b9] {\n  max-width: 60vw;\n  margin-bottom: 100px;\n}\n@media (max-width: 992px) {\n.price-cards[data-v-744025b9] {\n    max-width: unset;\n    margin-bottom: 30px;\n}\n}\n.content[data-v-744025b9] {\n  display: inline-block;\n  height: auto;\n}\n.contact-info-container[data-v-744025b9] {\n  z-index: 1;\n}\n.price-cards[data-v-744025b9] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\n.info-container[data-v-744025b9] {\n  width: 61vw;\n}\n\n/*.opaque-2 {*/\n/*    position         : absolute;*/\n/*    background-color : rgba(255, 255, 255, .5);*/\n/*    top              : 0;*/\n/*    bottom           : 0;*/\n/*    z-index          : 0;*/\n/*    @media ('max-width : 1280px') {*/\n/*        display : none;*/\n/*    }*/\n/*}*/\nh1[data-v-744025b9] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.grid[data-v-744025b9] {\n  margin: 12px;\n}\n.grid-column[data-v-744025b9] {\n  padding: 0px 12px;\n}\n@media (max-width: 1680px) {\n.grid-column[data-v-744025b9] {\n    font-size: 18px;\n    padding-left: 12px;\n    padding-right: 12px;\n    line-height: 28px;\n    padding-top: 4px;\n    padding-bottom: 4px;\n}\n}\n@media (max-width: 920px) {\n.grid-column[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n@media (max-width: 1680px) {\n.under-text[data-v-744025b9] {\n    font-size: 18px;\n}\n}\n@media (max-width: 920px) {\n.under-text[data-v-744025b9] {\n    font-size: 11px;\n    line-height: 20px;\n    padding: 0px;\n}\n}\n.info[data-v-744025b9] {\n  width: 100%;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n}\n@media (max-width: 920px) {\n.info[data-v-744025b9] {\n    width: 90vw;\n    font-size: 16px;\n    line-height: 20px;\n}\n}\n.sub-item[data-v-744025b9] {\n  font-weight: 200;\n}\n.bubble-content[data-v-744025b9] {\n  font-size: 18px;\n}\n.icon[data-v-744025b9] {\n  width: 50%;\n}\n.center[data-v-744025b9] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-744025b9] {\n  text-align: left;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -15173,7 +15219,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".description-title[data-v-63c8b399] {\n  margin-top: 64px;\n  text-align: center;\n  z-index: 2;\n  font-weight: 700;\n}\n@media (max-width: 500px) {\n.description-title[data-v-63c8b399] {\n    margin-top: 32px;\n    font-size: 18px;\n}\n}\n.description-sub[data-v-63c8b399] {\n  z-index: 2;\n}\n@media (max-width: 500px) {\n.description-sub[data-v-63c8b399] {\n    font-size: 14px;\n    line-height: 18px;\n    padding: 16px;\n    padding-bottom: 0;\n}\n}\n.privacy-policy[data-v-63c8b399] {\n  position: absolute;\n  bottom: 0;\n  z-index: 1;\n}\n@media (max-width: 500px) {\n.privacy-policy[data-v-63c8b399] {\n    display: none;\n}\n}\n.facebook[data-v-63c8b399] {\n  position: absolute;\n  bottom: 50px;\n  z-index: 1;\n}\n@media (max-width: 500px) {\n.facebook[data-v-63c8b399] {\n    display: none;\n}\n}\n.content[data-v-63c8b399] {\n  display: inline-block;\n  height: auto;\n}\n.price-cards[data-v-63c8b399] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\nh1[data-v-63c8b399] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.big-title[data-v-63c8b399] {\n  position: relative;\n  z-index: 1;\n}\n.mobile-menu[data-v-63c8b399] {\n  display: none;\n}\n@media (max-width: 500px) {\n.mobile-menu[data-v-63c8b399] {\n    display: block;\n    width: 100%;\n}\n}\n.info[data-v-63c8b399] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n  z-index: 1;\n  position: relative;\n}\n@media (max-width: 920px) {\n.info[data-v-63c8b399] {\n    width: 90vw;\n    font-size: 14px;\n    line-height: 20px;\n}\n}\n.grid-column[data-v-63c8b399] {\n  height: 100px;\n}\n.info-container[data-v-63c8b399] {\n  position: relative;\n}\n.sub-item[data-v-63c8b399] {\n  font-weight: 200;\n}\n.bubble[data-v-63c8b399] {\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  position: relative;\n  color: #204025;\n  font-size: 32px;\n  border: 5px solid #e88a60;\n  background-color: rgba(232, 138, 96, 0.2);\n  -webkit-transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, transform;\n  transition-property: box-shadow, transform, -webkit-transform;\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n          transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n}\n.bubble.dark[data-v-63c8b399] {\n  background-color: rgba(232, 138, 96, 0.5);\n  color: #bccfbf;\n}\n.bubble[data-v-63c8b399]:hover {\n  -webkit-transform: scale(1.1);\n          transform: scale(1.1);\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);\n}\n#bubbles[data-v-63c8b399] {\n  z-index: 1;\n}\n\n/*#bubbles {*/\n/*    width: 25%;*/\n/*    margin-top: 112px;*/\n/*    margin-bottom: 112px;*/\n/*    margin-left: 24px;*/\n/*    position: relative;*/\n/*    @media('max-width : 992px') {*/\n/*        display: none;*/\n/*    }*/\n/*}*/\n/*<!--.bubble-content {-->*/\n/*<!--    margin        : 0;-->*/\n/*<!--    position      : absolute;-->*/\n/*<!--    top           : 50%;-->*/\n/*<!--    left          : 50%;-->*/\n/*<!--    margin-right  : -50%;-->*/\n/*<!--    transform     : translate(-50%, -50%);-->*/\n/*<!--    border-radius : 200px;-->*/\n/*<!--    font-size     : 24px;-->*/\n/*<!--    font-weight   : 300;-->*/\n/*<!--    !*background-color: rgb(232, 138, 96);*!-->*/\n/*<!--}-->*/\n/*<!--.bubble-1 {-->*/\n/*<!--    position: absolute;-->*/\n/*<!--    top: -32px;-->*/\n/*<!--    left: 222px;-->*/\n/*<!--    width: 100px;-->*/\n/*<!--    height: 100px;-->*/\n/*<!--}-->*/\n/*.bubble-2 {*/\n/*    position: absolute;*/\n/*    top: 2px;*/\n/*    left: 24px;*/\n/*    width: 200px;*/\n/*    height: 200px;*/\n/*}*/\n/*.bubble-3 {*/\n/*    position: absolute;*/\n/*    top:195px;*/\n/*    left:134px;*/\n/*}*/\n#text[data-v-63c8b399] {\n  width: 75%;\n  font-size: 30px;\n  background-color: #204025;\n  color: white;\n  margin-top: 112px;\n  margin-bottom: 112px;\n  margin-right: 142px;\n  padding: 12px;\n  line-height: 42px;\n  z-index: 1;\n}\n@media (max-width: 992px) {\n#text[data-v-63c8b399] {\n    width: 100%;\n    margin: 0;\n    display: inline-block;\n    height: auto;\n}\n}\n.center[data-v-63c8b399] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-63c8b399] {\n  text-align: left;\n}", ""]);
+exports.push([module.i, ".description-title[data-v-63c8b399] {\n  margin-top: 64px;\n  text-align: center;\n  z-index: 2;\n  font-weight: 700;\n}\n@media (max-width: 500px) {\n.description-title[data-v-63c8b399] {\n    margin-top: 32px;\n    font-size: 18px;\n}\n}\n.description-sub[data-v-63c8b399] {\n  z-index: 2;\n}\n@media (max-width: 500px) {\n.description-sub[data-v-63c8b399] {\n    font-size: 14px;\n    line-height: 18px;\n    padding: 16px;\n    padding-bottom: 0;\n}\n}\n.privacy-policy[data-v-63c8b399] {\n  position: absolute;\n  bottom: 0;\n  z-index: 1;\n  right: 12px;\n  white-space: nowrap;\n}\n@media (max-width: 500px) {\n.privacy-policy[data-v-63c8b399] {\n    display: none;\n}\n}\n.facebook[data-v-63c8b399] {\n  position: absolute;\n  bottom: 30px;\n  z-index: 1;\n  right: 12px;\n}\n@media (max-width: 500px) {\n.facebook[data-v-63c8b399] {\n    display: none;\n}\n}\n.instagram[data-v-63c8b399] {\n  position: absolute;\n  bottom: 60px;\n  z-index: 1;\n  right: 12px;\n}\n@media (max-width: 500px) {\n.instagram[data-v-63c8b399] {\n    display: none;\n}\n}\n.content[data-v-63c8b399] {\n  display: inline-block;\n  height: auto;\n}\n.price-cards[data-v-63c8b399] {\n  width: 100%;\n  margin-bottom: 100px;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n          justify-content: space-evenly;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: revert;\n}\nh1[data-v-63c8b399] {\n  font-size: 42px;\n  line-height: 42px;\n  text-align: left;\n  color: #204025;\n}\n.big-title[data-v-63c8b399] {\n  position: relative;\n  z-index: 1;\n}\n.mobile-menu[data-v-63c8b399] {\n  display: none;\n}\n@media (max-width: 500px) {\n.mobile-menu[data-v-63c8b399] {\n    display: block;\n    width: 100%;\n}\n}\n.info[data-v-63c8b399] {\n  width: 61vw;\n  display: grid;\n  grid-template-columns: auto auto;\n  text-align: left;\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 36px;\n  z-index: 1;\n  position: relative;\n}\n@media (max-width: 920px) {\n.info[data-v-63c8b399] {\n    width: 90vw;\n    font-size: 14px;\n    line-height: 20px;\n}\n}\n.grid-column[data-v-63c8b399] {\n  height: 100px;\n}\n.info-container[data-v-63c8b399] {\n  position: relative;\n}\n.sub-item[data-v-63c8b399] {\n  font-weight: 200;\n}\n.bubble[data-v-63c8b399] {\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  position: relative;\n  color: #204025;\n  font-size: 32px;\n  border: 5px solid #e88a60;\n  background-color: rgba(232, 138, 96, 0.2);\n  -webkit-transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, -webkit-transform;\n  transition-property: box-shadow, transform;\n  transition-property: box-shadow, transform, -webkit-transform;\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n          transition-timing-function: cubic-bezier(1.5, 2, 0.175, 1);\n}\n.bubble.dark[data-v-63c8b399] {\n  background-color: rgba(232, 138, 96, 0.5);\n  color: #bccfbf;\n}\n.bubble[data-v-63c8b399]:hover {\n  -webkit-transform: scale(1.1);\n          transform: scale(1.1);\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);\n}\n#bubbles[data-v-63c8b399] {\n  z-index: 1;\n}\n\n/*#bubbles {*/\n/*    width: 25%;*/\n/*    margin-top: 112px;*/\n/*    margin-bottom: 112px;*/\n/*    margin-left: 24px;*/\n/*    position: relative;*/\n/*    @media('max-width : 992px') {*/\n/*        display: none;*/\n/*    }*/\n/*}*/\n/*<!--.bubble-content {-->*/\n/*<!--    margin        : 0;-->*/\n/*<!--    position      : absolute;-->*/\n/*<!--    top           : 50%;-->*/\n/*<!--    left          : 50%;-->*/\n/*<!--    margin-right  : -50%;-->*/\n/*<!--    transform     : translate(-50%, -50%);-->*/\n/*<!--    border-radius : 200px;-->*/\n/*<!--    font-size     : 24px;-->*/\n/*<!--    font-weight   : 300;-->*/\n/*<!--    !*background-color: rgb(232, 138, 96);*!-->*/\n/*<!--}-->*/\n/*<!--.bubble-1 {-->*/\n/*<!--    position: absolute;-->*/\n/*<!--    top: -32px;-->*/\n/*<!--    left: 222px;-->*/\n/*<!--    width: 100px;-->*/\n/*<!--    height: 100px;-->*/\n/*<!--}-->*/\n/*.bubble-2 {*/\n/*    position: absolute;*/\n/*    top: 2px;*/\n/*    left: 24px;*/\n/*    width: 200px;*/\n/*    height: 200px;*/\n/*}*/\n/*.bubble-3 {*/\n/*    position: absolute;*/\n/*    top:195px;*/\n/*    left:134px;*/\n/*}*/\n#text[data-v-63c8b399] {\n  width: 75%;\n  font-size: 30px;\n  background-color: #204025;\n  color: white;\n  margin-top: 112px;\n  margin-bottom: 112px;\n  margin-right: 142px;\n  padding: 12px;\n  line-height: 42px;\n  z-index: 1;\n}\n@media (max-width: 992px) {\n#text[data-v-63c8b399] {\n    width: 100%;\n    margin: 0;\n    display: inline-block;\n    height: auto;\n}\n}\n.center[data-v-63c8b399] {\n  width: 100%;\n  text-align: center;\n}\n.left[data-v-63c8b399] {\n  text-align: left;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -57567,6 +57613,21 @@ var staticRenderFns = [
             _vm._v("\n                    Facebook\n                ")
           ])
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          attrs: {
+            target: "_blank",
+            href: "https://www.instagram.com/werkplaats75c"
+          }
+        },
+        [
+          _c("div", { staticClass: "instagram" }, [
+            _vm._v("\n                    Instagram\n                ")
+          ])
+        ]
       )
     ])
   },
@@ -57600,6 +57661,22 @@ var staticRenderFns = [
         [
           _c("div", {}, [
             _vm._v("\n                    Facebook\n                ")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: {
+            target: "_blank",
+            href: "https://www.instagram.com/werkplaats75c"
+          }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Instagram\n                ")
           ])
         ]
       )
@@ -57657,7 +57734,9 @@ var render = function() {
           _vm._v(" "),
           _vm._m(2),
           _vm._v(" "),
-          _vm._m(3)
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._m(4)
         ],
         1
       ),
@@ -57695,14 +57774,16 @@ var render = function() {
             _vm._v("Activiteiten WP75C")
           ]),
           _vm._v(" "),
-          _vm._m(4),
+          _vm._m(5),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(6),
+          _vm._v(" "),
+          _vm._m(7)
         ],
         1
       ),
       _vm._v(" "),
-      _vm._m(6)
+      _vm._m(8)
     ],
     1
   )
@@ -57768,6 +57849,25 @@ var staticRenderFns = [
     return _c(
       "a",
       {
+        attrs: {
+          target: "_blank",
+          href: "https://www.instagram.com/werkplaats75c"
+        }
+      },
+      [
+        _c("div", { staticClass: "instagram" }, [
+          _vm._v("\n                Instagram\n            ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
         staticClass: "mobile-menu-link sub",
         attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" }
       },
@@ -57792,6 +57892,22 @@ var staticRenderFns = [
         }
       },
       [_c("div", {}, [_vm._v("\n                Facebook\n            ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "mobile-menu-link sub",
+        attrs: {
+          target: "_blank",
+          href: "https://www.instagram.com/werkplaats75c"
+        }
+      },
+      [_c("div", {}, [_vm._v("\n                Instagram\n            ")])]
     )
   },
   function() {
@@ -58055,11 +58171,9 @@ var render = function() {
       _vm._v(" "),
       _vm._m(6),
       _vm._v(" "),
-      _vm._m(7),
+      _c("div", { staticClass: "opaque" }),
       _vm._v(" "),
-      _vm._m(8),
-      _vm._v(" "),
-      _c("div", { staticClass: "opaque" })
+      _vm._m(7)
     ])
   ])
 }
@@ -58209,39 +58323,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" } },
-      [
-        _c("div", { staticClass: "privacy-policy" }, [
-          _vm._v("\n                Privacy policy\n            ")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        attrs: {
-          target: "_blank",
-          href: "https://www.facebook.com/werkplaats75c"
-        }
-      },
-      [
-        _c("div", { staticClass: "facebook" }, [
-          _vm._v("\n                Facebook\n            ")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mobile-menu" }, [
       _c(
         "a",
@@ -58270,8 +58351,82 @@ var staticRenderFns = [
             _vm._v("\n                    Facebook\n                ")
           ])
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: {
+            target: "_blank",
+            href: "https://www.instagram.com/werkplaats75c"
+          }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Instagram\n                ")
+          ])
+        ]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticStyle: {
+          position: "absolute",
+          right: "12px",
+          "text-align": "right"
+        }
+      },
+      [
+        _c(
+          "a",
+          {
+            attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" }
+          },
+          [
+            _c("div", { staticClass: "privacy-policy" }, [
+              _vm._v("\n                    Privacy policy\n                ")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            attrs: {
+              target: "_blank",
+              href: "https://www.facebook.com/werkplaats75c"
+            }
+          },
+          [
+            _c("div", { staticClass: "facebook" }, [
+              _vm._v("\n                    Facebook\n                ")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            attrs: {
+              target: "_blank",
+              href: "https://www.instagram.com/werkplaats75c/"
+            }
+          },
+          [
+            _c("div", { staticClass: "instagram" }, [
+              _vm._v("\n                    Instagram\n                ")
+            ])
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -58387,11 +58542,9 @@ var render = function() {
       _vm._v(" "),
       _vm._m(5),
       _vm._v(" "),
-      _vm._m(6),
+      _c("div", { staticClass: "content-opaque" }),
       _vm._v(" "),
-      _vm._m(7),
-      _vm._v(" "),
-      _c("div", { staticClass: "content-opaque" })
+      _vm._m(6)
     ])
   ])
 }
@@ -58494,39 +58647,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" } },
-      [
-        _c("div", { staticClass: "privacy-policy" }, [
-          _vm._v("\n                Privacy policy\n            ")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        attrs: {
-          target: "_blank",
-          href: "https://www.facebook.com/werkplaats75c"
-        }
-      },
-      [
-        _c("div", { staticClass: "facebook" }, [
-          _vm._v("\n                Facebook\n            ")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mobile-menu" }, [
       _c(
         "a",
@@ -58555,8 +58675,82 @@ var staticRenderFns = [
             _vm._v("\n                    Facebook\n                ")
           ])
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "mobile-menu-link sub",
+          attrs: {
+            target: "_blank",
+            href: "https://www.instagram.com/werkplaats75c"
+          }
+        },
+        [
+          _c("div", {}, [
+            _vm._v("\n                    Instagram\n                ")
+          ])
+        ]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticStyle: {
+          position: "absolute",
+          right: "12px",
+          "text-align": "right"
+        }
+      },
+      [
+        _c(
+          "a",
+          {
+            attrs: { target: "_blank", href: "/storage/img/docs/privacy.pdf" }
+          },
+          [
+            _c("div", { staticClass: "privacy-policy" }, [
+              _vm._v("\n                    Privacy policy\n                ")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            attrs: {
+              target: "_blank",
+              href: "https://www.facebook.com/werkplaats75c"
+            }
+          },
+          [
+            _c("div", { staticClass: "facebook" }, [
+              _vm._v("\n                    Facebook\n                ")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            attrs: {
+              target: "_blank",
+              href: "https://www.instagram.com/werkplaats75c/"
+            }
+          },
+          [
+            _c("div", { staticClass: "instagram" }, [
+              _vm._v("\n                    Instagram\n                ")
+            ])
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true

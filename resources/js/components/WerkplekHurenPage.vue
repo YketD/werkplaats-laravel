@@ -66,7 +66,7 @@
                         :months="true"
                         :pro-one="'12 u gratis gebruik vergaderruimten per week<br /><i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
-                        :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '"/>
+                        :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '" />
                 <pricing-card
                         :price-twelve-month="220"
                         :price-six-month="235"
@@ -74,7 +74,7 @@
                         :months="true"
                         :pro-one="'12 u gratis gebruik vergaderruimten per week, <i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
-                        :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '"/>
+                        :pro-three="'toegang 8.00 u – 22.00 u \n op zondag 10.00 u – 17.00 '" />
                 <pricing-card
                         :price-twelve-month="150"
                         :price-six-month="150"
@@ -82,7 +82,7 @@
                         :months="true"
                         :pro-one="'9 u gratis gebruik per week vergaderruimten op de werkdagen, <i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
-                        :pro-three="'toegang 8.00 u – 22.00 u'"/>
+                        :pro-three="'toegang 8.00 u – 22.00 u'" />
                 <pricing-card
                         :price-twelve-month="125"
                         :price-six-month="125"
@@ -99,18 +99,9 @@
                         :months="true"
                         :pro-one="'3 u gratis gebruik per week vergaderruimten op de werkdag, <i>mits beschikbaar</i>'"
                         :pro-two="'Wifi / Koffie / Thee'"
-                        :pro-three="'toegang 8.00 u – 22.00 u'"/>
+                        :pro-three="'toegang 8.00 u – 22.00 u'" />
             </div>
-            <a target="_blank" href="/storage/img/docs/privacy.pdf">
-                <div class="privacy-policy">
-                    Privacy policy
-                </div>
-            </a>
-            <a target="_blank" href="https://www.facebook.com/werkplaats75c">
-                <div class="facebook">
-                    Facebook
-                </div>
-            </a>
+
             <div class="mobile-menu">
                 <a target="_blank" class="mobile-menu-link sub" href="/storage/img/docs/privacy.pdf">
                     <div class="">
@@ -122,8 +113,30 @@
                         Facebook
                     </div>
                 </a>
+                <a target="_blank" class="mobile-menu-link sub" href="https://www.instagram.com/werkplaats75c">
+                    <div class="">
+                        Instagram
+                    </div>
+                </a>
             </div>
             <div class="content-opaque">
+            </div>
+            <div style="position: absolute; right: 12px; text-align: right;">
+                <a target="_blank" href="/storage/img/docs/privacy.pdf">
+                    <div class="privacy-policy">
+                        Privacy policy
+                    </div>
+                </a>
+                <a target="_blank" href="https://www.facebook.com/werkplaats75c">
+                    <div class="facebook">
+                        Facebook
+                    </div>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/werkplaats75c/">
+                    <div class="instagram">
+                        Instagram
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -141,55 +154,71 @@
 <style lang="scss" scoped>
 
     .description-title {
-        margin-top: 64px;
-        text-align: center;
-        z-index: 2;
-        font-weight:700;
+        margin-top  : 64px;
+        text-align  : center;
+        z-index     : 2;
+        font-weight : 700;
         @media('max-width: 500px') {
-            margin-top: 32px;
-            font-size: 18px;
+            margin-top : 32px;
+            font-size  : 18px;
         }
     }
 
     .description-sub {
-        z-index: 2;
+        z-index : 2;
         @media('max-width: 500px') {
-            font-size: 14px;
-            line-height: 18px;
-            padding: 16px;
-            padding-bottom:0;
+            font-size      : 14px;
+            line-height    : 18px;
+            padding        : 16px;
+            padding-bottom : 0;
         }
     }
+
     .privacy-policy {
-        position: absolute;
-        bottom: 0;
-        z-index:1;
+        position : absolute;
+        bottom   : 0;
+        z-index  : 1;
+        right    : 12px;
+        white-space: nowrap;
+
         @media('max-width: 500px') {
-            display: none;
+            display : none;
         }
     }
 
     .facebook {
-        position: absolute;
-        bottom: 50px;
-        z-index:1;
+        position : absolute;
+        bottom   : 30px;
+        z-index  : 1;
+        right    : 12px;
 
         @media('max-width: 500px') {
-            display: none;
+            display : none;
+        }
+    }
+    .instagram {
+        position : absolute;
+        bottom   : 60px;
+        z-index  : 1;
+        right    : 12px;
+
+        @media('max-width: 500px') {
+            display : none;
         }
     }
 
     .content {
-        display: inline-block;
-        height: auto;
+        display : inline-block;
+        height  : auto;
     }
 
     .price-cards {
         width           : 100%;
+        margin-bottom: 100px;
         display         : flex;
         justify-content : space-evenly;
-        flex-wrap: wrap;
-        flex-direction: revert;
+        flex-wrap       : wrap;
+        flex-direction  : revert;
     }
 
     h1 {

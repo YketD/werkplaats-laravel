@@ -64,6 +64,11 @@
                         Facebook
                     </div>
                 </a>
+                <a target="_blank" href="https://www.instagram.com/werkplaats75c">
+                    <div class="instagram">
+                        Instagram
+                    </div>
+                </a>
             </div>
             <div class="green-content-box">
                 <div class="padding">
@@ -93,6 +98,11 @@
                         Facebook
                     </div>
                 </a>
+                <a target="_blank" class="mobile-menu-link sub" href="https://www.instagram.com/werkplaats75c">
+                    <div class="">
+                        Instagram
+                    </div>
+                </a>
             </div>
             <div class="opaque"></div>
         </div>
@@ -105,39 +115,52 @@
         methods: {
             sendMail() {
                 let accepted = true;
-                if(!this.mailData.mail) {
+                if (!this.mailData.mail) {
                     this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'email niet ingevuld' });
                     console.log('false');
                     accepted = false;
-                }if(!this.mailData.phone){
-                    this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'Telefoonnummer niet ingevuld'});
+                }
+                if (!this.mailData.phone) {
+                    this.$notify({
+                        group: 'error',
+                        type: 'error',
+                        title: 'Mislukt !',
+                        text: 'Telefoonnummer niet ingevuld'
+                    });
                     console.log('false');
                     accepted = false;
-                }if(!this.mailData.name){
-                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Naam niet ingevuld'});
+                }
+                if (!this.mailData.name) {
+                    this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'Naam niet ingevuld' });
                     console.log('false');
                     accepted = false;
-                }if(!this.mailData.message){
-                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Bericht is leeg'});
+                }
+                if (!this.mailData.message) {
+                    this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'Bericht is leeg' });
                     console.log('false');
                     accepted = false;
                 }
 
                 if (accepted)
-                this.$http.post('api/send-message',
-                    this.mailData,
-                    {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                    }
-                ).then(response =>{
-                    this.$notify({
-                        group: 'reservations',
-                        title: 'Bericht verzonden! ',
-                        text: 'We nemen zo spoedig mogelijk contact met u op.',
+                    this.$http.post('api/send-message',
+                        this.mailData,
+                        {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    ).then(response => {
+                        this.$notify({
+                            group: 'reservations',
+                            title: 'Bericht verzonden! ',
+                            text: 'We nemen zo spoedig mogelijk contact met u op.',
+                        });
+                    }).catch(error => {
+                        this.$notify({
+                            group: 'error',
+                            type: 'error',
+                            title: 'Mislukt !',
+                            text: 'Er is iets fout gegaan. propeer het opnieuw'
+                        });
                     });
-                }).catch(error => {
-                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Er is iets fout gegaan. propeer het opnieuw'});
-                });
             }
         },
         data() {
@@ -157,10 +180,27 @@
     .privacy-policy {
         top      : 600px;
         position : absolute;
+
+        @media(max-width : 1440px) {
+            top: 520px;
+            white-space: nowrap;
+        }
     }
+
     .facebook {
-        top      : 650px;
+        top      : 640px;
         position : absolute;
+        @media(max-width : 1440px) {
+            top : 560px;
+        }
+    }
+
+    .instagram {
+        top      : 680px;
+        position : absolute;
+        @media(max-width : 1440px) {
+            top : 600px;
+        }
     }
 
     a {

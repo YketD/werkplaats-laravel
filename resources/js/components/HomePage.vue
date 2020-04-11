@@ -7,6 +7,7 @@
         <div class="opaque"></div>
 
         <content-with-bubbles class="content" />
+
     </div>
 </template>
 
