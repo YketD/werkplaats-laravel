@@ -17,11 +17,11 @@
                     andere
                     oplossingen mogelijk.
                 </div>
-                <img width="88" height="87" class="image" src="/storage/img/karin.png" />
+                <img width="88" height="87" class="image" src="/storage/img/renate.jpg" />
 
             </div>
             <div class="over">
-                <img width="88" height="87" class="image" src="/storage/img/renate.png" />
+                <img width="88" height="87" class="image" src="/storage/img/karin.jpg" />
                 <div class="text">
                     Ik, Karin, ben architect. Daarnaast ben ik mij steeds meer bezig gaan houden met
                     interieur advies. Dit doe
@@ -56,16 +56,14 @@
 </script>
 
 <style lang="scss" scoped>
-    a {
-        text-decoration : underline;
-    }
+
 
     * {
         font-size   : 18px;
         line-height : 22px;
 
         @media ('max-width: 500px') {
-            font-size: 14px;
+            font-size : 14px;
         }
     }
 
@@ -77,24 +75,38 @@
     .over {
         display          : flex;
         flex-direction   : row;
+        justify-content  : center;
+        align-items      : center;
         margin           : 12px;
         background-color : rgba(0, 0, 0, .3);
         box-shadow       : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
+        a {
+            text-decoration : underline;
+            @media ('max-width: 1440px') {
+                font-size : 14px;
+            }
+        }
+
         .image {
-            display    : block;
-            height     : 150px;
-            width      : 150px;
-            margin     : 12px;
-            box-shadow : 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            display     : block;
+            height      : 150px;
+            width       : auto;
+            margin      : 24px;
+            margin-left : 36px;
+            box-shadow  : 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             @media ('max-width : 500px') {
-                display: none;
+                display : none;
             }
         }
 
         .text {
-            width  : 75%;
-            margin : 24px;
+            width     : 75%;
+            margin    : 24px;
+            font-size : 18px;
+            @media ('max-width: 1440px') {
+                font-size : 14px;
+            }
 
         }
     }
@@ -112,7 +124,7 @@
 
 
         @media ('max-width : 1440px') {
-            font-size   : 20px;
+            font-size   : 14px;
             line-height : 30px;
         }
         @media ('max-width: 992px') {
