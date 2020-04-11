@@ -164,7 +164,7 @@
                 axios.post('/api/send-order', data).then(response => {
                     this.$notify({
                         group: 'reservations',
-                        title: 'Reservering succesvol! ',
+                        title: 'Aanvraag succesvol! ',
                         text: 'Bekijk je mailbox voor meer informatie',
                     });
 

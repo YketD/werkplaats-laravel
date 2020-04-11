@@ -168,7 +168,7 @@
                 axios.post('/api/send-hire-request', data).then(response => {
                     this.$notify({
                         group: 'reservations',
-                        title: 'Huuraanvraag succesvol! ',
+                        title: 'Aanvraag succesvol! ',
                         text: 'Bekijk je mailbox voor meer informatie',
                     });
                     this.loading = false;

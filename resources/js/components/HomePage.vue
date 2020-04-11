@@ -1,7 +1,7 @@
 <template>
     <div class="page-container">
         <div class="big-title">
-            <h1>Werkplaats <br />75c<span class="dot">.</span></h1>
+            <h1>Werkplaats <br />75C<span class="dot">.</span></h1>
             <h2>Meer dan alleen aan het werk gaan.</h2>
         </div>
         <div class="opaque"></div>

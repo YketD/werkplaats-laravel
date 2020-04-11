@@ -490,7 +490,7 @@
                                         <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
                                             <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #706f70;font-size: 18px;line-height: 26px;font-family: Cabin,Avenir,sans-serif;"><strong>Aanvraag abonnement bij Werkplaats 75c is gelukt!</strong></h2>
                                             <h3>Je hebt gekozen voor {{strtolower($reservation->plan)}}!</h3>
-                                            <p style="Margin-top: 16px;Margin-bottom: 0;">Beste {{$fullname}}, hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C.</p><p style="Margin-top: 20px;Margin-bottom: 0;">Wij nemen contact met jou op om verdere afspraken te maken.</p><p style="Margin-top: 20px;Margin-bottom: 0;">Hartelijke groeten,</p><p style="Margin-top: 20px;Margin-bottom: 0;">Karin en Renate</p><p style="Margin-top: 20px;Margin-bottom: 20px;">Werkplaats 75C</p>
+                                            <p style="Margin-top: 16px;Margin-bottom: 0;">Beste {{$fullname}}, <br />Hartelijk dank voor jouw interesse in een werkplek bij Werkplaats 75C.</p><p style="Margin-top: 20px;Margin-bottom: 0;">Wij nemen contact met jou op om verdere afspraken te maken.</p><p style="Margin-top: 20px;Margin-bottom: 0;">Hartelijke groeten,</p><p style="Margin-top: 20px;Margin-bottom: 0;">Karin en Renate</p><p style="Margin-top: 20px;Margin-bottom: 20px;">Werkplaats 75C</p>
                                         </div>
                                     </div>
 

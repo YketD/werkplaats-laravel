@@ -840,10 +840,9 @@
                                         <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
                                             <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #706f70;font-size: 18px;line-height: 26px;font-family: Cabin,Avenir,sans-serif;">
                                                 <strong>Je reservering bij Werkplaats 75C is gelukt!</strong></h2>
-                                            <p style="Margin-top: 16px;Margin-bottom: 0;">Beste {{$fullname}}, hartelijk
+                                            <p style="Margin-top: 16px;Margin-bottom: 0;">Beste {{$fullname}}, <br />Hartelijk
                                                                                           dank voor jouw reservering van
-                                                                                          de {{strtolower($ruimte)}}
-                                                                                          .</p>
+                                                                                          de {{strtolower($ruimte)}}.</p>
                                             <p style="Margin-top: 20px;Margin-bottom: 0;">Wij controleren of deze ruimte
                                                                                           ook daadwerkelijk beschikbaar
                                                                                           is en sturen jou een

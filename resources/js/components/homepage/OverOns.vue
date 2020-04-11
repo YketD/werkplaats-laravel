@@ -101,9 +101,12 @@
         }
 
         .text {
-            width     : 75%;
-            margin    : 24px;
-            font-size : 18px;
+            width       : 75%;
+            margin      : 24px;
+            font-size   : 18px;
+            font-weight : 200;
+            color       : white;
+
             @media ('max-width: 1440px') {
                 font-size : 14px;
             }
