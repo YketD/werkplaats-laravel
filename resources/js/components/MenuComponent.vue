@@ -103,6 +103,7 @@
         @media ('max-width: 1620px ') {
             font-size: 28px;
         }
+
         @media ('max-width: 1420px') {
             font-size : 24px;
         }
