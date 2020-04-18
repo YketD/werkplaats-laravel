@@ -15,35 +15,32 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPhone, faEnvelope, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Notifications from 'vue-notification'
+import VCalendar from 'v-calendar';
+import VueTimePicker from 'vue2-timepicker';
+import 'vue2-timepicker/dist/VueTimepicker.css'
 
+
+Vue.use(VueTimePicker);
+Vue.use(VueRouter);
+Vue.use(Notifications);
+Vue.use(VCalendar);
 
 Vue.config.productionTip = false;
-Vue.use(VueRouter);
 Vue.prototype.$http = axios;
-Vue.use(Notifications);
-
 
 library.add(faPhone);
 library.add(faEnvelope);
 library.add(faExternalLinkAlt);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+Vue.component('vue-time-picker', VueTimePicker);
 
 const routes = [
     {
         path: '/', component: HomePage, children: [
-            {
-                path: 'over-ons',
-                component: OverOns
-            },
-            {
-                path: '/',
-                component: WerkplaatsInformatie
-            },
-            {
-                path: '/privacy',
-                component: privacy
-            }
+            { path: 'over-ons', component: OverOns },
+            { path: '/', component: WerkplaatsInformatie },
+            { path: '/privacy', component: privacy }
         ]
     },
     { path: '/contact', component: ContactPage },

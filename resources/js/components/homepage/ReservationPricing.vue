@@ -2,15 +2,7 @@
     <div id="card" class="card">
         <h1 class="card__title">{{title}}</h1>
         <div class="card__body">
-            <div v-if="!!priceTwelveMonth" class="price__toggle__container">
-                <div class="price__toggle" :class="{active: !!twelveMonthActive}" @click="twelveMonthActive = true">12
-                                                                                                                    maand
-                </div>
-                <div class="price__toggle" :class="{active: !twelveMonthActive}" @click="twelveMonthActive = false">6
-                                                                                                                    maand
-                </div>
-            </div>
-            <div v-else class="price__toggle__container">
+            <div class="price__toggle__container">
                 <div class="price__toggle" :class="{active: !!twoHourActive}"
                      @click="function() {twoHourActive = true; fourHourActive = false; sixHourActive = false; eightHourActive = false;}">
                     2
@@ -32,7 +24,7 @@
                     uur
                 </div>
             </div>
-            <div >
+            <div v-if="! displayForm">
                 <div>
                     <div v-if="!!twoHourActive">
                         <p class="price"><span class="price__symbol">€</span>{{priceTwoHour}},-</p>
@@ -51,6 +43,20 @@
                         <p class="price__tag"><span>(excl. BTW)</span></p>
                     </div>
                 </div>
+            </div>
+            <div style="z-index: 5" v-else>
+                <form class="form">
+                    <label for="time-picker">{{timeToString}} vanaf: </label>
+                    <vue-time-picker class="time" input-width="100%" input-height="32px" minute-interval="30" hour-label="Uur" minute-label="Minuten" />
+
+                    <label for="date-picker">Datum: </label>
+                <v-date-picker
+                        id="date-picker"
+                        v-model="date"
+                        class="date"
+                        :borderRadius="0"
+                />
+                </form>
             </div>
 
         </div>
@@ -120,19 +126,9 @@
         },
         computed: {
             timeToString() {
-                let time = "";
-                if (!this.months) {
-                    if (this.sixHourActive){
-                        time = "6 uur"
-                    }   else if (!this.twoHourActive) {
-                        time = this.fourHourActive ? " 4 uur" : "8 uur";
-                    } else {
-                        time = "2 uur"
-                    }
-                } else {
-                    time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
-                }
-                return time;
+                if (this.sixHourActive){return "6 uur"}
+                if (!this.twoHourActive) {return this.fourHourActive ? " 4 uur" : "8 uur"}
+                return "2 uur"
             }
         },
         methods: {
@@ -206,7 +202,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
 
     .lds-dual-ring {
         display: inline-block;
@@ -237,6 +233,10 @@
     i {
         font-style: italic;
         font-weight: 400;
+    }
+
+    .vue__time-picker >>> .display-time {
+        padding: 12px !important;
     }
 </style>
 <style lang="scss" scoped>
@@ -294,7 +294,7 @@
         font-size : .6rem;
     }
 
-    * {
+    .card {
         z-index : 1;
     }
 
@@ -447,6 +447,11 @@
     .fade-in-out-enter, .fade-in-out-leave-to /* .fade-leave-active below version 2.1.8 */
     {
         opacity : 0;
+    }
+    .date {
+        width: calc(100% - 24px);
+        display:block;
+        border-radius: 0px;
     }
 
 
