@@ -2,15 +2,7 @@
     <div id="card" class="card">
         <h1 class="card__title">{{title}}</h1>
         <div class="card__body">
-            <div v-if="!!priceTwelveMonth" class="price__toggle__container">
-                <div class="price__toggle" :class="{active: !!twelveMonthActive}" @click="twelveMonthActive = true">12
-                                                                                                                    maand
-                </div>
-                <div class="price__toggle" :class="{active: !twelveMonthActive}" @click="twelveMonthActive = false">6
-                                                                                                                    maand
-                </div>
-            </div>
-            <div v-else class="price__toggle__container">
+            <div class="price__toggle__container">
                 <div class="price__toggle" :class="{active: !!twoHourActive}"
                      @click="function() {twoHourActive = true; fourHourActive = false; sixHourActive = false; eightHourActive = false;}">
                     2
@@ -32,7 +24,7 @@
                     uur
                 </div>
             </div>
-            <div >
+            <div v-if="! displayForm">
                 <div>
                     <div v-if="!!twoHourActive">
                         <p class="price"><span class="price__symbol">€</span>{{priceTwoHour}},-</p>
@@ -51,6 +43,28 @@
                         <p class="price__tag"><span>(excl. BTW)</span></p>
                     </div>
                 </div>
+            </div>
+            <div style="z-index: 5" v-else>
+                <form class="form">
+                    <label for="time-picker">{{timeToString}} vanaf: </label>
+<!--                    <vue-time-picker-->
+<!--                            class="time"-->
+<!--                            v-model="time"-->
+<!--                            input-width="100%"-->
+<!--                            input-height="32px"-->
+<!--                            minute-interval="30"-->
+<!--                            hour-label="Uur"-->
+<!--                            minute-label="Minuten" />-->
+                    <input type="time" min="9:00" max="18:00" step="1800" v-model="time">
+                    <label for="date-picker">Datum: </label>
+                <v-date-picker
+                        id="date-picker"
+                        v-model="date"
+                        class="date"
+                        :borderRadius="0"
+                        data='["YYYY-MM-DD"]'
+                />
+                </form>
             </div>
 
         </div>
@@ -111,28 +125,21 @@
                 twoHourActive: true,
                 fourHourActive: false,
                 sixHourActive: false,
+                eightHourActive: false,
                 displayForm: false,
                 loading: false,
                 email: "",
                 phone: "",
-                fullName: ""
+                fullName: "",
+                date:"",
+                time:"",
             }
         },
         computed: {
             timeToString() {
-                let time = "";
-                if (!this.months) {
-                    if (this.sixHourActive){
-                        time = "6 uur"
-                    }   else if (!this.twoHourActive) {
-                        time = this.fourHourActive ? " 4 uur" : "8 uur";
-                    } else {
-                        time = "2 uur"
-                    }
-                } else {
-                    time = this.twelveMonthActive ? "12 maanden" : "6 maanden";
-                }
-                return time;
+                if (this.sixHourActive){return "6 uur"}
+                if (!this.twoHourActive) {return this.fourHourActive ? " 4 uur" : "8 uur"}
+                return "2 uur"
             }
         },
         methods: {
@@ -144,33 +151,44 @@
                     'fullName': this.fullName,
                     'plan': this.title,
                     'time': this.timeToString,
+                    'fromTime' : this.time,
+                    'date' : this.date,
                 };
                 let accepted = true;
                 if(!this.email){
                     this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'email niet ingevuld'});
-                    console.log('false');
                     accepted = false;
                 }if(!this.phone){
                     this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'Telefoonnummer niet ingevuld'});
-                    console.log('false');
                     accepted = false;
                 }if(!this.fullName){
                     this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Naam niet ingevuld'});
-                    console.log('false');
+                    accepted = false;
+                }if(!this.time){
+                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Tijd niet ingevuld'});
+                    accepted = false;
+                }if(!this.date){
+                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Datum niet ingevuld'});
                     accepted = false;
                 }
 
-                if (accepted)
-                axios.post('/api/send-order', data).then(response => {
-                    this.$notify({
-                        group: 'reservations',
-                        title: 'Aanvraag succesvol! ',
-                        text: 'Bekijk je mailbox voor meer informatie',
-                    });
+                if (accepted) {
+                    data.date = new Date(data.date).toLocaleDateString();
 
+                    axios.post('/api/send-order', data).then(response => {
+                        this.$notify({
+                            group: 'reservations',
+                            title: 'Aanvraag succesvol! ',
+                            text: 'Bekijk je mailbox voor meer informatie',
+                        });
+                        this.displayForm = false;
+                        this.loading = false;
+                    })
+
+                }   else {
                     this.loading = false;
-                    this.displayForm = false;
-                })
+                }
+
             },
             getMailText() {
                 let time = "";
@@ -206,7 +224,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
 
     .lds-dual-ring {
         display: inline-block;
@@ -237,6 +255,10 @@
     i {
         font-style: italic;
         font-weight: 400;
+    }
+
+    .vue__time-picker >>> .display-time {
+        padding: 12px !important;
     }
 </style>
 <style lang="scss" scoped>
@@ -294,7 +316,7 @@
         font-size : .6rem;
     }
 
-    * {
+    .card {
         z-index : 1;
     }
 
@@ -447,6 +469,11 @@
     .fade-in-out-enter, .fade-in-out-leave-to /* .fade-leave-active below version 2.1.8 */
     {
         opacity : 0;
+    }
+    .date {
+        width: calc(100% - 24px);
+        display:block;
+        border-radius: 0px;
     }
 
 

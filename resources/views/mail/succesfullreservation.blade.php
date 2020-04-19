@@ -842,7 +842,7 @@
                                                 <strong>Je reservering bij Werkplaats 75C is gelukt!</strong></h2>
                                             <p style="Margin-top: 16px;Margin-bottom: 0;">Beste {{$fullname}}, <br />Hartelijk
                                                                                           dank voor jouw reservering van
-                                                                                          de {{strtolower($ruimte)}}.</p>
+                                                                                          de {{strtolower($ruimte)}} om {{$reservation->time}} op {{$reservation->date}}.</p>
                                             <p style="Margin-top: 20px;Margin-bottom: 0;">Wij controleren of deze ruimte
                                                                                           ook daadwerkelijk beschikbaar
                                                                                           is en sturen jou een
