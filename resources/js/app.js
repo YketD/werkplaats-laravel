@@ -1,3 +1,5 @@
+import Ondernemers from "./components/homepage/Ondernemers";
+
 require('./bootstrap');
 import Vue from 'vue';
 import App from './App.vue';
@@ -40,7 +42,8 @@ const routes = [
         path: '/', component: HomePage, children: [
             { path: 'over-ons', component: OverOns },
             { path: '/', component: WerkplaatsInformatie },
-            { path: '/privacy', component: privacy }
+            { path: '/privacy', component: privacy },
+            { path: '/ondernemers', component: Ondernemers },
         ]
     },
     { path: '/contact', component: ContactPage },
