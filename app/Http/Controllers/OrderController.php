@@ -15,6 +15,8 @@ class OrderController extends Controller
 
         $reservation->email = Arr::get($request, 'email', 'Not provided');
         $reservation->phone = Arr::get($request, 'phone', 'Not provided');
+        $reservation->time = Arr::get($request, 'fromTime', 'Not provided');
+        $reservation->date = Arr::get($request, 'date', 'Not provided');
         $reservation->fullname = Arr::get($request, 'fullName', 'Not provided');
         $reservation->plan = Arr::get($request, 'plan', 'Not provided') . " voor " . Arr::get($request, 'time', 'Not provided');
         $reservation->save();
@@ -23,7 +25,7 @@ class OrderController extends Controller
             $message->to('info@werkplaats75c.nl')->subject('Nieuwe reservering!')->from('info@werkplaats75c.nl');
         });
 
-        Mail::send('mail.succesfullreservation', ['fullname' => $reservation->fullname, 'ruimte' => Arr::get($request, 'plan', 'Not provided')], function($message) use ($reservation) {
+        Mail::send('mail.succesfullreservation', ['fullname' => $reservation->fullname, 'ruimte' => Arr::get($request, 'plan', 'Not provided'), 'reservation' => $reservation], function($message) use ($reservation) {
             $message->to($reservation->email)->subject('Bedankt voor je reservering!')->from('info@werkplaats75c.nl');
         });
 

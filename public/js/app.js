@@ -12944,6 +12944,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Pricing",
@@ -12954,11 +12962,14 @@ __webpack_require__.r(__webpack_exports__);
       twoHourActive: true,
       fourHourActive: false,
       sixHourActive: false,
+      eightHourActive: false,
       displayForm: false,
       loading: false,
       email: "",
       phone: "",
-      fullName: ""
+      fullName: "",
+      date: "",
+      time: ""
     };
   },
   computed: {
@@ -12984,7 +12995,9 @@ __webpack_require__.r(__webpack_exports__);
         'phone': this.phone,
         'fullName': this.fullName,
         'plan': this.title,
-        'time': this.timeToString
+        'time': this.timeToString,
+        'fromTime': this.time,
+        'date': this.date
       };
       var accepted = true;
 
@@ -12995,7 +13008,6 @@ __webpack_require__.r(__webpack_exports__);
           title: 'Mislukt !',
           text: 'email niet ingevuld'
         });
-        console.log('false');
         accepted = false;
       }
 
@@ -13006,7 +13018,6 @@ __webpack_require__.r(__webpack_exports__);
           title: 'Mislukt !',
           text: 'Telefoonnummer niet ingevuld'
         });
-        console.log('false');
         accepted = false;
       }
 
@@ -13017,20 +13028,44 @@ __webpack_require__.r(__webpack_exports__);
           title: 'Mislukt !',
           text: 'Naam niet ingevuld'
         });
-        console.log('false');
         accepted = false;
       }
 
-      if (accepted) axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/send-order', data).then(function (response) {
-        _this.$notify({
-          group: 'reservations',
-          title: 'Aanvraag succesvol! ',
-          text: 'Bekijk je mailbox voor meer informatie'
+      if (!this.time) {
+        this.$notify({
+          group: 'error',
+          type: 'error',
+          title: 'Mislukt !',
+          text: 'Tijd niet ingevuld'
         });
+        accepted = false;
+      }
 
-        _this.loading = false;
-        _this.displayForm = false;
-      });
+      if (!this.date) {
+        this.$notify({
+          group: 'error',
+          type: 'error',
+          title: 'Mislukt !',
+          text: 'Datum niet ingevuld'
+        });
+        accepted = false;
+      }
+
+      if (accepted) {
+        data.date = new Date(data.date).toLocaleDateString();
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/send-order', data).then(function (response) {
+          _this.$notify({
+            group: 'reservations',
+            title: 'Aanvraag succesvol! ',
+            text: 'Bekijk je mailbox voor meer informatie'
+          });
+
+          _this.displayForm = false;
+          _this.loading = false;
+        });
+      } else {
+        this.loading = false;
+      }
     },
     getMailText: function getMailText() {
       var time = "";
@@ -59370,7 +59405,11 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                2\n                uur\n            ")]
+            [
+              _vm._v(
+                "\n                    2\n                    uur\n                "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -59387,7 +59426,11 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                4\n                uur\n            ")]
+            [
+              _vm._v(
+                "\n                    4\n                    uur\n                "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -59404,7 +59447,11 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                6\n                uur\n            ")]
+            [
+              _vm._v(
+                "\n                    6\n                    uur\n                "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -59421,7 +59468,11 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                8\n                uur\n            ")]
+            [
+              _vm._v(
+                "\n                    8\n                    uur\n                "
+              )
+            ]
           )
         ]),
         _vm._v(" "),
@@ -59484,14 +59535,29 @@ var render = function() {
                     _vm._v(_vm._s(_vm.timeToString) + " vanaf: ")
                   ]),
                   _vm._v(" "),
-                  _c("vue-time-picker", {
-                    staticClass: "time",
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.time,
+                        expression: "time"
+                      }
+                    ],
                     attrs: {
-                      "input-width": "100%",
-                      "input-height": "32px",
-                      "minute-interval": "30",
-                      "hour-label": "Uur",
-                      "minute-label": "Minuten"
+                      type: "time",
+                      min: "9:00",
+                      max: "18:00",
+                      step: "1800"
+                    },
+                    domProps: { value: _vm.time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.time = $event.target.value
+                      }
                     }
                   }),
                   _vm._v(" "),
@@ -59501,7 +59567,11 @@ var render = function() {
                   _vm._v(" "),
                   _c("v-date-picker", {
                     staticClass: "date",
-                    attrs: { id: "date-picker", borderRadius: 0 },
+                    attrs: {
+                      id: "date-picker",
+                      borderRadius: 0,
+                      data: '["YYYY-MM-DD"]'
+                    },
                     model: {
                       value: _vm.date,
                       callback: function($$v) {
@@ -59549,7 +59619,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Kies\n            ")]
+                [_vm._v("Kies\n                ")]
               )
             ])
           : _c("div", { key: "order", staticClass: "container" }, [
@@ -59643,7 +59713,7 @@ var render = function() {
                   _vm.loading
                     ? _c("div", { staticClass: "lds-dual-ring" })
                     : _vm._e(),
-                  _vm._v("Verstuur\n            ")
+                  _vm._v("Verstuur\n                ")
                 ]
               ),
               _vm._v(" "),

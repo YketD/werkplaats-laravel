@@ -489,7 +489,7 @@
                                     <div style="Margin-left: 20px;Margin-right: 20px;">
                                         <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
                                             <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #706f70;font-size: 18px;line-height: 26px;font-family: Cabin,Avenir,sans-serif;"><strong>Nieuwe aanmelding binnen vanuit het werplek huren formulier!</strong></h2>
-                                            <h3>{{$reservation->plan}} is gekozen !</h3>
+                                            <h3>{{$reservation->plan}} is gekozen @if($reservation->time && $reservation->date) om {{$reservation->time}} op {{$reservation->date}} @endif !</h3>
                                             <p style="Margin-top: 16px;Margin-bottom: 0;">Afzender: {{$reservation->fullname}}</p><p style="Margin-top: 0px;Margin-bottom: 0;">Telefoon nummer: {{$reservation->phone}}</p><p style="Margin-top: 0px;Margin-bottom: 0;">Email: {{$reservation->email}}</p>
                                         </div>
                                     </div>
