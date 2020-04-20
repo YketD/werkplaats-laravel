@@ -7,9 +7,9 @@
             <router-link to="/over-ons" class="bubble bubble-1">
                 <div class="bubble-content">Over ons</div>
             </router-link>
-            <div class="bubble bubble-2 dark">
+            <router-link to="/ondernemers" class="bubble bubble-2">
                 <div class="bubble-content">Ondernemers WP75C</div>
-            </div>
+            </router-link>
             <div class="bubble bubble-3 dark">
                 <div class="bubble-content">Activiteiten WP75C</div>
             </div>
@@ -39,7 +39,7 @@
         <div class="mobile-menu">
             <router-link to="/" class="mobile-menu-link">Werkplaats 75C</router-link>
             <router-link to="/over-ons" class="mobile-menu-link">Over ons</router-link>
-            <div class="mobile-menu-link inactive">Ondernemers WP75C </div>
+            <router-link to="/ondernemers" class="mobile-menu-link">Ondernemers WP75C </router-link>
             <div class="mobile-menu-link inactive">Activiteiten WP75C</div>
             <a target="_blank" class="mobile-menu-link sub" href="/storage/img/docs/privacy.pdf">
                 <div class="">
