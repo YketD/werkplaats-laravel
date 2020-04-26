@@ -18,12 +18,18 @@ import Notifications from 'vue-notification'
 import VCalendar from 'v-calendar';
 import VueTimePicker from 'vue2-timepicker';
 import 'vue2-timepicker/dist/VueTimepicker.css'
-
+import PrismicVue from "prismic-vue";
+import linkresolver from '../plugins/LinkResolver.js';
 
 Vue.use(VueTimePicker);
 Vue.use(VueRouter);
 Vue.use(Notifications);
 Vue.use(VCalendar);
+
+Vue.use(PrismicVue, {
+    endpoint: window.prismic.endpoint,
+    linkresolver
+});
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;
@@ -37,15 +43,15 @@ Vue.component('vue-time-picker', VueTimePicker);
 
 const routes = [
     {
-        path: '/', component: HomePage, children: [
+        path: '/', name: 'home', component: HomePage, children: [
             { path: 'over-ons', component: OverOns },
-            { path: '/', component: WerkplaatsInformatie },
+            { path: '/', name: 'home', component: WerkplaatsInformatie },
             { path: '/privacy', component: privacy }
         ]
     },
-    { path: '/contact', component: ContactPage },
-    { path: '/werkplek-huren', component: WerkplekHurenPage },
-    { path: '/reserveren', component: ReserverenPage }
+    { path: '/contact', name: 'contact', component: ContactPage },
+    { path: '/werkplek-huren', name: 'werkplek_huren', component: WerkplekHurenPage },
+    { path: '/reserveren', name: 'ruimte_reserveren', component: ReserverenPage }
 ];
 
 const router = new VueRouter({

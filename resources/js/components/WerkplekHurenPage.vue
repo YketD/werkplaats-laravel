@@ -174,6 +174,11 @@
         }
     }
 
+    .contact-info-container {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
     .privacy-policy {
         position : absolute;
         bottom   : 0;

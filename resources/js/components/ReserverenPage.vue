@@ -1,11 +1,17 @@
 <template>
     <div class="page-container">
         <div class="contact-info-container">
-            <h1 class="big-title">
+            <h1 v-if="prismic" class="big-title">
+                {{ prismic.titel[0].text }}
+            </h1>
+            <h1 v-else>
                 WERKRUIMTEN
             </h1>
             <div class="info-container">
-                <div class="info">
+                <div v-if="prismic.text[0]" class="info">
+                    {{prismic.text[0].text}}
+                </div>
+                <div v-else class="info">
                     Op zoek naar een inspirerende ruimte voor het geven van
                     workshops, lezingen of om te vergaderen? Werkplaats 75C heeft hiervoor twee ruimten beschikbaar. De
                     grote workshopruimte- /vergaderruimte is circa 40m² en geschikt voor 20 à 25 personen.
@@ -153,38 +159,39 @@
 
     export default {
         name: "ContactPage",
-        components: { PricingCard }
+        components: { PricingCard },
+        props: { prismic }
     }
 </script>
 
 <style lang="scss" scoped>
     .description-title {
-        margin-top: 64px;
-        text-align: center;
-        z-index: 2;
-        font-weight:700;
+        margin-top  : 64px;
+        text-align  : center;
+        z-index     : 2;
+        font-weight : 700;
         @media('max-width: 500px') {
-            margin-top: 32px;
-            font-size: 18px;
+            margin-top : 32px;
+            font-size  : 18px;
         }
     }
 
     .description-sub {
-        z-index: 2;
+        z-index : 2;
         @media('max-width: 500px') {
-            font-size: 14px;
-            line-height: 18px;
-            padding: 16px;
-            padding-bottom:0;
+            font-size      : 14px;
+            line-height    : 18px;
+            padding        : 16px;
+            padding-bottom : 0;
         }
     }
 
     .privacy-policy {
-        position : absolute;
-        bottom   : 0;
-        z-index  : 1;
-        right    : 12px;
-        white-space: nowrap;
+        position    : absolute;
+        bottom      : 0;
+        z-index     : 1;
+        right       : 12px;
+        white-space : nowrap;
 
         @media('max-width: 500px') {
             display : none;
@@ -201,6 +208,7 @@
             display : none;
         }
     }
+
     .instagram {
         position : absolute;
         bottom   : 60px;
@@ -213,36 +221,37 @@
     }
 
     .price-cards {
-        max-width: 60vw;
-        margin-bottom: 100px;
+        max-width     : 60vw;
+        margin-bottom : 100px;
         @media('max-width: 992px') {
-            max-width: unset;
-            margin-bottom: 30px;
+            max-width     : unset;
+            margin-bottom : 30px;
         }
 
 
-
-
     }
+
     .content {
-        display: inline-block;
-        height: auto;
+        display : inline-block;
+        height  : auto;
     }
 
     .contact-info-container {
-        z-index: 1;
+        z-index : 1;
+        margin-top: 24px;
+        padding-bottom: 24px;
     }
 
     .price-cards {
         width           : 100%;
         display         : flex;
         justify-content : space-evenly;
-        flex-wrap: wrap;
-        flex-direction: revert;
+        flex-wrap       : wrap;
+        flex-direction  : revert;
     }
 
     .info-container {
-        width: 61vw;
+        width : 61vw;
     }
 
     /*.opaque-2 {*/
@@ -288,7 +297,7 @@
 
     .under-text {
         @media ('max-width: 1680px') {
-            font-size      : 18px;
+            font-size : 18px;
         }
         @media ('max-width: 920px') {
             font-size   : 11px;

@@ -13,6 +13,7 @@
 
 <script>
     import ContentWithBubbles from "./ContentWithBubbles";
+    import axios from 'axios';
 
     export default {
         name: "HomePage",
@@ -21,7 +22,10 @@
             return {
                 msg: "ww",
             }
-        }
+        },
+
+
+
     }
 </script>
 
@@ -75,7 +79,6 @@
 
         }
     }
-
 
 
     .big-title {
