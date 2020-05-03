@@ -36,11 +36,8 @@
                 console.log('fetching: ' + this.$route.name)
                 this.$prismic.client.getSingle(this.$route.name)
                     .then((document) => {
-                        console.log(document)
-                        this.prismic = document.data
-                        // this.imagesrc = document.data.hoofd_afbeelding;
-                        // this.fields.logo = document.data.logo;
-                        // this.fields.richContent = document.data.rich_content;
+                        console.log(document);
+                        this.prismic = document.data;
                     })
             }
         },

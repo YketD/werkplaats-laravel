@@ -24,48 +24,43 @@
                     uur
                 </div>
             </div>
-            <div v-if="! displayForm">
-                <div>
-                    <div v-if="!!twoHourActive">
-                        <p class="price"><span class="price__symbol">€</span>{{priceTwoHour}},-</p>
-                        <p class="price__tag"><span>(excl. BTW)</span></p>
-                    </div>
-                    <div v-else-if="!!fourHourActive">
-                        <p class="price"><span class="price__symbol">€</span>{{priceFourHour}},-</p>
-                        <p class="price__tag"><span>(excl. BTW)</span></p>
-                    </div>
-                    <div v-else-if="!!sixHourActive">
-                        <p class="price"><span class="price__symbol">€</span>{{priceSixHour}},-</p>
-                        <p class="price__tag"><span>(excl. BTW)</span></p>
-                    </div>
-                    <div v-else-if="!!eightHourActive">
-                        <p class="price"><span class="price__symbol">€</span>{{priceEightHour}},-</p>
-                        <p class="price__tag"><span>(excl. BTW)</span></p>
+            <transition name="fade-in-out" mode="out-in">
+                <div v-if="! displayForm">
+                    <div>
+                        <div v-if="!!twoHourActive">
+                            <p class="price"><span class="price__symbol">€</span>{{priceTwoHour}},-</p>
+                            <p class="price__tag"><span>(excl. BTW)</span></p>
+                        </div>
+                        <div v-else-if="!!fourHourActive">
+                            <p class="price"><span class="price__symbol">€</span>{{priceFourHour}},-</p>
+                            <p class="price__tag"><span>(excl. BTW)</span></p>
+                        </div>
+                        <div v-else-if="!!sixHourActive">
+                            <p class="price"><span class="price__symbol">€</span>{{priceSixHour}},-</p>
+                            <p class="price__tag"><span>(excl. BTW)</span></p>
+                        </div>
+                        <div v-else-if="!!eightHourActive">
+                            <p class="price"><span class="price__symbol">€</span>{{priceEightHour}},-</p>
+                            <p class="price__tag"><span>(excl. BTW)</span></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div style="z-index: 5" v-else>
-                <form class="form">
-                    <label for="time-picker">{{timeToString}} vanaf: </label>
-<!--                    <vue-time-picker-->
-<!--                            class="time"-->
-<!--                            v-model="time"-->
-<!--                            input-width="100%"-->
-<!--                            input-height="32px"-->
-<!--                            minute-interval="30"-->
-<!--                            hour-label="Uur"-->
-<!--                            minute-label="Minuten" />-->
-                    <input type="time" min="9:00" max="18:00" step="1800" v-model="time">
-                    <label for="date-picker">Datum: </label>
-                <v-date-picker
-                        id="date-picker"
-                        v-model="date"
-                        class="date"
-                        :borderRadius="0"
-                        data='["YYYY-MM-DD"]'
-                />
-                </form>
-            </div>
+                <div v-else>
+                    <form class="form">
+                        <label for="time-picker">{{timeToString}} vanaf: </label>
+
+                        <input type="time" min="9:00" max="18:00" step="1800" v-model="time">
+                        <label for="date-picker">Datum: </label>
+                        <v-date-picker
+                                id="date-picker"
+                                v-model="date"
+                                class="date"
+                                :borderRadius="0"
+                                data='["YYYY-MM-DD"]'
+                        />
+                    </form>
+                </div>
+            </transition>
 
         </div>
         <transition name="fade-in-out" mode="out-in">
@@ -80,7 +75,7 @@
                         @click="displayForm = true">Kies
                 </button>
             </div>
-            <div class="container" key="order" v-else>
+            <div class="container" v-else>
                 <span class="sub-text">Vul hier uw persoonlijke gegevens in:</span>
                 <form class="form">
                     <label for="email">Email: </label>
@@ -93,7 +88,8 @@
                 <button @click="sendOrder"
                         class="button card__button send__button"
                         type="button">
-                    <div class="lds-dual-ring" v-if="loading"></div>Verstuur
+                    <div class="lds-dual-ring" v-if="loading"></div>
+                    Verstuur
                 </button>
                 <span class="go-back" @click="displayForm = false">< Terug</span>
             </div>
@@ -131,44 +127,57 @@
                 email: "",
                 phone: "",
                 fullName: "",
-                date:"",
-                time:"",
+                date: "",
+                time: "",
             }
         },
         computed: {
             timeToString() {
-                if (this.sixHourActive){return "6 uur"}
-                if (!this.twoHourActive) {return this.fourHourActive ? " 4 uur" : "8 uur"}
+                if (this.sixHourActive) {
+                    return "6 uur"
+                }
+                if (!this.twoHourActive) {
+                    return this.fourHourActive ? " 4 uur" : "8 uur"
+                }
                 return "2 uur"
             }
         },
         methods: {
             sendOrder() {
-                this.loading =true;
+                this.loading = true;
                 let data = {
                     'email': this.email,
                     'phone': this.phone,
                     'fullName': this.fullName,
                     'plan': this.title,
                     'time': this.timeToString,
-                    'fromTime' : this.time,
-                    'date' : this.date,
+                    'fromTime': this.time,
+                    'date': this.date,
                 };
                 let accepted = true;
-                if(!this.email){
-                    this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'email niet ingevuld'});
+                if (!this.email) {
+                    this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'email niet ingevuld' });
                     accepted = false;
-                }if(!this.phone){
-                    this.$notify({group: 'error',type: 'error', title: 'Mislukt !', text: 'Telefoonnummer niet ingevuld'});
+                }
+                if (!this.phone) {
+                    this.$notify({
+                        group: 'error',
+                        type: 'error',
+                        title: 'Mislukt !',
+                        text: 'Telefoonnummer niet ingevuld'
+                    });
                     accepted = false;
-                }if(!this.fullName){
-                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Naam niet ingevuld'});
+                }
+                if (!this.fullName) {
+                    this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'Naam niet ingevuld' });
                     accepted = false;
-                }if(!this.time){
-                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Tijd niet ingevuld'});
+                }
+                if (!this.time) {
+                    this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'Tijd niet ingevuld' });
                     accepted = false;
-                }if(!this.date){
-                    this.$notify({group: 'error', type: 'error', title: 'Mislukt !', text: 'Datum niet ingevuld'});
+                }
+                if (!this.date) {
+                    this.$notify({ group: 'error', type: 'error', title: 'Mislukt !', text: 'Datum niet ingevuld' });
                     accepted = false;
                 }
 
@@ -185,7 +194,7 @@
                         this.loading = false;
                     })
 
-                }   else {
+                } else {
                     this.loading = false;
                 }
 
@@ -229,8 +238,10 @@
     .lds-dual-ring {
         display: inline-block;
         width: 20px;
-        height: 20px;     margin-right:10px;
+        height: 20px;
+        margin-right: 10px;
     }
+
     .lds-dual-ring:after {
         content: " ";
         display: block;
@@ -239,10 +250,11 @@
         margin: 2px;
 
         border-radius: 50%;
-        border: 3px solid #fff;
-        border-color: #fff transparent #fff transparent;
+        border: 3px solid #ffffff;
+        border-color: #ffffff transparent #ffffff transparent;
         animation: lds-dual-ring 1.2s linear infinite;
     }
+
     @keyframes lds-dual-ring {
         0% {
             transform: rotate(0deg);
@@ -470,10 +482,11 @@
     {
         opacity : 0;
     }
+
     .date {
-        width: calc(100% - 24px);
-        display:block;
-        border-radius: 0px;
+        width         : calc(100% - 24px);
+        display       : block;
+        border-radius : 0px;
     }
 
 

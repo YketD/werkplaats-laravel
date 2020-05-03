@@ -1,3 +1,5 @@
+import Ondernemers from "./components/homepage/Ondernemers";
+
 require('./bootstrap');
 import Vue from 'vue';
 import App from './App.vue';
@@ -44,9 +46,9 @@ Vue.component('vue-time-picker', VueTimePicker);
 const routes = [
     {
         path: '/', name: 'home', component: HomePage, children: [
-            { path: 'over-ons', component: OverOns },
+            { path: 'over-ons', name: 'home', component: OverOns },
             { path: '/', name: 'home', component: WerkplaatsInformatie },
-            { path: '/privacy', component: privacy }
+            { path: '/privacy', name: 'home',  component: privacy },{ path: '/ondernemers', name: 'home',  component: Ondernemers }
         ]
     },
     { path: '/contact', name: 'contact', component: ContactPage },
