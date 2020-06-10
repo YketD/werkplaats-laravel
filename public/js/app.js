@@ -11827,9 +11827,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log('fetching: ' + this.$route.name);
       this.$prismic.client.getSingle(this.$route.name).then(function (document) {
         console.log(document);
-        _this.prismic = document.data; // this.imagesrc = document.data.hoofd_afbeelding;
-        // this.fields.logo = document.data.logo;
-        // this.fields.richContent = document.data.rich_content;
+        _this.prismic = document.data;
       });
     }
   }
@@ -12573,14 +12571,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactPage",
   components: {
     PricingCard: _components_homepage_Pricing__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    prismic: prismic
   }
 });
 
@@ -59498,7 +59496,25 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page-container" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "contact-info-container" }, [
+      _c("h1", { staticClass: "big-title" }, [
+        _vm._v("\n            WERKPLEKKEN\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "info-container" }, [
+        _vm.prismic.text[0]
+          ? _c("div", { staticClass: "info" }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.prismic.text[0].text) +
+                  "\n            "
+              )
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "opaque" })
+    ]),
     _vm._v(" "),
     _c("div"),
     _vm._v(" "),
@@ -59587,35 +59603,15 @@ var render = function() {
           )
         : undefined,
       _vm._v(" "),
-      _vm._m(5),
+      _vm._m(4),
       _vm._v(" "),
       _c("div", { staticClass: "content-opaque" }),
       _vm._v(" "),
-      _vm._m(6)
+      _vm._m(5)
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "contact-info-container" }, [
-      _c("h1", { staticClass: "big-title" }, [
-        _vm._v("\n            WERKPLEKKEN\n        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "info-container" }, [
-        _c("div", { staticClass: "info" }, [
-          _vm._v(
-            "\n                Ben jij benieuwd of WP75C voor jou de ideale werkplek is?\n                Je hebt de keuze uit verschillende abonnementen en mogelijkheden.\n                Wil je graag een eigen vaste werkplek?\n                Wij kijken samen met jou naar de mogelijkheden.\n            "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "opaque" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
