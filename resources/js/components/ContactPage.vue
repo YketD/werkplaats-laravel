@@ -254,12 +254,13 @@
         color       : white;
         background  : #e88a60;
         border      : none;
-        cursor      : poiner;
+        cursor      : pointer;
     }
 
     .contact-info-container {
         text-align : left;
         z-index    : 1;
+        margin-top:24px;
     }
 
     .contact-table {

@@ -1,10 +1,10 @@
 <template>
     <div id="app">
         <transition name="fade-in-top" mode="in">
-            <menu-component v-if="initialLoad" class="menu-component" />
+            <menu-component v-if="initialLoad" :prismic="prismic" class="menu-component" />
         </transition>
         <transition name="fade" mode="out-in">
-            <router-view v-if="initialLoad" />
+            <router-view :prismic="prismic" v-if="initialLoad" />
         </transition>
         <notifications group="reservations" />
         <notifications group="error"/>
@@ -19,16 +19,28 @@
         name: 'app',
         components: { MenuComponent },
         data() {
-            return { initialLoad: false, showSplashScreen: true, }
+            return { initialLoad: false, showSplashScreen: true, prismic: null}
         },
         mounted() {
             this.initialLoad = true;
-
+            this.fetchData();
             setTimeout(function () {
-
                 this.showSplashScreen = false;
             }, 1000)
-        }
+        },
+        updated() {
+            this.fetchData();
+        },
+        methods: {
+            fetchData() {
+                console.log('fetching: ' + this.$route.name)
+                this.$prismic.client.getSingle(this.$route.name)
+                    .then((document) => {
+                        console.log(document);
+                        this.prismic = document.data;
+                    })
+            }
+        },
     }
 </script>
 

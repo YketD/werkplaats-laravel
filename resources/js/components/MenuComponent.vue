@@ -20,7 +20,7 @@
 
             <div class="image-container">
                 <transition name="fade" mode="out-in">
-                    <img class="img" :key="menuImage" :src="imgSrc">
+                    <img class="img" :key="this.$route.path" :src="imgSrc">
                 </transition>
             </div>
         </div>
@@ -35,23 +35,27 @@
                 menuImage: '/',
             }
         },
+        props: {prismic},
         computed: {
             imgSrc() {
-                let src = '/storage/img/homepage.png';
-
-                if (this.$route.path === '/werkplek-huren') {
-                    src = '/storage/img/huren.png';
+                if (this.prismic) {
+                    return this.prismic.hoofd_afbeelding.url;
                 }
-                if (this.$route.path === '/reserveren') {
-                    src = '/storage/img/create.png';
-                }
-                if (this.$route.path === '/contact') {
-                    src = '/storage/img/map.png';
-                }
-                this.menuImage = this.$route.path;
-                return src;
+                // let src = '/storage/img/homepage.png';
+                //
+                // if (this.$route.path === '/werkplek-huren') {
+                //     src = '/storage/img/huren.png';
+                // }
+                // if (this.$route.path === '/reserveren') {
+                //     src = '/storage/img/create.png';
+                // }
+                // if (this.$route.path === '/contact') {
+                //     src = '/storage/img/map.png';
+                // }
+                // this.menuImage = this.$route.path;
+                // return src;
             }
-        }
+        },
     }
 </script>
 

@@ -5,11 +5,8 @@
                 WERKPLEKKEN
             </h1>
             <div class="info-container">
-                <div class="info">
-                    Ben jij benieuwd of WP75C voor jou de ideale werkplek is?
-                    Je hebt de keuze uit verschillende abonnementen en mogelijkheden.
-                    Wil je graag een eigen vaste werkplek?
-                    Wij kijken samen met jou naar de mogelijkheden.
+                <div v-if="prismic.text[0]" class="info">
+                    {{prismic.text[0].text}}
                 </div>
             </div>
             <div class="opaque"></div>
@@ -147,7 +144,8 @@
 
     export default {
         name: "ContactPage",
-        components: { PricingCard }
+        components: { PricingCard },
+        props: { prismic }
     }
 </script>
 
@@ -172,6 +170,11 @@
             padding        : 16px;
             padding-bottom : 0;
         }
+    }
+
+    .contact-info-container {
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
 
     .privacy-policy {
