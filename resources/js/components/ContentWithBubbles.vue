@@ -13,7 +13,6 @@
             <div class="bubble bubble-3 dark">
                 <div class="bubble-content">Activiteiten WP75C</div>
             </div>
-
         </div>
 
         <div class="content-opaque"></div>
@@ -55,15 +54,6 @@
 </script>
 
 <style lang="scss" scoped>
-    .privacy-policy {
-        top      : 600px;
-        position : absolute;
-
-        @media(max-width : 1440px) {
-            top: 520px;
-            white-space: nowrap;
-        }
-    }
 
     #bubbles {
         z-index: 1;
