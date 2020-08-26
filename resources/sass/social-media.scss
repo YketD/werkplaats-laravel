@@ -1,0 +1,25 @@
+.socials-container {
+    position: absolute;
+    right: 12px;
+    text-align: right;
+
+    .facebook {
+        position : absolute;
+        bottom   : 30px;
+        z-index  : 1;
+        right    : 12px;
+        @media('max-width: 500px') {
+            display : none;
+        }
+    }
+
+    .instagram {
+        position : absolute;
+        bottom   : 60px;
+        z-index  : 1;
+        right    : 12px;
+        @media('max-width: 500px') {
+            display : none;
+        }
+    }
+}
