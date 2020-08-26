@@ -8,6 +8,13 @@
 
         <content-with-bubbles class="content" />
 
+        <div class="privacy-policy-container">
+            <a target="_blank" href="/storage/img/docs/privacy.pdf">
+                <div class="privacy-policy">
+                    Privacy policy
+                </div>
+            </a>
+        </div>
         <div class="socials-container">
             <a class="facebook" href="https://www.facebook.com/werkplaats75c">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

@@ -13,11 +13,7 @@
             <div class="bubble bubble-3 dark">
                 <div class="bubble-content">Activiteiten WP75C</div>
             </div>
-            <a target="_blank" href="/storage/img/docs/privacy.pdf">
-                <div class="privacy-policy">
-                    Privacy policy
-                </div>
-            </a>
+
         </div>
 
         <div class="content-opaque"></div>

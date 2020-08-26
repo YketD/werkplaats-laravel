@@ -108,6 +108,13 @@
             </div>
             <div class="content-opaque">
             </div>
+            <div class="privacy-policy-container">
+                <a target="_blank" href="/storage/img/docs/privacy.pdf">
+                    <div class="privacy-policy">
+                        Privacy policy
+                    </div>
+                </a>
+            </div>
             <div class="socials-container">
                 <a class="facebook" href="https://www.facebook.com/werkplaats75c">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -119,11 +126,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
                     </svg>
-                </a>
-                <a target="_blank" href="/storage/img/docs/privacy.pdf">
-                    <div class="privacy-policy">
-                        Privacy policy
-                    </div>
                 </a>
             </div>
         </div>
@@ -141,27 +143,6 @@
 </script>
 
 <style lang="scss" scoped>
-
-    .facebook {
-        position : absolute;
-        bottom   : 30px;
-        z-index  : 1;
-        right    : 12px;
-        @media('max-width: 500px') {
-            display : none;
-        }
-    }
-
-    .instagram {
-        position : absolute;
-        bottom   : 60px;
-        z-index  : 1;
-        right    : 12px;
-        @media('max-width: 500px') {
-            display : none;
-        }
-    }
-
 
     .description-title {
         margin-top  : 64px;
@@ -187,18 +168,6 @@
     .contact-info-container {
         padding-top    : 24px;
         padding-bottom : 24px;
-    }
-
-    .privacy-policy {
-        position    : absolute;
-        bottom      : 0;
-        z-index     : 1;
-        right       : 12px;
-        white-space : nowrap;
-
-        @media('max-width: 500px') {
-            display : none;
-        }
     }
 
     .content {

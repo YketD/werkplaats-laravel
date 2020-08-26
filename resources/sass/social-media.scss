@@ -1,11 +1,24 @@
+.privacy-policy-container {
+    position   : absolute;
+    left       : 12px;
+    text-align : left;
+
+    .privacy-policy {
+        bottom      : 16px;
+        position    : absolute;
+        font-weight : 100;
+        white-space : nowrap;
+    }
+}
+
 .socials-container {
-    position: absolute;
-    right: 12px;
-    text-align: right;
+    position   : absolute;
+    right      : 12px;
+    text-align : right;
 
     .facebook {
         position : absolute;
-        bottom   : 30px;
+        bottom   : 16px;
         z-index  : 1;
         right    : 12px;
         @media('max-width: 500px') {

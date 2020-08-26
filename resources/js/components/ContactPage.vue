@@ -85,7 +85,13 @@
                 </a>
             </div>
             <div class="opaque"></div>
-
+        </div>
+        <div class="privacy-policy-container">
+            <a target="_blank" href="/storage/img/docs/privacy.pdf">
+                <div class="privacy-policy">
+                    Privacy policy
+                </div>
+            </a>
         </div>
         <div class="socials-container">
             <a class="facebook" href="https://www.facebook.com/werkplaats75c">
@@ -171,40 +177,8 @@
 </script>
 
 <style lang="scss" scoped>
-    .facebook {
-        position : absolute;
-        bottom   : 30px;
-        z-index  : 1;
-        right    : 12px;
-        @media('max-width: 500px') {
-            display : none;
-        }
-    }
-
-    .instagram {
-        position : absolute;
-        bottom   : 60px;
-        z-index  : 1;
-        right    : 12px;
-        @media('max-width: 500px') {
-            display : none;
-        }
-    }
-
-    .privacy-policy {
-        top      : 600px;
-        position : absolute;
-
-        @media(max-width : 1440px) {
-            top: 520px;
-            white-space: nowrap;
-        }
-    }
 
     a {
-        /*font-weight: 400;*/
-
-
         border-radius : 4px;
     }
 
