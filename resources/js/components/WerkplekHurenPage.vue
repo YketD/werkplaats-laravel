@@ -105,16 +105,6 @@
                         Privacy policy
                     </div>
                 </a>
-                <a target="_blank" class="mobile-menu-link sub" href="https://www.facebook.com/werkplaats75c">
-                    <div class="">
-                        Facebook
-                    </div>
-                </a>
-                <a target="_blank" class="mobile-menu-link sub" href="https://www.instagram.com/werkplaats75c">
-                    <div class="">
-                        Instagram
-                    </div>
-                </a>
             </div>
             <div class="content-opaque">
             </div>
@@ -122,16 +112,6 @@
                 <a target="_blank" href="/storage/img/docs/privacy.pdf">
                     <div class="privacy-policy">
                         Privacy policy
-                    </div>
-                </a>
-                <a target="_blank" href="https://www.facebook.com/werkplaats75c">
-                    <div class="facebook">
-                        Facebook
-                    </div>
-                </a>
-                <a target="_blank" href="https://www.instagram.com/werkplaats75c/">
-                    <div class="instagram">
-                        Instagram
                     </div>
                 </a>
             </div>
@@ -183,27 +163,6 @@
         z-index  : 1;
         right    : 12px;
         white-space: nowrap;
-
-        @media('max-width: 500px') {
-            display : none;
-        }
-    }
-
-    .facebook {
-        position : absolute;
-        bottom   : 30px;
-        z-index  : 1;
-        right    : 12px;
-
-        @media('max-width: 500px') {
-            display : none;
-        }
-    }
-    .instagram {
-        position : absolute;
-        bottom   : 60px;
-        z-index  : 1;
-        right    : 12px;
 
         @media('max-width: 500px') {
             display : none;
