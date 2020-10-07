@@ -21,6 +21,7 @@ class OrderController extends Controller
         $reservation->plan = Arr::get($request, 'plan', 'Not provided') . " voor " . Arr::get($request, 'time', 'Not provided');
         $reservation->save();
 
+
         Mail::send('mail.aanmeldingmessage', ['reservation' => $reservation], function($message) {
             $message->to('info@werkplaats75c.nl')->subject('Nieuwe reservering!')->from('info@werkplaats75c.nl');
         });

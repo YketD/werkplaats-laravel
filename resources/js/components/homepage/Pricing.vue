@@ -145,8 +145,10 @@
                     'fullName': this.fullName,
                     'plan': this.title,
                     'time': this.timeToString,
-                }
+                };
+
                 let accepted = true;
+
                 if(!this.email){
                     this.$notify({group: 'reservations', title: 'Mislukt !', text: 'email niet ingevuld'});
                     console.log('false');
