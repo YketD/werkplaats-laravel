@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
+
     public function sendOrder(Request $request)
     {
         $reservation = new Reservation();
@@ -22,15 +23,19 @@ class OrderController extends Controller
         $reservation->save();
 
 
-        Mail::send('mail.aanmeldingmessage', ['reservation' => $reservation], function($message) {
+        Mail::send('mail.aanmeldingmessage', ['reservation' => $reservation], function ($message) {
             $message->to('info@werkplaats75c.nl')->subject('Nieuwe reservering!')->from('info@werkplaats75c.nl');
         });
 
-        Mail::send('mail.succesfullreservation', ['fullname' => $reservation->fullname, 'ruimte' => Arr::get($request, 'plan', 'Not provided'), 'reservation' => $reservation], function($message) use ($reservation) {
+        Mail::send('mail.succesfullreservation', ['fullname'    => $reservation->fullname,
+                                                  'ruimte'      => Arr::get($request, 'plan', 'Not provided'),
+                                                  'reservation' => $reservation
+        ], function ($message) use ($reservation) {
             $message->to($reservation->email)->subject('Bedankt voor je reservering!')->from('info@werkplaats75c.nl');
         });
 
         view('mail.succesfullreservation');
+
         return response()->json($request->all());
     }
 
@@ -41,22 +46,35 @@ class OrderController extends Controller
         $reservation->email = Arr::get($request, 'email', 'Not provided');
         $reservation->phone = Arr::get($request, 'phone', 'Not provided');
         $reservation->fullname = Arr::get($request, 'fullName', 'Not provided');
-        $reservation->plan = Arr::get($request, 'plan', 'Not provided') . " voor " . Arr::get($request, 'time', 'Not provided');
+        if ($request->time)
+        {
+            $reservation->plan = Arr::get($request, 'plan', 'Not provided') . " voor " . Arr::get($request, 'time', 'Not provided');
+        }   else {
+            $reservation->plan = Arr::get($request, 'plan', 'Not provided');
+        }
         $reservation->save();
 
-        Mail::send('mail.aanmeldingmessage', ['reservation' => $reservation], function($message) {
-            $message->to('info@werkplaats75c.nl')->subject('Nieuwe aanvraag abonnement!')->from('info@werkplaats75c.nl');
+        Mail::send('mail.aanmeldingmessage', ['reservation' => $reservation], function ($message) {
+            $message->to('info@werkplaats75c.nl')
+                    ->subject('Nieuwe aanvraag abonnement!')
+                    ->from('info@werkplaats75c.nl');
         });
 
-        Mail::send('mail.succesfullhire', ['fullname' => $reservation->fullname, 'reservation' => $reservation], function($message) use ($reservation) {
-            $message->to($reservation->email)->subject('aanvraag succesvol | Werkplaats 75C!')->from('info@werkplaats75c.nl');
+        Mail::send('mail.succesfullhire', ['fullname'    => $reservation->fullname,
+                                           'reservation' => $reservation
+        ], function ($message) use ($reservation) {
+            $message->to($reservation->email)
+                    ->subject('aanvraag succesvol | Werkplaats 75C!')
+                    ->from('info@werkplaats75c.nl');
         });
 
         view('mail.succesfullreservation');
+
         return response()->json($request->all());
     }
 
-    public function show(Request $request) {
+    public function show(Request $request)
+    {
         return view('mail.succesfullreservation');
     }
 
