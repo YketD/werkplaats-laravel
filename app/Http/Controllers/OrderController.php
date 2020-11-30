@@ -73,6 +73,12 @@ class OrderController extends Controller
         return response()->json($request->all());
     }
 
+    public function activityAdmission(Request $request) {
+        Mail::send('mail.holly', ['email' => $request->email], function ($message) {
+            $message->to('info@werkplaats75c.nl')->subject('Nieuwe aanmelding!')->from('info@werkplaats75c.nl');
+        });
+    }
+
     public function show(Request $request)
     {
         return view('mail.succesfullreservation');
