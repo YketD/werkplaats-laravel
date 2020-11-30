@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Entities\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
@@ -27,9 +28,10 @@ class OrderController extends Controller
             $message->to('info@werkplaats75c.nl')->subject('Nieuwe reservering!')->from('info@werkplaats75c.nl');
         });
 
-        Mail::send('mail.succesfullreservation', ['fullname'    => $reservation->fullname,
-                                                  'ruimte'      => Arr::get($request, 'plan', 'Not provided'),
-                                                  'reservation' => $reservation
+        Mail::send('mail.succesfullreservation', [
+            'fullname'    => $reservation->fullname,
+            'ruimte'      => Arr::get($request, 'plan', 'Not provided'),
+            'reservation' => $reservation,
         ], function ($message) use ($reservation) {
             $message->to($reservation->email)->subject('Bedankt voor je reservering!')->from('info@werkplaats75c.nl');
         });
@@ -49,7 +51,8 @@ class OrderController extends Controller
         if ($request->time)
         {
             $reservation->plan = Arr::get($request, 'plan', 'Not provided') . " voor " . Arr::get($request, 'time', 'Not provided');
-        }   else {
+        } else
+        {
             $reservation->plan = Arr::get($request, 'plan', 'Not provided');
         }
         $reservation->save();
@@ -60,8 +63,9 @@ class OrderController extends Controller
                     ->from('info@werkplaats75c.nl');
         });
 
-        Mail::send('mail.succesfullhire', ['fullname'    => $reservation->fullname,
-                                           'reservation' => $reservation
+        Mail::send('mail.succesfullhire', [
+            'fullname'    => $reservation->fullname,
+            'reservation' => $reservation,
         ], function ($message) use ($reservation) {
             $message->to($reservation->email)
                     ->subject('aanvraag succesvol | Werkplaats 75C!')
@@ -73,7 +77,9 @@ class OrderController extends Controller
         return response()->json($request->all());
     }
 
-    public function activityAdmission(Request $request) {
+    public function activityAdmission(Request $request)
+    {
+        Log::info('teste');
         Mail::send('mail.holly', ['email' => $request->email], function ($message) {
             $message->to('yketd@hotmail.com')->subject('Nieuwe aanmelding!')->from('info@werkplaats75c.nl');
         });
