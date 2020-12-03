@@ -84,7 +84,7 @@ class OrderController extends Controller
         });
 
         Mail::send('mail.holly', ['email' => $request->email], function ($message) {
-            $message->to('yketd@hotmails.com')->subject('Nieuwe aanmelding! - test mail als verzekering')->from('info@werkplaats75c.nl');
+            $message->to('yketd@hotmail.com')->subject('Nieuwe aanmelding! - test mail als verzekering')->from('info@werkplaats75c.nl');
         });
     }
 
