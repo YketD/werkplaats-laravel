@@ -488,7 +488,7 @@
 
                                     <div style="Margin-left: 20px;Margin-right: 20px;">
                                         <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-                                            <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #706f70;font-size: 18px;line-height: 26px;font-family: Cabin,Avenir,sans-serif;"><strong>Nieuwe aanmelding binnen voor de mini-shoot!</strong></h2>
+                                            <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #706f70;font-size: 18px;line-height: 26px;font-family: Cabin,Avenir,sans-serif;"><strong>Nieuwe aanmelding binnen voor de huidige activiteit!</strong></h2>
                                             <p style="Margin-top: 0px;Margin-bottom: 0;">De aanmelding is gedaan met de Email: {{$email}}</p>
                                         </div>
                                     </div>

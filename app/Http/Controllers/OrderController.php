@@ -80,7 +80,7 @@ class OrderController extends Controller
     public function activityAdmission(Request $request)
     {
         Mail::send('mail.holly', ['email' => $request->email], function ($message) {
-            $message->to('hollykleinoonkphotography@gmail.com')->subject('Nieuwe aanmelding!')->from('info@werkplaats75c.nl');
+            $message->to('info@werkplaats75c.nl')->subject('Nieuwe aanmelding!')->from('info@werkplaats75c.nl');
         });
 
         Mail::send('mail.holly', ['email' => $request->email], function ($message) {
